@@ -1,0 +1,51 @@
+{
+  "name": "kpc-mcp-server",
+  "version": "1.0.2",
+  "description": "KPC组件库MCP服务 - 基于官方TypeScript SDK",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "kpc-mcp-server": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "postbuild": "chmod +x dist/index.js",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "yarn build && node dist/test.js",
+    "prepare": "yarn build"
+  },
+  "keywords": [
+    "mcp",
+    "kpc",
+    "components",
+    "api",
+    "vue",
+    "ui-library",
+    "model-context-protocol"
+  ],
+  "author": "KPC Team",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ksc-fe/kpc"
+  },
+  "homepage": "https://design.ksyun.com/",
+  "bugs": {
+    "url": "https://github.com/ksc-fe/kpc/issues"
+  },
+  "files": [
+    "dist/**/*",
+    "data/**/*"
+  ]
+}
