@@ -1,0 +1,378 @@
+{
+  "category": "工具组件",
+  "components": {
+    "Config": {
+      "name": "Config",
+      "description": "Config组件",
+      "category": "工具组件",
+      "tags": [],
+      "filePath": "components/config",
+      "props": [
+        {
+          "name": "classNamePrefix",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "disableWave",
+          "type": "boolean",
+          "required": false,
+          "description": "",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Copy": {
+      "name": "Copy",
+      "description": "Copy复制",
+      "category": "工具组件",
+      "tags": [],
+      "filePath": "components/copy",
+      "props": [
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "description": "复制时的文案",
+          "options": []
+        },
+        {
+          "name": "showMessage",
+          "type": "boolean",
+          "required": false,
+          "description": "复制成功/失败时，是否展示Message",
+          "options": []
+        }
+      ],
+      "events": [
+        {
+          "name": "success",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "description": "复制成功时触发 (value: string) => void"
+        },
+        {
+          "name": "error",
+          "parameters": [],
+          "description": "复制失败时触发 () => void"
+        },
+        {
+          "name": "click",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "any",
+              "description": ""
+            }
+          ],
+          "description": ""
+        }
+      ],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "<Copy text=Hello King Desgin! />"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Ellipsis": {
+      "name": "Ellipsis",
+      "description": "Ellipsis超长忽略",
+      "category": "工具组件",
+      "tags": [],
+      "filePath": "components/ellipsis",
+      "props": [
+        {
+          "name": "maxLines",
+          "type": "number",
+          "required": false,
+          "description": "定义多行省略最大行数",
+          "options": []
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "description": "定义是否展示tooltip",
+          "options": []
+        },
+        {
+          "name": "position",
+          "type": "any | \"left\" | \"bottom\" | \"right\" | \"top\"",
+          "required": false,
+          "description": "菜单弹出的位置，默认在触发器正上方向上偏移10px的地方",
+          "options": []
+        },
+        {
+          "name": "theme",
+          "type": "\"light\" | \"dark\"",
+          "required": false,
+          "description": "",
+          "options": [
+            "light",
+            "dark"
+          ]
+        },
+        {
+          "name": "hoverable",
+          "type": "boolean",
+          "required": false,
+          "description": "",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "<Ellipsis>ppp</Ellipsis>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Transfer": {
+      "name": "Transfer",
+      "description": "Transfer穿梭框",
+      "category": "工具组件",
+      "tags": [],
+      "filePath": "components/transfer",
+      "props": [
+        {
+          "name": "data",
+          "type": "any",
+          "required": false,
+          "description": "需要展示的列表数据, 其中label会默认当做列表文案展示，disabled用于指定是否禁用该行选择",
+          "options": []
+        },
+        {
+          "name": "keyName",
+          "type": "any",
+          "required": false,
+          "description": "指定每一行数据的哪个属性当做列表的key属性，默认会取key属性",
+          "options": []
+        },
+        {
+          "name": "labelName",
+          "type": "any",
+          "required": false,
+          "description": "指定每一行数据的哪个属性当做列表的label属性，默认会取label属性",
+          "options": []
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "required": false,
+          "description": "已选择key的数据项，可用v-model进行双向绑定",
+          "options": []
+        },
+        {
+          "name": "leftCheckedKeys",
+          "type": "any",
+          "required": false,
+          "description": "通过key指定勾选的左侧数据节点",
+          "options": []
+        },
+        {
+          "name": "rightCheckedKeys",
+          "type": "any",
+          "required": false,
+          "description": "通过key指定勾选的右侧数据节点",
+          "options": []
+        },
+        {
+          "name": "filterable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否需要过滤列表功能，默认根据data中定义的label进行过滤",
+          "options": []
+        },
+        {
+          "name": "filter",
+          "type": "any",
+          "required": false,
+          "description": "指定自定义的过滤函数，组件会将每行数据data以及关键词keywords传给它",
+          "options": []
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "required": false,
+          "description": "当开启过滤功能时，用于输入框展示的占位文案",
+          "options": []
+        },
+        {
+          "name": "leftKeywords",
+          "type": "string",
+          "required": false,
+          "description": "左边筛选关键字",
+          "options": []
+        },
+        {
+          "name": "rightKeywords",
+          "type": "string",
+          "required": false,
+          "description": "右边筛选关键字",
+          "options": []
+        },
+        {
+          "name": "leftTitle",
+          "type": "string | any",
+          "required": false,
+          "description": "左边顶部展示的标题",
+          "options": []
+        },
+        {
+          "name": "rightTitle",
+          "type": "string | any",
+          "required": false,
+          "description": "右边顶部展示的标题",
+          "options": []
+        },
+        {
+          "name": "enableAdd",
+          "type": "any",
+          "required": false,
+          "description": "指定右箭头按钮的可用状态",
+          "options": []
+        },
+        {
+          "name": "enableRemove",
+          "type": "any",
+          "required": false,
+          "description": "指定左箭头按钮的可用状态",
+          "options": []
+        }
+      ],
+      "events": [
+        {
+          "name": "add",
+          "parameters": [],
+          "description": "右箭头按钮点击事件"
+        },
+        {
+          "name": "remove",
+          "parameters": [],
+          "description": "左箭头按钮点击事件"
+        },
+        {
+          "name": "getData",
+          "parameters": [],
+          "description": "获取右边的节点数据 () => TransferDataItem[]"
+        },
+        {
+          "name": "getCheckedData",
+          "parameters": [],
+          "description": "获取勾选的节点数据 () => (type: 'left' | 'right') => TransferDataItem[]"
+        }
+      ],
+      "methods": [
+        {
+          "name": "getData",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "getCheckedData",
+          "parameters": [
+            {
+              "name": "model",
+              "type": "any",
+              "optional": false,
+              "description": ""
+            }
+          ],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        }
+      ],
+      "slots": [
+        {
+          "name": "header",
+          "description": "自定义整个头部内容 (type: 'left' | 'right') => Children",
+          "parameters": []
+        },
+        {
+          "name": "filter",
+          "description": "自定义检索内容 (type: 'left' | 'right') => Children",
+          "parameters": []
+        },
+        {
+          "name": "list",
+          "description": "自定义整个列表内容 (type: 'left' | 'right') => Children",
+          "parameters": []
+        },
+        {
+          "name": "label",
+          "description": "自定义每一项的渲染函数，类似于label属性 (data: TransferDataItem, key: string, type: 'left' | 'right') => Children",
+          "parameters": []
+        }
+      ],
+      "examples": [
+        "<Transfer v-model=value :data=data>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "View": {
+      "name": "View",
+      "description": "",
+      "category": "工具组件",
+      "tags": [],
+      "filePath": "components/view",
+      "props": [
+        {
+          "name": "tag",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "name": "template",
+          "parameters": [
+            {
+              "name": "this",
+              "type": "any",
+              "optional": false,
+              "description": ""
+            }
+          ],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "defaults",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        }
+      ],
+      "slots": [],
+      "examples": [],
+      "nestingRules": [],
+      "dependencies": []
+    }
+  }
+}

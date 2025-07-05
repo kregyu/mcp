@@ -1,0 +1,1205 @@
+{
+  "category": "数据展示",
+  "components": {
+    "Card": {
+      "name": "Card",
+      "description": "Card卡片",
+      "category": "数据展示",
+      "tags": [],
+      "filePath": "components/card",
+      "props": [
+        {
+          "name": "title",
+          "type": "string | any",
+          "required": false,
+          "description": "卡片标题",
+          "options": []
+        },
+        {
+          "name": "type",
+          "type": "\"shadow\" | \"border\" | \"none\"",
+          "required": false,
+          "description": "卡片类型",
+          "options": []
+        },
+        {
+          "name": "size",
+          "type": "any",
+          "required": false,
+          "description": "卡片尺寸",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "<Card title='用户信息' type='border'><div>卡片内容</div><div>卡片内容</div></Card>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Code": {
+      "name": "Code",
+      "description": "Code组件",
+      "category": "数据展示",
+      "tags": [],
+      "filePath": "components/code",
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "theme",
+          "type": "\"vs\" | \"vs-dark\" | \"hc-black\"",
+          "required": false,
+          "description": "",
+          "options": [
+            "vs",
+            "vs-dark",
+            "hc-black"
+          ]
+        },
+        {
+          "name": "readOnly",
+          "type": "boolean",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "width",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "height",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "options",
+          "type": "any",
+          "required": false,
+          "description": "",
+          "options": []
+        }
+      ],
+      "events": [
+        {
+          "name": "ready",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "any",
+              "description": ""
+            },
+            {
+              "name": "arg1",
+              "type": "any",
+              "description": ""
+            },
+            {
+              "name": "arg2",
+              "type": "any",
+              "description": ""
+            }
+          ],
+          "description": ""
+        }
+      ],
+      "methods": [
+        {
+          "name": "getEditor",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        }
+      ],
+      "slots": [],
+      "examples": [],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Descriptions": {
+      "name": "Descriptions",
+      "description": "Descriptions组件",
+      "category": "数据展示",
+      "tags": [],
+      "filePath": "components/descriptions",
+      "props": [],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Diagram": {
+      "name": "Diagram",
+      "description": "Diagram组件",
+      "category": "数据展示",
+      "tags": [],
+      "filePath": "components/diagram",
+      "props": [],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Pagination": {
+      "name": "Pagination",
+      "description": "Pagination分页",
+      "category": "数据展示",
+      "tags": [
+        "分页",
+        "翻页",
+        "页码"
+      ],
+      "filePath": "components/pagination",
+      "props": [
+        {
+          "name": "size",
+          "type": "any",
+          "required": false,
+          "description": "组件尺寸",
+          "options": [
+            "large",
+            "default",
+            "small",
+            "mini"
+          ]
+        },
+        {
+          "name": "counts",
+          "type": "number | string",
+          "required": false,
+          "description": "展示按钮个数",
+          "options": []
+        },
+        {
+          "name": "total",
+          "type": "number",
+          "required": false,
+          "description": "数据总条数",
+          "options": []
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "required": false,
+          "description": "当前页码",
+          "options": []
+        },
+        {
+          "name": "limit",
+          "type": "number",
+          "required": false,
+          "description": "页面条数",
+          "options": []
+        },
+        {
+          "name": "limits",
+          "type": "any",
+          "required": false,
+          "description": "页面条数 [10, 20, 50]",
+          "options": []
+        },
+        {
+          "name": "flat",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示无边框样式，默认有边框",
+          "options": []
+        },
+        {
+          "name": "simple",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示简洁样式",
+          "options": []
+        },
+        {
+          "name": "showTotal",
+          "type": "boolean",
+          "required": false,
+          "description": "显示总条数",
+          "options": []
+        },
+        {
+          "name": "showGoto",
+          "type": "boolean",
+          "required": false,
+          "description": "显示快速跳转框",
+          "options": []
+        },
+        {
+          "name": "showLimits",
+          "type": "boolean",
+          "required": false,
+          "description": "是否显示每页条数选择框",
+          "options": []
+        },
+        {
+          "name": "disableBtn",
+          "type": "any",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "disablePage",
+          "type": "any",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "border",
+          "type": "string",
+          "required": false,
+          "description": "定义边框样式",
+          "options": [
+            "solid",
+            "dashed",
+            "none"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "name": "change",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "any",
+              "description": ""
+            }
+          ],
+          "description": "value和limit变化时触发，同时变化不会重复触发 {value: number, limit: number}"
+        }
+      ],
+      "methods": [
+        {
+          "name": "init",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "changePage",
+          "parameters": [
+            {
+              "name": "page",
+              "type": "number",
+              "optional": false,
+              "description": ""
+            }
+          ],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        }
+      ],
+      "slots": [],
+      "examples": [
+        "<Pagination v-model=value3 :total=200 :limit=20 :limits=[10, 20, 50, 100] />"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Progress": {
+      "name": "Progress",
+      "description": "Progress进度条",
+      "category": "数据展示",
+      "tags": [
+        "进度条",
+        "进度",
+        "加载"
+      ],
+      "filePath": "components/progress",
+      "props": [
+        {
+          "name": "type",
+          "type": "any",
+          "required": false,
+          "description": "类型",
+          "options": [
+            "bar",
+            "circle"
+          ]
+        },
+        {
+          "name": "percent",
+          "type": "any",
+          "required": false,
+          "description": "当前百分比(0~100)",
+          "options": []
+        },
+        {
+          "name": "size",
+          "type": "any",
+          "required": false,
+          "description": "尺寸",
+          "options": [
+            "default",
+            "small",
+            "mini"
+          ]
+        },
+        {
+          "name": "showOuterText",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示后面的百分比",
+          "options": []
+        },
+        {
+          "name": "showInnerText",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示进度条上面的百分比",
+          "options": []
+        },
+        {
+          "name": "status",
+          "type": "any",
+          "required": false,
+          "description": "进度条状态",
+          "options": [
+            "success",
+            "error",
+            "active",
+            "normal",
+            "warning"
+          ]
+        },
+        {
+          "name": "strokeWidth",
+          "type": "number",
+          "required": false,
+          "description": "进度条指示线的宽度，单位px，只对type=\"circle\"圆形进度有效",
+          "options": []
+        },
+        {
+          "name": "color",
+          "type": "string | any | any",
+          "required": false,
+          "description": "进度条背景颜色，支持根据百分比自定义颜色。会覆盖status设置的颜色",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "name": "init",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        }
+      ],
+      "slots": [],
+      "examples": [
+        "<Progress percent=50 />"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Skeleton": {
+      "name": "Skeleton",
+      "description": "Skeleton组件",
+      "category": "数据展示",
+      "tags": [],
+      "filePath": "components/skeleton",
+      "props": [],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Table": {
+      "name": "Table",
+      "description": "表格Table组件与TableColumn组件绑定结合使用",
+      "category": "数据展示",
+      "tags": [
+        "表格",
+        "数据",
+        "列表",
+        "分页"
+      ],
+      "filePath": "components/table",
+      "props": [
+        {
+          "name": "data",
+          "type": "array",
+          "required": false,
+          "description": "表格数据",
+          "options": []
+        },
+        {
+          "name": "fixHeader",
+          "type": "boolean",
+          "required": false,
+          "description": "表头固定，给定需要固定高度的具体数值，当超出改值时，展示滚动条",
+          "options": []
+        },
+        {
+          "name": "stickHeader",
+          "type": "boolean",
+          "required": false,
+          "description": "表头吸顶，给定需要吸顶的高度，当表头在页面滚动滚动时，距离视窗顶部的距离等于该高度时，将表头固定在此高度处",
+          "options": []
+        },
+        {
+          "name": "stickScrollbar",
+          "type": "boolean",
+          "required": false,
+          "description": "当出现横向滚动条时，设置是否当表格底部没有滚动到视窗中时，将横向滚动条固定在页面底部；取值为number类型时，用来指定距离视窗底部的距离",
+          "options": []
+        },
+        {
+          "name": "checkType",
+          "type": "string",
+          "required": false,
+          "description": "当行可选择时，定义选择的类型: 单选 'radio' , 复选 'checkbox', 不可选'none'",
+          "options": [
+            "checkbox",
+            "radio",
+            "none"
+          ]
+        },
+        {
+          "name": "rowKey",
+          "type": "function",
+          "required": false,
+          "description": "设置每行的key (value: T, index: number) => TableRowKey ",
+          "options": []
+        },
+        {
+          "name": "rowCheckable",
+          "type": "boolean",
+          "required": false,
+          "description": "当行可选时，是否点击该行任意区域都可选中",
+          "options": []
+        },
+        {
+          "name": "disableRow",
+          "type": "function",
+          "required": false,
+          "description": "定义行禁用可选的逻辑，返回true，则该行被禁用选择",
+          "options": []
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": false,
+          "description": "表格类型，默认左右无边框，'border'类型会添加边框, 'grid'类型会展示栅格边框",
+          "options": [
+            "default",
+            "border",
+            "grid"
+          ]
+        },
+        {
+          "name": "stripe",
+          "type": "boolean",
+          "required": false,
+          "description": "相邻行是否展示不同的背景色",
+          "options": []
+        },
+        {
+          "name": "rowClassName",
+          "type": "function",
+          "required": false,
+          "description": "通过一个函数定义行的className，该函数会传入该行数据，索引和key当做参数，返回的字符串将被设为该行的className ",
+          "options": []
+        },
+        {
+          "name": "group",
+          "type": "object",
+          "required": false,
+          "description": "分组需要两个group来指定：1.第一个是Table上的group属性，该属性指定当前分组的方式，形式为：{分组的列的key: ['当前列选择的分组的值']}。 对于“全部”选项，value需要设为空字符串'这样才能在选择“全部”的时候，不高亮筛选按钮  当分组方式改变时，可以监听默认事件$change:group来执行自定义分组逻辑。 2.第二个是TableColumn的group属性,该属性指定当前列有哪些可选的分组方式，形式为:[{label:'分组展示文案",
+          "options": []
+        },
+        {
+          "name": "sort",
+          "type": "object",
+          "required": false,
+          "description": "通过sort属性来指定当前表格的排序方式。它的数据格式如下{ key: '当前排序的列的key', type: '当前排序方式（desc: 降序，asc: 升序）' }, 当该列可排序时，只需要在TableColumn中加入sortable即可, 当排序方式改变时，可以监听默认事件$change:sort来执行自定义排序逻辑",
+          "options": []
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示加载状态",
+          "options": []
+        },
+        {
+          "name": "merge",
+          "type": "boolean",
+          "required": false,
+          "description": "通过merge属性指定一个函数来定义合并单元格的逻辑，函数返回的结果{colspan?: number, rowspan?: number}用来定义单元格占用的行列数。组件传入函数的参数如下,1.row 当前行数据 2.column 当前列数据 3.rowIndex 当前行索引 4.columnIndex 当前列索引. 合并多选框时，可以通过checkedKeys来设置选中行，多选框是支持半选状态的；合并单选框时，与合并多选框不同的是，单选框是不支持半选状态的，只要一行被选中，那么整个合并行都会被选中.注意：禁选行和选中行默认没有给出高亮，如果需要请自行设置高亮",
+          "options": []
+        },
+        {
+          "name": "expandedKeys",
+          "type": "array",
+          "required": false,
+          "description": "通过key来指定哪些行展开",
+          "options": []
+        },
+        {
+          "name": "rowExpandable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否点击该行任意区域即展开",
+          "options": []
+        },
+        {
+          "name": "selectedKeys",
+          "type": "array",
+          "required": false,
+          "description": "当rowSelectable取值为非false时，指定哪些行高亮",
+          "options": []
+        },
+        {
+          "name": "rowSelectable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否点击行时高亮该行，取值为multiple时，可以同时高亮多行",
+          "options": [
+            "single",
+            "multiple",
+            "true",
+            "false"
+          ]
+        },
+        {
+          "name": "childrenKey",
+          "type": "string",
+          "required": false,
+          "description": "树形表格指定子元素键名",
+          "options": []
+        },
+        {
+          "name": "indent",
+          "type": "number",
+          "required": false,
+          "description": "树形表格指定子元素缩进宽度",
+          "options": []
+        },
+        {
+          "name": "spreadKeys",
+          "type": "array",
+          "required": false,
+          "description": "树形表格指定展开的行",
+          "options": []
+        },
+        {
+          "name": "tooltipPosition",
+          "type": "array",
+          "required": false,
+          "description": "行提示的位置",
+          "options": [
+            "left",
+            "bottom",
+            "right",
+            "top"
+          ]
+        },
+        {
+          "name": "tooltipContainer",
+          "type": "string",
+          "required": false,
+          "description": "指定行提示弹层追加的位置，默认：Dialog类型的组件会追加到Dialog中，其他会追加到body中。你可以传入函数返回一个DOM用来作为插入的容器，或者传入字符串用来给querySelector进行查询",
+          "options": []
+        },
+        {
+          "name": "keepStatus",
+          "type": "boolean",
+          "required": false,
+          "description": "是否在行销毁的时候，保持该行在checkedKeys | selectedKeys | spreadKeys | expandedKeys中的key值，默认会同步删除（仅在销毁行的时候有效，如果整个Table被销毁，则不会执行该逻辑）",
+          "options": []
+        },
+        {
+          "name": "showIndeterminate",
+          "type": "boolean",
+          "required": false,
+          "description": "表头的Checkbox是否支持展示半选中状态",
+          "options": []
+        },
+        {
+          "name": "resizable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否可以表头拖动",
+          "options": []
+        },
+        {
+          "name": "minColWidth",
+          "type": "number",
+          "required": false,
+          "description": "指定所有列拖动时的最小宽度",
+          "options": []
+        },
+        {
+          "name": "widthStoreKey",
+          "type": "string",
+          "required": false,
+          "description": "如果要保存表格拖动后的列宽信息，可以通过该属性设置保存到localStorage中的key",
+          "options": []
+        },
+        {
+          "name": "draggable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否可以表头拖动",
+          "options": []
+        },
+        {
+          "name": "animation",
+          "type": "boolean",
+          "required": false,
+          "description": "是否开启动效，默认开启。可以通过true false全部设置，或者通过数组单独设置行和列的动效",
+          "options": []
+        },
+        {
+          "name": "hideHeader",
+          "type": "boolean",
+          "required": false,
+          "description": "是否隐藏表头",
+          "options": []
+        },
+        {
+          "name": "pagination",
+          "type": "boolean",
+          "required": false,
+          "description": "是否支持分页",
+          "options": []
+        },
+        {
+          "name": "fixFooter",
+          "type": "boolean",
+          "required": false,
+          "description": "table给定需要固定高度时，自定义footer固定",
+          "options": []
+        },
+        {
+          "name": "load",
+          "type": "function",
+          "required": false,
+          "description": "指定异步加载节点数据的函数，该函数通过Promise返回数组来添加子节点数据",
+          "options": []
+        },
+        {
+          "name": "spreadArrowIndex",
+          "type": "number",
+          "required": false,
+          "description": "指定树形表格展开Icon的所在列，默认在第一列",
+          "options": []
+        },
+        {
+          "name": "virtual",
+          "type": "boolean",
+          "required": false,
+          "description": "是否开启虚拟列表",
+          "options": []
+        }
+      ],
+      "events": [
+        {
+          "name": "getCheckedData",
+          "parameters": [],
+          "description": "获取选中数据信息 返回值为数组"
+        },
+        {
+          "name": "getSelectedData",
+          "parameters": [],
+          "description": "获取高亮行数据信息 返回值为数组"
+        },
+        {
+          "name": "checkAll",
+          "parameters": [],
+          "description": "全部选中"
+        },
+        {
+          "name": "uncheckAll",
+          "parameters": [],
+          "description": "全不选中"
+        },
+        {
+          "name": "scrollToRowByIndex",
+          "parameters": [],
+          "description": "通过索引指定滚动的行 (index: number) => Promise<void>"
+        },
+        {
+          "name": "scrollToRowByKey",
+          "parameters": [],
+          "description": "通过key指定滚动的行 (key: TableRowKey) => Promise<void>"
+        },
+        {
+          "name": "exportTable",
+          "parameters": [],
+          "description": "导出表格 (data: T[] = this.get('data'), filename = 'table') => Promise<string>"
+        }
+      ],
+      "methods": [],
+      "slots": [
+        {
+          "name": "empty",
+          "description": "自定义无数据展示模板",
+          "parameters": []
+        },
+        {
+          "name": "expand",
+          "description": "指定行展开后要展示的模板内容 格式为： ([data: T, index: number]) => Children",
+          "parameters": []
+        },
+        {
+          "name": "tooltip",
+          "description": "行提示内容 格式为：([data: T, index: number]) => Children",
+          "parameters": []
+        },
+        {
+          "name": "footer",
+          "description": "自定义Table底部",
+          "parameters": []
+        }
+      ],
+      "examples": [
+        "<Table :data='data' resizable><TableColumn key='a' title='Title 1' :minWidth='200' /><TableColumn key='b' title='Title 2' :minWidth='300' /></Table>"
+      ],
+      "nestingRules": [
+        {
+          "parent": "Table",
+          "children": {
+            "required": [
+              "TableColumn"
+            ],
+            "allowed": [
+              "TableColumn"
+            ],
+            "forbidden": []
+          },
+          "mandatory": true,
+          "description": "Table组件必须包含TableColumn定义列"
+        }
+      ],
+      "dependencies": []
+    },
+    "Tag": {
+      "name": "Tag",
+      "description": "Tag标签",
+      "category": "数据展示",
+      "tags": [],
+      "filePath": "components/tag",
+      "props": [
+        {
+          "name": "type",
+          "type": "string",
+          "required": false,
+          "description": "组件类型",
+          "options": [
+            "primary",
+            "default",
+            "success",
+            "warning",
+            "danger"
+          ]
+        },
+        {
+          "name": "closable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否可关闭",
+          "options": []
+        },
+        {
+          "name": "closed",
+          "type": "boolean",
+          "required": false,
+          "description": "是否已关闭",
+          "options": []
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示禁用状态",
+          "options": []
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "required": false,
+          "description": "组件尺寸",
+          "options": [
+            "large",
+            "default",
+            "small",
+            "mini"
+          ]
+        },
+        {
+          "name": "border",
+          "type": "string",
+          "required": false,
+          "description": "定义边框样式",
+          "options": [
+            "solid",
+            "dashed",
+            "none"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "name": "colse",
+          "parameters": [],
+          "description": "标签关闭事件 (e: MouseEvent) => void"
+        }
+      ],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "<Tag v-for=($value, $key) in tags1 :key=$value :type=$value>{{ $value }}</Tag><Tooltip content=test key=test><Tag>with tooltip</Tag></Tooltip>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Timeline": {
+      "name": "Timeline",
+      "description": "Timeline与TimelineItem组合使用垂直方向线性时间轴",
+      "category": "数据展示",
+      "tags": [],
+      "filePath": "components/timeline",
+      "props": [],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "<Timeline><TimelineItem></TimelineItem></Timeline>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Tree": {
+      "name": "Tree",
+      "description": "树形控件",
+      "category": "数据展示",
+      "tags": [],
+      "filePath": "components/tree",
+      "props": [
+        {
+          "name": "data",
+          "type": "any",
+          "required": false,
+          "description": "要渲染的数据",
+          "options": []
+        },
+        {
+          "name": "filter",
+          "type": "any",
+          "required": false,
+          "description": "指定节点过滤函数，返回true则展示，否则过滤掉",
+          "options": []
+        },
+        {
+          "name": "uncorrelated",
+          "type": "boolean",
+          "required": false,
+          "description": "是否让父子checkbox选中状态互不关联",
+          "options": []
+        },
+        {
+          "name": "checkedKeys",
+          "type": "any",
+          "required": false,
+          "description": "通过key指定勾选的数据节点",
+          "options": []
+        },
+        {
+          "name": "expandedKeys",
+          "type": "any",
+          "required": false,
+          "description": "通过key指定展开的数据节点",
+          "options": []
+        },
+        {
+          "name": "defaultExpandAll",
+          "type": "boolean",
+          "required": false,
+          "description": "是否默认展开所有节点",
+          "options": []
+        },
+        {
+          "name": "selectable",
+          "type": "boolean",
+          "required": false,
+          "description": "节点是否可选中，默认为true可选中",
+          "options": []
+        },
+        {
+          "name": "selectedKeys",
+          "type": "any",
+          "required": false,
+          "description": "通过key指定选中的数据节点",
+          "options": []
+        },
+        {
+          "name": "multiple",
+          "type": "boolean",
+          "required": false,
+          "description": "selectedKeys是否支持多选",
+          "options": []
+        },
+        {
+          "name": "checkbox",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示复选框",
+          "options": []
+        },
+        {
+          "name": "load",
+          "type": "any",
+          "required": false,
+          "description": "指定异步加载节点数据的函数，该函数通过Promise返回数组来添加子节点数据",
+          "options": []
+        },
+        {
+          "name": "showLine",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示左侧对齐线",
+          "options": []
+        },
+        {
+          "name": "draggable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否支持拖拽",
+          "options": []
+        },
+        {
+          "name": "allowDrag",
+          "type": "any",
+          "required": false,
+          "description": "指定哪些节点可拖拽",
+          "options": []
+        },
+        {
+          "name": "allowDrop",
+          "type": "any",
+          "required": false,
+          "description": "指定哪些节点可以插入子节点",
+          "options": []
+        }
+      ],
+      "events": [
+        {
+          "name": "denydrag",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "any",
+              "description": ""
+            }
+          ],
+          "description": "拖拽不允许拖拽的节点触发"
+        },
+        {
+          "name": "denydrop",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "any",
+              "description": ""
+            },
+            {
+              "name": "arg1",
+              "type": "any",
+              "description": ""
+            },
+            {
+              "name": "arg2",
+              "type": "any",
+              "description": ""
+            }
+          ],
+          "description": "插入到不允许插入的节点时触发"
+        },
+        {
+          "name": "dragend",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "any",
+              "description": ""
+            }
+          ],
+          "description": "拖拽完成触发"
+        },
+        {
+          "name": "transitionEnd",
+          "parameters": [],
+          "description": ""
+        },
+        {
+          "name": "getCheckedData",
+          "parameters": [],
+          "description": "获取勾选的节点数据 (leafOnly: boolean = false) => TreeDataItem<K>[]"
+        },
+        {
+          "name": "getSelectedData",
+          "parameters": [],
+          "description": "获取选中的节点数据"
+        },
+        {
+          "name": "expand",
+          "parameters": [],
+          "description": "展开节点 (key: K) => void，key 要展开的节点的key"
+        },
+        {
+          "name": "shrink",
+          "parameters": [],
+          "description": "收起节点 (key: K) => void，key 要收起的节点的key"
+        },
+        {
+          "name": "getNodes",
+          "parameters": [],
+          "description": "返回一级节点 () => TreeNode<K>[]"
+        },
+        {
+          "name": "expandAll",
+          "parameters": [],
+          "description": "展开所有节点"
+        }
+      ],
+      "methods": [
+        {
+          "name": "getCheckedData",
+          "parameters": [
+            {
+              "name": "leafOnly",
+              "type": "boolean",
+              "optional": false,
+              "description": ""
+            }
+          ],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "getSelectedData",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "expand",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "any",
+              "optional": false,
+              "description": ""
+            }
+          ],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "shrink",
+          "parameters": [
+            {
+              "name": "key",
+              "type": "any",
+              "optional": false,
+              "description": ""
+            }
+          ],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "getNodes",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "expandAll",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        }
+      ],
+      "slots": [
+        {
+          "name": "label",
+          "description": "自定义节点渲染内容",
+          "parameters": []
+        }
+      ],
+      "examples": [
+        "<Tree :data=data :expandedKeys=['2', '2-1'] />"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "VirtualList": {
+      "name": "VirtualList",
+      "description": "VirtualList虚拟列表适用于数据量大加载",
+      "category": "数据展示",
+      "tags": [],
+      "filePath": "components/virtualList",
+      "props": [
+        {
+          "name": "disable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否禁用虚拟化",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "<VirtualList style=height: 450px ></VirtualList>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    }
+  }
+}

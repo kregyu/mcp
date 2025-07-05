@@ -1,0 +1,1164 @@
+{
+  "category": "反馈组件",
+  "components": {
+    "Drawer": {
+      "name": "Drawer",
+      "description": "Drawer抽屉",
+      "category": "反馈组件",
+      "tags": [],
+      "filePath": "components/drawer",
+      "props": [
+        {
+          "name": "placement",
+          "type": "any",
+          "required": false,
+          "description": "自定义位置",
+          "options": [
+            "top",
+            "bottom",
+            "left",
+            "right"
+          ]
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false,
+          "description": "弹窗标题",
+          "options": []
+        },
+        {
+          "name": "value",
+          "type": "boolean",
+          "required": false,
+          "description": "弹窗是否展示出来",
+          "options": []
+        },
+        {
+          "name": "size",
+          "type": "\"large\"",
+          "required": false,
+          "description": "弹窗尺寸",
+          "options": []
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "required": false,
+          "description": "“确定”按钮是否为加载状态",
+          "options": []
+        },
+        {
+          "name": "disabledOk",
+          "type": "boolean",
+          "required": false,
+          "description": "“确定”按钮是否为禁用状态",
+          "options": []
+        },
+        {
+          "name": "okText",
+          "type": "string",
+          "required": false,
+          "description": "“确定”按钮文案",
+          "options": []
+        },
+        {
+          "name": "cancelText",
+          "type": "string",
+          "required": false,
+          "description": "“取消”按钮文案",
+          "options": []
+        },
+        {
+          "name": "ok",
+          "type": "() => void",
+          "required": false,
+          "description": "“确定”按钮点击后自定义回调函数",
+          "options": []
+        },
+        {
+          "name": "cancel",
+          "type": "() => void",
+          "required": false,
+          "description": "“取消”按钮点击后自定义回调函数",
+          "options": []
+        },
+        {
+          "name": "container",
+          "type": "Container",
+          "required": false,
+          "description": "指定弹层插入的位置，默认会追加到body中，你可以传入函数返回一个DOM用来作为插入的容器，或者传入字符串用来给querySelector进行查询",
+          "options": []
+        },
+        {
+          "name": "hideClose",
+          "type": "boolean",
+          "required": false,
+          "description": "是否隐藏右上角关闭按钮",
+          "options": []
+        },
+        {
+          "name": "overlay",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示遮罩层",
+          "options": []
+        },
+        {
+          "name": "closable",
+          "type": "boolean",
+          "required": false,
+          "description": "点击遮罩层是否可以关闭弹窗",
+          "options": []
+        },
+        {
+          "name": "terminate",
+          "type": "() => void",
+          "required": false,
+          "description": "指定在用户点击“关闭”按钮，点击遮罩层或者按ESC键时的回调函数",
+          "options": []
+        },
+        {
+          "name": "escClosable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否按ESC时关闭弹窗",
+          "options": []
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "required": false,
+          "description": "指定弹窗宽度，number类型时，单位为px；string类型时，需要指定单位",
+          "options": []
+        },
+        {
+          "name": "mode",
+          "type": "string",
+          "required": false,
+          "description": "指定主体元素在关闭状态下的渲染方式，\"destroy\"代表直接销毁，\"hide\"代表只是隐藏",
+          "options": [
+            "destroy",
+            "hide"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "name": "show",
+          "parameters": [],
+          "description": "弹出弹窗"
+        },
+        {
+          "name": "close",
+          "parameters": [],
+          "description": "关闭弹窗"
+        },
+        {
+          "name": "showLoading",
+          "parameters": [],
+          "description": "“确定”按钮变为加载状态"
+        },
+        {
+          "name": "hideLoading",
+          "parameters": [],
+          "description": "“确定”按钮变为正常状态"
+        },
+        {
+          "name": "disableOk",
+          "parameters": [],
+          "description": "“确定”按钮变为禁用状态"
+        },
+        {
+          "name": "enableOk",
+          "parameters": [],
+          "description": "“确定”按钮变为正常状态"
+        },
+        {
+          "name": "ok",
+          "parameters": [],
+          "description": "点击“确定”按钮的回调方法，继承Dialog时，可以复写该方法实现自定义需求"
+        },
+        {
+          "name": "cancel",
+          "parameters": [],
+          "description": "点击“取消”按钮的回调方法，继承Dialog时，可以复写该方法实现自定义需求"
+        }
+      ],
+      "methods": [],
+      "slots": [
+        {
+          "name": "content",
+          "description": "定义整个弹窗体，包括header，body，footer",
+          "parameters": []
+        },
+        {
+          "name": "header",
+          "description": "扩展弹窗头部",
+          "parameters": []
+        },
+        {
+          "name": "body",
+          "description": "扩展弹窗主体部分",
+          "parameters": []
+        },
+        {
+          "name": "footer",
+          "description": "扩展弹窗底部",
+          "parameters": []
+        },
+        {
+          "name": "footerWrapper",
+          "description": "扩展弹窗整个底部，上述footer是它下面一个子扩展点",
+          "parameters": []
+        }
+      ],
+      "examples": [
+        "<Drawer v-model=show title=Drawer Title />"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Dialog": {
+      "name": "Dialog",
+      "description": "弹窗组件, 注意默认内部已经包含了头部标题以及底部确认和取消按钮",
+      "category": "反馈组件",
+      "tags": [
+        "对话框",
+        "弹窗",
+        "模态框"
+      ],
+      "filePath": "components/dialog",
+      "props": [
+        {
+          "name": "size",
+          "type": "string",
+          "required": false,
+          "description": "弹窗尺寸",
+          "options": [
+            "large",
+            "default",
+            "small",
+            "mini"
+          ]
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false,
+          "description": "是否垂直排列按钮组",
+          "options": []
+        },
+        {
+          "name": "value",
+          "type": "boolean",
+          "required": false,
+          "description": "弹窗是否展示出来 使用v-model控制",
+          "options": []
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "required": false,
+          "description": "“确定”按钮是否为加载状态",
+          "options": []
+        },
+        {
+          "name": "disabledOk",
+          "type": "boolean",
+          "required": false,
+          "description": "“确定”按钮是否为禁用状态",
+          "options": []
+        },
+        {
+          "name": "okText",
+          "type": "string",
+          "required": false,
+          "description": "“确定”按钮文案",
+          "options": []
+        },
+        {
+          "name": "cancelText",
+          "type": "string",
+          "required": false,
+          "description": "“取消”按钮文案",
+          "options": []
+        },
+        {
+          "name": "ok",
+          "type": "string",
+          "required": false,
+          "description": "“确定”按钮点击后自定义回调函数",
+          "options": []
+        },
+        {
+          "name": "cancel",
+          "type": "string",
+          "required": false,
+          "description": "“取消”按钮点击后自定义回调函数",
+          "options": []
+        },
+        {
+          "name": "container",
+          "type": "string",
+          "required": false,
+          "description": "指定弹层插入的位置，默认会追加到body中，你可以传入函数返回一个DOM用来作为插入的容器，或者传入字符串用来给querySelector进行查询",
+          "options": []
+        },
+        {
+          "name": "hideClose",
+          "type": "boolean",
+          "required": false,
+          "description": "是否隐藏右上角关闭按钮",
+          "options": []
+        },
+        {
+          "name": "overlay",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示遮罩层",
+          "options": []
+        },
+        {
+          "name": "closable",
+          "type": "boolean",
+          "required": false,
+          "description": "点击遮罩层是否可以关闭弹窗",
+          "options": []
+        },
+        {
+          "name": "terminate",
+          "type": "string",
+          "required": false,
+          "description": "指定在用户点击“关闭”按钮，点击遮罩层或者按ESC键时的回调函数",
+          "options": []
+        },
+        {
+          "name": "escClosable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否按ESC时关闭弹窗",
+          "options": []
+        },
+        {
+          "name": "width",
+          "type": "string",
+          "required": false,
+          "description": "指定弹窗宽度，number类型时，单位为px；string类型时，需要指定单位",
+          "options": []
+        },
+        {
+          "name": "mode",
+          "type": "boolean",
+          "required": false,
+          "description": "指定主体元素在关闭状态下的渲染方式，'destroy'代表直接销毁，'hide'代表只是隐藏",
+          "options": [
+            "destroy",
+            "hide"
+          ]
+        },
+        {
+          "name": "draggable",
+          "type": "boolean",
+          "required": false,
+          "description": "弹窗是否可拖拽",
+          "options": []
+        }
+      ],
+      "events": [
+        {
+          "name": "open",
+          "parameters": [],
+          "description": "弹窗打开后触发"
+        },
+        {
+          "name": "close",
+          "parameters": [],
+          "description": "弹窗关闭后触发，不管是什么原因导致的关闭"
+        },
+        {
+          "name": "ok",
+          "parameters": [],
+          "description": "点击确定按钮时触发"
+        },
+        {
+          "name": "cancel",
+          "parameters": [],
+          "description": "点击取消按钮时触发"
+        },
+        {
+          "name": "terminate",
+          "parameters": [],
+          "description": "用户强行关闭弹窗时触发，即：点击“关闭”按钮，点击遮罩层，按ESC键"
+        },
+        {
+          "name": "afterClose",
+          "parameters": [],
+          "description": "弹窗退出动画执行完成后触发"
+        }
+      ],
+      "methods": [],
+      "slots": [
+        {
+          "name": "content",
+          "description": "定义整个弹窗体，包括header，body，footer",
+          "parameters": []
+        },
+        {
+          "name": "header",
+          "description": "扩展弹窗头部",
+          "parameters": []
+        },
+        {
+          "name": "body",
+          "description": "扩展弹窗主体部分",
+          "parameters": []
+        },
+        {
+          "name": "footer",
+          "description": "扩展弹窗底部",
+          "parameters": []
+        },
+        {
+          "name": "footerWrapper",
+          "description": "扩展弹窗整个底部，上述footer是它下面一个子扩展点",
+          "parameters": []
+        }
+      ],
+      "examples": [
+        "<Dialog v-model='show' title='Dialog Title' ref='__demo'>Dialog Body <Select></Select></Dialog>",
+        "<Dialog v-model='show' title='Dialog Title' ref='__demo' />"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Message": {
+      "name": "Message",
+      "description": "Message全局提示",
+      "category": "反馈组件",
+      "tags": [
+        "消息",
+        "提示",
+        "通知"
+      ],
+      "filePath": "components/message",
+      "props": [
+        {
+          "name": "content",
+          "type": "string",
+          "required": false,
+          "description": "提示内容",
+          "options": []
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false,
+          "description": "提示展示多长时间后自动关闭，当传入0时，提示将会一直展示。单位ms",
+          "options": []
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": false,
+          "description": "提示类型",
+          "options": [
+            "info",
+            "error",
+            "success",
+            "warning"
+          ]
+        },
+        {
+          "name": "closable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示关闭按钮",
+          "options": []
+        },
+        {
+          "name": "hideIcon",
+          "type": "boolean",
+          "required": false,
+          "description": "是否隐藏文字前面的icon",
+          "options": []
+        }
+      ],
+      "events": [
+        {
+          "name": "info",
+          "parameters": [],
+          "description": "普通提示"
+        },
+        {
+          "name": "error",
+          "parameters": [],
+          "description": "错误提示"
+        },
+        {
+          "name": "success",
+          "parameters": [],
+          "description": "成功提示"
+        },
+        {
+          "name": "warning",
+          "parameters": [],
+          "description": "警告提示"
+        }
+      ],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "Message.success('success')"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Popover": {
+      "name": "Popover",
+      "description": "Ellipsis超长忽略",
+      "category": "反馈组件",
+      "tags": [],
+      "filePath": "components/popover",
+      "props": [
+        {
+          "name": "confirm",
+          "type": "any",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "theme",
+          "type": "any",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "hoverable",
+          "type": "any",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "trigger",
+          "type": "any",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false,
+          "description": "指定提示的标题，也可以用title扩展点指定",
+          "options": []
+        },
+        {
+          "name": "type",
+          "type": "\"info\"",
+          "required": false,
+          "description": "指定提示的类型",
+          "options": []
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "description": "是否禁用组件",
+          "options": []
+        },
+        {
+          "name": "value",
+          "type": "boolean",
+          "required": false,
+          "description": "是否将弹出菜单展示出来，可通过v-model双向绑定",
+          "options": []
+        },
+        {
+          "name": "position",
+          "type": "Position",
+          "required": false,
+          "description": "菜单弹出的位置，默认在触发器正上方向上偏移10px的地方",
+          "options": []
+        },
+        {
+          "name": "of",
+          "type": "\"self\"",
+          "required": false,
+          "description": "弹出菜单的位置是相对当前触发元素，还是触发元素所在的菜单元素，这在嵌套菜单中可能会用到，可以使所有子菜单保持统一的对齐方式，例如：级联选择（Cascader）组件",
+          "options": []
+        },
+        {
+          "name": "container",
+          "type": "Container",
+          "required": false,
+          "description": "指定弹出菜单追加的位置，默认：Dialog类型的组件会追加到Dialog中，其他会追加到body中。你可以传入函数返回一个 DOM 用来作为插入的容器，或者传入字符串用来给querySelector进行查询",
+          "options": []
+        },
+        {
+          "name": "showArrow",
+          "type": "boolean",
+          "required": false,
+          "description": "弹层是否展示箭头",
+          "options": []
+        },
+        {
+          "name": "always",
+          "type": "boolean",
+          "required": false,
+          "description": "是否一直保持当前展示/隐藏状态",
+          "options": []
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "required": false,
+          "description": "弹层尺寸",
+          "options": [
+            "large",
+            "default",
+            "small",
+            "mini"
+          ]
+        },
+        {
+          "name": "content",
+          "type": "String",
+          "required": false,
+          "description": "指定提示的内容，当然你也可以用content扩展点指定",
+          "options": []
+        },
+        {
+          "name": "okText",
+          "type": "string",
+          "required": false,
+          "description": "“确认”按钮文案",
+          "options": []
+        },
+        {
+          "name": "cancelText",
+          "type": "string",
+          "required": false,
+          "description": "“取消”按钮文案",
+          "options": []
+        }
+      ],
+      "events": [
+        {
+          "name": "show",
+          "parameters": [],
+          "description": "弹层展开事件"
+        },
+        {
+          "name": "hide",
+          "parameters": [],
+          "description": "弹层隐藏事件"
+        },
+        {
+          "name": "ok",
+          "parameters": [],
+          "description": "点击确认按钮事件"
+        },
+        {
+          "name": "cancel",
+          "parameters": [],
+          "description": "点击取消按钮事件"
+        }
+      ],
+      "methods": [],
+      "slots": [
+        {
+          "name": "title",
+          "description": "自定义提示标题",
+          "parameters": []
+        },
+        {
+          "name": "content",
+          "description": "自定义提示内容",
+          "parameters": []
+        },
+        {
+          "name": "footer",
+          "description": "自定义底部按钮",
+          "parameters": []
+        }
+      ],
+      "examples": [
+        "<Popover title=确定删除？ @ok=ok @cancel=cancel size=small><Button>删除</Button></Popover>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Spin": {
+      "name": "Spin",
+      "description": "Spin组件",
+      "category": "反馈组件",
+      "tags": [],
+      "filePath": "components/spin",
+      "props": [
+        {
+          "name": "size",
+          "type": "any",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "center",
+          "type": "boolean",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "overlay",
+          "type": "boolean",
+          "required": false,
+          "description": "",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Tip": {
+      "name": "Tip",
+      "description": "警告提示",
+      "category": "反馈组件",
+      "tags": [],
+      "filePath": "components/tip",
+      "props": [
+        {
+          "name": "showIcon",
+          "type": "boolean",
+          "required": false,
+          "description": "展示Icon",
+          "options": []
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "required": false,
+          "description": "组件类型",
+          "options": [
+            "default",
+            "primary",
+            "success",
+            "warning",
+            "danger"
+          ]
+        },
+        {
+          "name": "closable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否可关闭",
+          "options": []
+        },
+        {
+          "name": "closed",
+          "type": "boolean",
+          "required": false,
+          "description": "是否已关闭",
+          "options": []
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示禁用状态",
+          "options": []
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "required": false,
+          "description": "组件尺寸",
+          "options": [
+            "large",
+            "default",
+            "small",
+            "mini"
+          ]
+        },
+        {
+          "name": "border",
+          "type": "string",
+          "required": false,
+          "description": "定义边框样式",
+          "options": [
+            "solid",
+            "dashed",
+            "none"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "name": "close",
+          "parameters": [],
+          "description": "标签关闭事件 (e: MouseEvent) => void"
+        }
+      ],
+      "methods": [],
+      "slots": [
+        {
+          "name": "title",
+          "description": "自定义标题内容",
+          "parameters": []
+        },
+        {
+          "name": "close",
+          "description": "自定义关闭按钮内容",
+          "parameters": []
+        },
+        {
+          "name": "icon",
+          "description": "自定义Icon内容",
+          "parameters": []
+        }
+      ],
+      "examples": [
+        "<Tip> type=primary showIcon closable /"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Tooltip": {
+      "name": "Tooltip",
+      "description": "Tooltip提示弹层",
+      "category": "反馈组件",
+      "tags": [
+        "提示框",
+        "文字提示",
+        "悬停"
+      ],
+      "filePath": "components/tooltip",
+      "props": [
+        {
+          "name": "content",
+          "type": "any",
+          "required": false,
+          "description": "指定提示的内容，当然你也可以用content扩展点指定",
+          "options": []
+        },
+        {
+          "name": "trigger",
+          "type": "string",
+          "required": false,
+          "description": "触发方式，hover为悬停触发，click为点击触发",
+          "options": [
+            "hover",
+            "click",
+            "focus"
+          ]
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "description": "是否禁用提示",
+          "options": []
+        },
+        {
+          "name": "value",
+          "type": "boolean",
+          "required": false,
+          "description": "是否将弹出菜单展示出来，可通过v-model双向绑定",
+          "options": []
+        },
+        {
+          "name": "position",
+          "type": "Position",
+          "required": false,
+          "description": "菜单弹出的位置，默认在触发器正上方向上偏移10px的地方",
+          "options": [
+            "left",
+            "bottom",
+            "right",
+            "top"
+          ]
+        },
+        {
+          "name": "of",
+          "type": "string",
+          "required": false,
+          "description": "弹出菜单的位置是相对当前触发元素，还是触发元素所在的菜单元素，这在嵌套菜单中可能会用到，可以使所有子菜单保持统一的对齐方式，例如：级联选择（Cascader）组件",
+          "options": [
+            "parent",
+            "self"
+          ]
+        },
+        {
+          "name": "container",
+          "type": "Container",
+          "required": false,
+          "description": "指定弹出菜单追加的位置，默认：Dialog类型的组件会追加到Dialog中，其他会追加到body中。你可以传入函数返回一个 DOM 用来作为插入的容器，或者传入字符串用来给querySelector进行查询",
+          "options": []
+        },
+        {
+          "name": "showArrow",
+          "type": "boolean",
+          "required": false,
+          "description": "弹层是否展示箭头",
+          "options": []
+        },
+        {
+          "name": "theme",
+          "type": "string",
+          "required": false,
+          "description": "指定主题",
+          "options": [
+            "dark",
+            "light"
+          ]
+        },
+        {
+          "name": "hoverable",
+          "type": "boolean",
+          "required": false,
+          "description": "对于悬浮触发hover的方式，提示内容弹层是否在鼠标悬浮时仍然展示，默认鼠标离开触发元素弹层就会关闭",
+          "options": []
+        },
+        {
+          "name": "always",
+          "type": "boolean",
+          "required": false,
+          "description": "是否一直保持当前展示/隐藏状态",
+          "options": []
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "required": false,
+          "description": "弹层尺寸",
+          "options": [
+            "default",
+            "small"
+          ]
+        }
+      ],
+      "events": [],
+      "methods": [],
+      "slots": [
+        {
+          "name": "content",
+          "description": "自定义提示内容",
+          "parameters": []
+        }
+      ],
+      "examples": [
+        "<Tooltip content=hello>hover the text</Tooltip>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Tour": {
+      "name": "Tour",
+      "description": "Tour组件",
+      "category": "反馈组件",
+      "tags": [],
+      "filePath": "components/tour",
+      "props": [
+        {
+          "name": "open",
+          "type": "boolean",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "steps",
+          "type": "any",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "current",
+          "type": "number",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "placement",
+          "type": "\"top\" | \"bottom\" | \"left\" | \"right\"",
+          "required": false,
+          "description": "",
+          "options": [
+            "top",
+            "bottom",
+            "left",
+            "right"
+          ]
+        },
+        {
+          "name": "mask",
+          "type": "boolean",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "maskClosable",
+          "type": "boolean",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "showArrow",
+          "type": "boolean",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "size",
+          "type": "any",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "zIndex",
+          "type": "number",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "gap",
+          "type": "any",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "scrollIntoViewOptions",
+          "type": "boolean | any",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "indicatorsRender",
+          "type": "any",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "type",
+          "type": "\"default\" | \"primary\"",
+          "required": false,
+          "description": "",
+          "options": [
+            "default",
+            "primary"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "name": "close",
+          "parameters": [],
+          "description": ""
+        },
+        {
+          "name": "finish",
+          "parameters": [],
+          "description": ""
+        },
+        {
+          "name": "change",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "any",
+              "description": ""
+            }
+          ],
+          "description": ""
+        }
+      ],
+      "methods": [
+        {
+          "name": "init",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "mounted",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "beforeUnmount",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "next",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "prev",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "close",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "finish",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "goTo",
+          "parameters": [
+            {
+              "name": "step",
+              "type": "number",
+              "optional": false,
+              "description": ""
+            }
+          ],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        }
+      ],
+      "slots": [],
+      "examples": [],
+      "nestingRules": [],
+      "dependencies": []
+    }
+  }
+}

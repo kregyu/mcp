@@ -1,0 +1,420 @@
+{
+  "version": "3.5.2",
+  "generatedAt": "2025-07-05T09:02:44.678Z",
+  "components": [
+    {
+      "name": "Affix",
+      "description": "Affix组件",
+      "category": "布局组件",
+      "tags": []
+    },
+    {
+      "name": "Breadcrumb",
+      "description": "Breadcrumb组件",
+      "category": "导航组件",
+      "tags": []
+    },
+    {
+      "name": "Badge",
+      "description": "Badge组件",
+      "category": "基础组件",
+      "tags": []
+    },
+    {
+      "name": "Button",
+      "description": "Button组件",
+      "category": "基础组件",
+      "tags": [
+        "按钮",
+        "点击",
+        "操作"
+      ]
+    },
+    {
+      "name": "Card",
+      "description": "Card组件",
+      "category": "数据展示",
+      "tags": []
+    },
+    {
+      "name": "Carousel",
+      "description": "Carousel组件",
+      "category": "布局组件",
+      "tags": []
+    },
+    {
+      "name": "Checkbox",
+      "description": "Checkbox组件",
+      "category": "表单组件",
+      "tags": [
+        "复选框",
+        "多选",
+        "选中"
+      ]
+    },
+    {
+      "name": "Cascader",
+      "description": "Cascader组件",
+      "category": "表单组件",
+      "tags": []
+    },
+    {
+      "name": "Code",
+      "description": "Code组件",
+      "category": "数据展示",
+      "tags": []
+    },
+    {
+      "name": "Collapse",
+      "description": "Collapse组件",
+      "category": "布局组件",
+      "tags": []
+    },
+    {
+      "name": "Config",
+      "description": "Config组件",
+      "category": "工具组件",
+      "tags": []
+    },
+    {
+      "name": "Colorpicker",
+      "description": "Colorpicker组件",
+      "category": "表单组件",
+      "tags": []
+    },
+    {
+      "name": "Copy",
+      "description": "Copy组件",
+      "category": "工具组件",
+      "tags": []
+    },
+    {
+      "name": "Datepicker",
+      "description": "Datepicker组件",
+      "category": "表单组件",
+      "tags": []
+    },
+    {
+      "name": "Descriptions",
+      "description": "Descriptions组件",
+      "category": "数据展示",
+      "tags": []
+    },
+    {
+      "name": "Diagram",
+      "description": "Diagram组件",
+      "category": "数据展示",
+      "tags": []
+    },
+    {
+      "name": "Divider",
+      "description": "Divider组件",
+      "category": "基础组件",
+      "tags": []
+    },
+    {
+      "name": "Drawer",
+      "description": "Drawer组件",
+      "category": "反馈组件",
+      "tags": []
+    },
+    {
+      "name": "Dropdown",
+      "description": "Dropdown组件",
+      "category": "导航组件",
+      "tags": []
+    },
+    {
+      "name": "Dialog",
+      "description": "Dialog组件",
+      "category": "反馈组件",
+      "tags": [
+        "对话框",
+        "弹窗",
+        "模态框"
+      ]
+    },
+    {
+      "name": "Editable",
+      "description": "Editable组件",
+      "category": "表单组件",
+      "tags": []
+    },
+    {
+      "name": "Ellipsis",
+      "description": "Ellipsis组件",
+      "category": "工具组件",
+      "tags": []
+    },
+    {
+      "name": "Grid",
+      "description": "Grid组件",
+      "category": "布局组件",
+      "tags": []
+    },
+    {
+      "name": "Form",
+      "description": "Form组件",
+      "category": "表单组件",
+      "tags": [
+        "表单",
+        "验证",
+        "提交"
+      ]
+    },
+    {
+      "name": "Layout",
+      "description": "Layout组件",
+      "category": "布局组件",
+      "tags": []
+    },
+    {
+      "name": "Input",
+      "description": "Input组件",
+      "category": "表单组件",
+      "tags": [
+        "输入框",
+        "输入",
+        "文本"
+      ]
+    },
+    {
+      "name": "Message",
+      "description": "Message组件",
+      "category": "反馈组件",
+      "tags": [
+        "消息",
+        "提示",
+        "通知"
+      ]
+    },
+    {
+      "name": "Menu",
+      "description": "Menu组件",
+      "category": "导航组件",
+      "tags": [
+        "菜单",
+        "导航",
+        "侧边栏"
+      ]
+    },
+    {
+      "name": "Icon",
+      "description": "Icon组件",
+      "category": "基础组件",
+      "tags": []
+    },
+    {
+      "name": "Popover",
+      "description": "Popover组件",
+      "category": "反馈组件",
+      "tags": []
+    },
+    {
+      "name": "Pagination",
+      "description": "Pagination组件",
+      "category": "数据展示",
+      "tags": [
+        "分页",
+        "翻页",
+        "页码"
+      ]
+    },
+    {
+      "name": "Progress",
+      "description": "Progress组件",
+      "category": "数据展示",
+      "tags": [
+        "进度条",
+        "进度",
+        "加载"
+      ]
+    },
+    {
+      "name": "Radio",
+      "description": "Radio组件",
+      "category": "表单组件",
+      "tags": [
+        "单选框",
+        "单选",
+        "选择"
+      ]
+    },
+    {
+      "name": "Rate",
+      "description": "Rate组件",
+      "category": "表单组件",
+      "tags": []
+    },
+    {
+      "name": "ScrollSelect",
+      "description": "ScrollSelect组件",
+      "category": "表单组件",
+      "tags": []
+    },
+    {
+      "name": "Select",
+      "description": "Select组件",
+      "category": "表单组件",
+      "tags": [
+        "选择器",
+        "下拉",
+        "选择"
+      ]
+    },
+    {
+      "name": "Slider",
+      "description": "Slider组件",
+      "category": "表单组件",
+      "tags": []
+    },
+    {
+      "name": "Spin",
+      "description": "Spin组件",
+      "category": "反馈组件",
+      "tags": []
+    },
+    {
+      "name": "Spinner",
+      "description": "Spinner组件",
+      "category": "表单组件",
+      "tags": [
+        "数字输入框",
+        "计数器",
+        "数字",
+        "输入"
+      ]
+    },
+    {
+      "name": "Skeleton",
+      "description": "Skeleton组件",
+      "category": "数据展示",
+      "tags": []
+    },
+    {
+      "name": "Split",
+      "description": "Split组件",
+      "category": "布局组件",
+      "tags": []
+    },
+    {
+      "name": "Steps",
+      "description": "Steps组件",
+      "category": "导航组件",
+      "tags": []
+    },
+    {
+      "name": "Switch",
+      "description": "Switch组件",
+      "category": "表单组件",
+      "tags": []
+    },
+    {
+      "name": "Tabs",
+      "description": "Tabs组件",
+      "category": "导航组件",
+      "tags": [
+        "标签页",
+        "选项卡",
+        "切换"
+      ]
+    },
+    {
+      "name": "Table",
+      "description": "Table组件",
+      "category": "数据展示",
+      "tags": [
+        "表格",
+        "数据",
+        "列表",
+        "分页"
+      ]
+    },
+    {
+      "name": "Tag",
+      "description": "Tag组件",
+      "category": "数据展示",
+      "tags": []
+    },
+    {
+      "name": "Timeline",
+      "description": "Timeline组件",
+      "category": "数据展示",
+      "tags": []
+    },
+    {
+      "name": "Timepicker",
+      "description": "Timepicker组件",
+      "category": "表单组件",
+      "tags": []
+    },
+    {
+      "name": "Tip",
+      "description": "Tip组件",
+      "category": "反馈组件",
+      "tags": []
+    },
+    {
+      "name": "Tooltip",
+      "description": "Tooltip组件",
+      "category": "反馈组件",
+      "tags": [
+        "提示框",
+        "文字提示",
+        "悬停"
+      ]
+    },
+    {
+      "name": "Tour",
+      "description": "Tour组件",
+      "category": "反馈组件",
+      "tags": []
+    },
+    {
+      "name": "Transfer",
+      "description": "Transfer组件",
+      "category": "工具组件",
+      "tags": []
+    },
+    {
+      "name": "Tree",
+      "description": "Tree组件",
+      "category": "数据展示",
+      "tags": []
+    },
+    {
+      "name": "TreeSelect",
+      "description": "TreeSelect组件",
+      "category": "表单组件",
+      "tags": []
+    },
+    {
+      "name": "Upload",
+      "description": "Upload组件",
+      "category": "表单组件",
+      "tags": [
+        "上传",
+        "文件",
+        "图片"
+      ]
+    },
+    {
+      "name": "View",
+      "description": "",
+      "category": "工具组件",
+      "tags": []
+    },
+    {
+      "name": "VirtualList",
+      "description": "VirtualList组件",
+      "category": "数据展示",
+      "tags": []
+    },
+    {
+      "name": "Wave",
+      "description": "",
+      "category": "基础组件",
+      "tags": []
+    }
+  ]
+}

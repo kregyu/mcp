@@ -1,0 +1,357 @@
+{
+  "category": "导航组件",
+  "components": {
+    "Breadcrumb": {
+      "name": "Breadcrumb",
+      "description": "Breadcrumb面包屑与BreadcrumbItem组合使用",
+      "category": "导航组件",
+      "tags": [],
+      "filePath": "components/breadcrumb",
+      "props": [
+        {
+          "name": "separator",
+          "type": "string",
+          "required": false,
+          "description": "指定分隔符",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "<Breadcrumb><BreadcrumbItem to='#/'>item 1</BreadcrumbItem><BreadcrumbItem to='/components/breadcrumb/'>item 2</BreadcrumbItem><BreadcrumbItem>item 3</BreadcrumbItem></Breadcrumb>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Dropdown": {
+      "name": "Dropdown",
+      "description": "Dropdown下拉菜单与DropdownItem组合使用,内部第一个元素为Button组件",
+      "category": "导航组件",
+      "tags": [],
+      "filePath": "components/dropdown",
+      "props": [
+        {
+          "name": "trigger",
+          "type": "string",
+          "required": false,
+          "description": "触发方式，hover为悬停触发，click为点击触发",
+          "options": [
+            "hover",
+            "click",
+            "contextmenu",
+            "focus"
+          ]
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "description": "是否禁用整个菜单",
+          "options": []
+        },
+        {
+          "name": "value",
+          "type": "boolean",
+          "required": false,
+          "description": "是否将弹出菜单展示出来，可通过v-model双向绑定",
+          "options": []
+        },
+        {
+          "name": "position",
+          "type": "Position",
+          "required": false,
+          "description": "菜单弹出的位置，默认与触发器左侧对齐向下偏移8px的地方",
+          "options": [
+            "left",
+            "bottom",
+            "right",
+            "top"
+          ]
+        },
+        {
+          "name": "of",
+          "type": "string",
+          "required": false,
+          "description": "弹出菜单的位置是相对当前触发元素，还是触发元素所在的菜单元素，这在嵌套菜单中可能会用到，可以使所有子菜单保持统一的对齐方式，例如：级联选择（Cascader）组件",
+          "options": [
+            "self",
+            "parent"
+          ]
+        },
+        {
+          "name": "container",
+          "type": "Container",
+          "required": false,
+          "description": "指定弹出菜单追加的位置，默认：Dialog类型的组件会追加到Dialog中，其他会追加到body中。你可以传入函数返回一个DOM用来作为插入的容器，或者传入字符串用来给querySelector进行查询",
+          "options": []
+        }
+      ],
+      "events": [
+        {
+          "name": "show",
+          "parameters": [],
+          "description": "菜单展示事件"
+        },
+        {
+          "name": "hide",
+          "parameters": [],
+          "description": "菜单隐藏事件"
+        }
+      ],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "<Dropdown><Button /> <DropdownMenu><DropdownItem /></Dropdown>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Menu": {
+      "name": "Menu",
+      "description": "Menu组件",
+      "category": "导航组件",
+      "tags": [
+        "菜单",
+        "导航",
+        "侧边栏"
+      ],
+      "filePath": "components/menu",
+      "props": [],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [],
+      "nestingRules": [
+        {
+          "parent": "Menu",
+          "children": {
+            "required": [
+              "MenuItem"
+            ],
+            "allowed": [
+              "MenuItem",
+              "MenuTitle",
+              "Divider"
+            ],
+            "forbidden": []
+          },
+          "mandatory": true,
+          "description": "Menu组件必须包含MenuItem或MenuTitle"
+        }
+      ],
+      "dependencies": []
+    },
+    "Steps": {
+      "name": "Steps",
+      "description": "Steps步骤条与Step组合使用",
+      "category": "导航组件",
+      "tags": [],
+      "filePath": "components/steps",
+      "props": [
+        {
+          "name": "value",
+          "type": "number",
+          "required": false,
+          "description": "标识当前第几步，从0开始",
+          "options": []
+        },
+        {
+          "name": "status",
+          "type": "\"normal\" | \"error\" | \"done\"",
+          "required": false,
+          "description": "步骤条的状态",
+          "options": [
+            "normal",
+            "error"
+          ]
+        },
+        {
+          "name": "type",
+          "type": "\"default\" | \"line\" | \"simple\" | \"line-compact\" | \"dot\"",
+          "required": false,
+          "description": "步骤条样式",
+          "options": [
+            "default",
+            "line",
+            "simple",
+            "line-compact"
+          ]
+        },
+        {
+          "name": "clickable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否支持快速切换【已完成】的步骤",
+          "options": []
+        },
+        {
+          "name": "vertical",
+          "type": "boolean",
+          "required": false,
+          "description": "是否垂直排列",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "<Rate v-model=value1 />"
+      ],
+      "nestingRules": [
+        {
+          "parent": "Steps",
+          "children": {
+            "required": [
+              "Step"
+            ],
+            "allowed": [
+              "Step"
+            ],
+            "forbidden": []
+          },
+          "mandatory": true,
+          "description": "Steps组件必须包含Step定义步骤"
+        }
+      ],
+      "dependencies": []
+    },
+    "Tabs": {
+      "name": "Tabs",
+      "description": "Tab选项卡与Tabs组合使用",
+      "category": "导航组件",
+      "tags": [
+        "标签页",
+        "选项卡",
+        "切换"
+      ],
+      "filePath": "components/tabs",
+      "props": [
+        {
+          "name": "value",
+          "type": "any",
+          "required": false,
+          "description": "被选中的选项卡,使用v-model进行双向绑定",
+          "options": []
+        },
+        {
+          "name": "vertical",
+          "type": "boolean",
+          "required": false,
+          "description": "垂直排列",
+          "options": []
+        },
+        {
+          "name": "size",
+          "type": "any",
+          "required": false,
+          "description": "选项卡尺寸",
+          "options": [
+            "large",
+            "default",
+            "small",
+            "mini"
+          ]
+        },
+        {
+          "name": "type",
+          "type": "\"default\" | \"card\" | \"flat-card\"",
+          "required": false,
+          "description": "选项卡类型",
+          "options": [
+            "card",
+            "default",
+            "flat-card"
+          ]
+        },
+        {
+          "name": "closable",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示选项卡关闭按钮",
+          "options": []
+        },
+        {
+          "name": "beforeChange",
+          "type": "any",
+          "required": false,
+          "description": "切换Switch之前的拦截函数，如果该函数返回false则阻止本次切换，支持异步函数, 参数为当前值from，期望切换值to (from: any, to: any) => boolean | Promise<boolean> ",
+          "options": []
+        }
+      ],
+      "events": [
+        {
+          "name": "remove",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "any",
+              "description": ""
+            }
+          ],
+          "description": "关闭选项卡时触发 (value: T) => void"
+        }
+      ],
+      "methods": [
+        {
+          "name": "init",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "changeTab",
+          "parameters": [
+            {
+              "name": "tabProps",
+              "type": "any",
+              "optional": false,
+              "description": ""
+            }
+          ],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "remove",
+          "parameters": [
+            {
+              "name": "value",
+              "type": "any",
+              "optional": false,
+              "description": ""
+            }
+          ],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        }
+      ],
+      "slots": [],
+      "examples": [
+        "<Tabs v-model=tab><Tab value=rulein>入站规则</Tab><Tab value=ruleout>出站规则</Tab><Tab value=relatedVM>关联云主机</Tab></Tabs>"
+      ],
+      "nestingRules": [
+        {
+          "parent": "Tabs",
+          "children": {
+            "required": [
+              "Tab"
+            ],
+            "allowed": [
+              "Tab"
+            ],
+            "forbidden": []
+          },
+          "mandatory": true,
+          "description": "Tabs组件必须包含Tab定义标签页"
+        }
+      ],
+      "dependencies": []
+    }
+  }
+}

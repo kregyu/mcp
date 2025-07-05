@@ -1,0 +1,557 @@
+{
+  "category": "基础组件",
+  "components": {
+    "Badge": {
+      "name": "Badge",
+      "description": "徽标",
+      "category": "基础组件",
+      "tags": [],
+      "filePath": "components/badge",
+      "props": [
+        {
+          "name": "text",
+          "type": "string | number",
+          "required": false,
+          "description": "要展示的文案，不指定该属性，则展示红点",
+          "options": []
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "required": false,
+          "description": "如果text属性number类型，可以通过该属性指定最大数字",
+          "options": []
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "description": "禁用徽标展示",
+          "options": []
+        },
+        {
+          "name": "exclude",
+          "type": "function",
+          "required": false,
+          "description": "排除某些固定的情况",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "<Badge :text='19'><Button>Message</Button></Badge>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Button": {
+      "name": "Button",
+      "description": "按钮组件",
+      "category": "基础组件",
+      "tags": [
+        "按钮",
+        "点击",
+        "操作"
+      ],
+      "filePath": "components/button",
+      "props": [
+        {
+          "name": "type",
+          "type": "any | \"none\" | \"secondary\" | \"link\" | \"flat\"",
+          "required": false,
+          "description": "按钮类型",
+          "options": [
+            "default",
+            "primary",
+            "warning",
+            "danger",
+            "success",
+            "none",
+            "secondary",
+            "link",
+            "flat"
+          ]
+        },
+        {
+          "name": "size",
+          "type": "any",
+          "required": false,
+          "description": "按钮的尺寸",
+          "options": [
+            "default",
+            "small",
+            "mini"
+          ]
+        },
+        {
+          "name": "icon",
+          "type": "boolean",
+          "required": false,
+          "description": "是否为图标按钮",
+          "options": []
+        },
+        {
+          "name": "circle",
+          "type": "boolean",
+          "required": false,
+          "description": "是否为圆角按钮",
+          "options": []
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "description": "自定义字体、边框、波纹动效颜色",
+          "options": []
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "required": false,
+          "description": "是否为正在加载中的按钮",
+          "options": []
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "description": "是否禁用状态",
+          "options": []
+        },
+        {
+          "name": "fluid",
+          "type": "boolean",
+          "required": false,
+          "description": "是否宽度100%",
+          "options": []
+        },
+        {
+          "name": "htmlType",
+          "type": "\"submit\" | \"reset\" | \"button\"",
+          "required": false,
+          "description": "是否宽度100%",
+          "options": []
+        },
+        {
+          "name": "tagName",
+          "type": "string | any",
+          "required": false,
+          "description": "按钮渲染后的实际html元素，例如我们可以传入'a'来渲染成超链接",
+          "options": []
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "required": false,
+          "description": "对于radio/checkbox类型的按钮组，我们可以给每个按钮指定一个选中时的值",
+          "options": []
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": false,
+          "description": "对于radio/checkbox类型的按钮组，我们给input指定name属性",
+          "options": []
+        },
+        {
+          "name": "tabindex",
+          "type": "string | number",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "ghost",
+          "type": "boolean",
+          "required": false,
+          "description": "展示透明背景的按钮",
+          "options": []
+        }
+      ],
+      "events": [
+        {
+          "name": "click",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "any",
+              "description": ""
+            }
+          ],
+          "description": ""
+        },
+        {
+          "name": "mouseup",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "any",
+              "description": ""
+            }
+          ],
+          "description": ""
+        },
+        {
+          "name": "showLoading",
+          "parameters": [],
+          "description": "展示loading状态"
+        },
+        {
+          "name": "hideLoading",
+          "parameters": [],
+          "description": "取消loading状态"
+        },
+        {
+          "name": "disable",
+          "parameters": [],
+          "description": "禁用按钮"
+        },
+        {
+          "name": "enable",
+          "parameters": [],
+          "description": "启用按钮"
+        }
+      ],
+      "methods": [
+        {
+          "name": "showLoading",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "hideLoading",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "disable",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "enable",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        }
+      ],
+      "slots": [],
+      "examples": [
+        "<Button type='primary'>primary</Button>",
+        "<Button color='rgb(183, 18, 193)''>custom</Button>",
+        "<Button icon circle><Icon class='k-icon-search' /></Button>",
+        "<Button type='primary'><Icon class='k-icon-search' size='small' />搜索</Button>",
+        "<Button icon circle loading><i class='k-icon k-icon-search'></i></Button>",
+        "<Button disabled>disabled</Button>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Divider": {
+      "name": "Divider",
+      "description": "Divider分割线",
+      "category": "基础组件",
+      "tags": [],
+      "filePath": "components/divider",
+      "props": [
+        {
+          "name": "borderType",
+          "type": "\"solid\" | \"dashed\" | \"dotted\" | \"double\"",
+          "required": false,
+          "description": "定义线的类型",
+          "options": [
+            "solid",
+            "dashed",
+            "dotted",
+            "double"
+          ]
+        },
+        {
+          "name": "position",
+          "type": "\"left\" | \"right\" | \"center\"",
+          "required": false,
+          "description": "定义文字位置",
+          "options": [
+            "left",
+            "right",
+            "center"
+          ]
+        },
+        {
+          "name": "type",
+          "type": "\"vertical\" | \"horizontal\"",
+          "required": false,
+          "description": "定义菜单排列方式：垂直，水平",
+          "options": [
+            "vertical",
+            "horizontal"
+          ]
+        },
+        {
+          "name": "theme",
+          "type": "\"light\" | \"dark\"",
+          "required": false,
+          "description": "定义菜单主题",
+          "options": [
+            "light",
+            "dark"
+          ]
+        },
+        {
+          "name": "margin",
+          "type": "\"large\" | \"default\" | \"small\" | \"none\" | number",
+          "required": false,
+          "description": "定义Divider外边距",
+          "options": [
+            "large",
+            "default",
+            "small",
+            "none",
+            "number"
+          ]
+        }
+      ],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "<Divider />"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Icon": {
+      "name": "Icon",
+      "description": "字体图标",
+      "category": "基础组件",
+      "tags": [],
+      "filePath": "components/icon",
+      "props": [
+        {
+          "name": "size",
+          "type": "any | string | number",
+          "required": false,
+          "description": "自定义图标尺寸",
+          "options": [
+            "default",
+            "large",
+            "small",
+            "mini"
+          ]
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "description": "图标颜色",
+          "options": [
+            "default",
+            "primary",
+            "danger",
+            "warning",
+            "success"
+          ]
+        },
+        {
+          "name": "rotate",
+          "type": "boolean",
+          "required": false,
+          "description": "是否一直旋转图标",
+          "options": []
+        },
+        {
+          "name": "hoverable",
+          "type": "boolean",
+          "required": false,
+          "description": "图标是否具有hover效果",
+          "options": []
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "class",
+          "type": "string",
+          "required": false,
+          "description": "图标样式",
+          "options": [
+            "k-icon-information-fill",
+            "k-icon-warning-fill",
+            "k-icon-success-fill",
+            "k-icon-error-fill",
+            "k-icon-question-fill",
+            "k-icon-heart-fill",
+            "k-icon-heart",
+            "k-icon-notification-fill",
+            "k-icon-notification",
+            "k-icon-information",
+            "k-icon-alert",
+            "k-icon-question",
+            "k-icon-zoom-in",
+            "k-icon-zoom-out",
+            "k-icon-close-outline",
+            "k-icon-check-outline",
+            "k-icon-time",
+            "k-icon-right-circled-arrow",
+            "k-icon-down-circled-arrow",
+            "k-icon-up-circled-arrow",
+            "k-icon-right-squared-arrow",
+            "k-icon-down-squared-arrow",
+            "k-icon-left-squared-arrow",
+            "k-icon-up-squared-arrow",
+            "k-icon-right-arrow",
+            "k-icon-down-arrow",
+            "k-icon-left-arrow",
+            "k-icon-up-arrow",
+            "k-icon-right-bold-arrow",
+            "k-icon-down-bold-arrow",
+            "k-icon-left-bold-arrow",
+            "k-icon-up-bold-arrow",
+            "k-icon-sort",
+            "k-icon-sort-bold",
+            "k-icon-close",
+            "k-icon-close-bold",
+            "k-icon-check",
+            "k-icon-check-bold",
+            "k-icon-add",
+            "k-icon-add-bold",
+            "k-icon-minus",
+            "k-icon-minus-bold",
+            "k-icon-share",
+            "k-icon-tag",
+            "k-icon-clone",
+            "k-icon-cloud",
+            "k-icon-pin",
+            "k-icon-home",
+            "k-icon-cut",
+            "k-icon-server",
+            "k-icon-internet",
+            "k-icon-mail",
+            "k-icon-paper",
+            "k-icon-phone",
+            "k-icon-panel",
+            "k-icon-alarm",
+            "k-icon-earphone",
+            "k-icon-settings-horizontal",
+            "k-icon-settings-vertical",
+            "k-icon-settings",
+            "k-icon-message",
+            "k-icon-return-right",
+            "k-icon-picture",
+            "k-icon-logout",
+            "k-icon-all",
+            "k-icon-drag",
+            "k-icon-more",
+            "k-icon-more-circled",
+            "k-icon-folder",
+            "k-icon-folder-open",
+            "k-icon-lock",
+            "k-icon-unlock",
+            "k-icon-user",
+            "k-icon-users",
+            "k-icon-edit",
+            "k-icon-location",
+            "k-icon-delete",
+            "k-icon-calendar",
+            "k-icon-search",
+            "k-icon-batchsearch",
+            "k-icon-hidden",
+            "k-icon-visible",
+            "k-icon-refresh",
+            "k-icon-upload",
+            "k-icon-download",
+            "k-icon-start",
+            "k-icon-stop",
+            "k-icon-sortorder"
+          ]
+        },
+        {
+          "name": "disbaled",
+          "type": "string",
+          "required": false,
+          "description": "是否展示disabled状态",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "<Card title='用户信息' type='border'><div>卡片内容</div><div>卡片内容</div></Card>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Wave": {
+      "name": "Wave",
+      "description": "",
+      "category": "基础组件",
+      "tags": [],
+      "filePath": "components/wave",
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "inset",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "name": "mounted",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "beforeUnmount",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "resetAnimation",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        }
+      ],
+      "slots": [],
+      "examples": [],
+      "nestingRules": [],
+      "dependencies": []
+    }
+  }
+}

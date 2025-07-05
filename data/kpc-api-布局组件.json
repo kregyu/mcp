@@ -1,0 +1,375 @@
+{
+  "category": "布局组件",
+  "components": {
+    "Affix": {
+      "name": "Affix",
+      "description": "图钉",
+      "category": "布局组件",
+      "tags": [],
+      "filePath": "components/affix",
+      "props": [
+        {
+          "name": "top",
+          "type": "number",
+          "required": false,
+          "description": "指定元素固定距离顶部的位置",
+          "options": []
+        },
+        {
+          "name": "bottom",
+          "type": "number",
+          "required": false,
+          "description": "指定元素固定距离底部的位置",
+          "options": []
+        },
+        {
+          "name": "exclude",
+          "type": "any",
+          "required": false,
+          "description": "排除某些固定的情况",
+          "options": []
+        },
+        {
+          "name": "shouldFix",
+          "type": "any",
+          "required": false,
+          "description": "自定义元素固定规则",
+          "options": []
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false,
+          "description": "",
+          "options": []
+        }
+      ],
+      "events": [
+        {
+          "name": "change",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "boolean",
+              "description": ""
+            }
+          ],
+          "description": "固定状态改变时触发"
+        }
+      ],
+      "methods": [],
+      "slots": [],
+      "examples": [
+        "<Affix :bottom='bottom'><Button>fix at the bottom</Button></Affix>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Carousel": {
+      "name": "Carousel",
+      "description": "Carousel走马灯与CarouselItem组合使用",
+      "category": "布局组件",
+      "tags": [],
+      "filePath": "components/carousel",
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "required": false,
+          "description": "当前展示的内容块对应的的值",
+          "options": []
+        },
+        {
+          "name": "autoplay",
+          "type": "number | boolean",
+          "required": false,
+          "description": "是否自动切换，如果指定数值，则表示切换的时间间隔（ms），为0则不自动切换",
+          "options": []
+        },
+        {
+          "name": "arrow",
+          "type": "\"hover\" | \"always\" | \"never\"",
+          "required": false,
+          "description": "左右快速切换箭头展示的方式，hover：鼠标移入展示；always：一直展示；never：不展示",
+          "options": [
+            "hover",
+            "always",
+            "never"
+          ]
+        },
+        {
+          "name": "effect",
+          "type": "\"slide\" | \"fade\"",
+          "required": false,
+          "description": "指定切换动画",
+          "options": [
+            "slide",
+            "fade"
+          ]
+        },
+        {
+          "name": "clonedAmount",
+          "type": "number",
+          "required": false,
+          "description": "指定前后克隆的内容块数量",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "name": "isActive",
+          "parameters": [
+            {
+              "name": "value",
+              "type": "string",
+              "optional": false,
+              "description": ""
+            }
+          ],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "getIndex",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "setIndex",
+          "parameters": [
+            {
+              "name": "index",
+              "type": "number",
+              "optional": false,
+              "description": ""
+            }
+          ],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "prev",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "next",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        }
+      ],
+      "slots": [],
+      "examples": [
+        "<Carousel><CarouselItem>1</CarouselItem><CarouselItem>2</CarouselItem><CarouselItem>3</CarouselItem><CarouselItem>4</CarouselItem></Carousel>"
+      ],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Collapse": {
+      "name": "Collapse",
+      "description": "Collapse折叠面板与Collapse组合使用",
+      "category": "布局组件",
+      "tags": [],
+      "filePath": "components/collapse",
+      "props": [
+        {
+          "name": "value",
+          "type": "any",
+          "required": false,
+          "description": "当前展开的CollapseItem取值",
+          "options": []
+        },
+        {
+          "name": "accordion",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示手风琴风格",
+          "options": []
+        },
+        {
+          "name": "arrow",
+          "type": "any",
+          "required": false,
+          "description": "指定箭头位置",
+          "options": [
+            "right",
+            "left"
+          ]
+        },
+        {
+          "name": "noBorder",
+          "type": "boolean",
+          "required": false,
+          "description": "是否展示无边框的简洁样式",
+          "options": []
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "name": "init",
+          "parameters": [],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        },
+        {
+          "name": "changeValue",
+          "parameters": [
+            {
+              "name": "v",
+              "type": "string",
+              "optional": false,
+              "description": ""
+            }
+          ],
+          "returnType": "any",
+          "description": "",
+          "access": "public"
+        }
+      ],
+      "slots": [],
+      "examples": [
+        " <Collapse v-model=value accordion><CollapseItem title=设计语言></CollapseItem></Collapse>"
+      ],
+      "nestingRules": [
+        {
+          "parent": "Collapse",
+          "children": {
+            "required": [
+              "CollapseItem"
+            ],
+            "allowed": [
+              "CollapseItem"
+            ],
+            "forbidden": []
+          },
+          "mandatory": true,
+          "description": "Collapse组件必须包含CollapseItem"
+        }
+      ],
+      "dependencies": []
+    },
+    "Grid": {
+      "name": "Grid",
+      "description": "Grid组件",
+      "category": "布局组件",
+      "tags": [],
+      "filePath": "components/grid",
+      "props": [],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Layout": {
+      "name": "Layout",
+      "description": "Layout组件",
+      "category": "布局组件",
+      "tags": [],
+      "filePath": "components/layout",
+      "props": [],
+      "events": [],
+      "methods": [],
+      "slots": [],
+      "examples": [],
+      "nestingRules": [],
+      "dependencies": []
+    },
+    "Split": {
+      "name": "Split",
+      "description": "Split组件",
+      "category": "布局组件",
+      "tags": [],
+      "filePath": "components/split",
+      "props": [
+        {
+          "name": "mode",
+          "type": "any",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "firstSize",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "lastSize",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "min",
+          "type": "number | string",
+          "required": false,
+          "description": "",
+          "options": []
+        },
+        {
+          "name": "max",
+          "type": "number | string",
+          "required": false,
+          "description": "",
+          "options": []
+        }
+      ],
+      "events": [
+        {
+          "name": "moveStart",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "any",
+              "description": ""
+            }
+          ],
+          "description": ""
+        },
+        {
+          "name": "moving",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "any",
+              "description": ""
+            }
+          ],
+          "description": ""
+        },
+        {
+          "name": "moveEnd",
+          "parameters": [
+            {
+              "name": "arg0",
+              "type": "any | any",
+              "description": ""
+            }
+          ],
+          "description": ""
+        }
+      ],
+      "methods": [],
+      "slots": [],
+      "examples": [],
+      "nestingRules": [],
+      "dependencies": []
+    }
+  }
+}

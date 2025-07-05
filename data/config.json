@@ -1,0 +1,3313 @@
+{
+    "Affix": {
+        "name": "Affix",
+        "description": "图钉",
+        "props": {
+            "top": {
+                "type": "number",
+                "description": "指定元素固定距离顶部的位置"
+            },
+            "bottom": {
+                "type": "number",
+                "description": "指定元素固定距离底部的位置"
+            },
+            "shouldFix": {
+                "type": "function",
+                "description": "自定义元素固定规则"
+            },
+            "exclude": {
+                "type": "function",
+                "description": "排除某些固定的情况"
+            }
+        },
+        "events": {
+            "change": {
+                "type": "string",
+                "description": "固定状态改变时触发"
+            }
+        },
+        "examples": [
+            "<Affix :bottom='bottom'><Button>fix at the bottom</Button></Affix>"
+        ]
+    },
+    "Badge": {
+        "name": "Badge",
+        "description": "徽标",
+        "props": {
+            "text": {
+                "type": "string",
+                "description": "要展示的文案，不指定该属性，则展示红点"
+            },
+            "max": {
+                "type": "number",
+                "description": "如果text属性number类型，可以通过该属性指定最大数字"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "禁用徽标展示"
+            },
+            "exclude": {
+                "type": "function",
+                "description": "排除某些固定的情况"
+            }
+        },
+        "examples": [
+            "<Badge :text='19'><Button>Message</Button></Badge>"
+        ]
+    },
+    "Breadcrumb": {
+        "name": "Breadcrumb",
+        "description": "Breadcrumb面包屑与BreadcrumbItem组合使用",
+        "props": {
+            "separator": {
+                "type": "string",
+                "description": "指定分隔符"
+            }
+        },
+        "examples": [
+            "<Breadcrumb><BreadcrumbItem to='#/'>item 1</BreadcrumbItem><BreadcrumbItem to='/components/breadcrumb/'>item 2</BreadcrumbItem><BreadcrumbItem>item 3</BreadcrumbItem></Breadcrumb>"
+        ]
+    },
+    "BreadcrumbItem": {
+        "name": "BreadcrumbItem",
+        "description": "Breadcrumb面包屑与BreadcrumbItem组合使用",
+        "props": {
+            "to": {
+                "type": "string",
+                "description": "指定超链接地址"
+            }
+        },
+        "examples": [
+            "<Breadcrumb><BreadcrumbItem to='#/'>item 1</BreadcrumbItem><BreadcrumbItem to='/components/breadcrumb/'>item 2</BreadcrumbItem><BreadcrumbItem>item 3</BreadcrumbItem></Breadcrumb>"
+        ]
+    },
+    "Card": {
+        "name": "Card",
+        "description": "Card卡片",
+        "props": {
+            "title": {
+                "type": "string",
+                "description": "卡片标题"
+            },
+            "type": {
+                "type": "string",
+                "description": "卡片类型"
+            },
+            "size": {
+                "type": "string",
+                "description": "卡片尺寸"
+            }
+        },
+        "examples": [
+            "<Card title='用户信息' type='border'><div>卡片内容</div><div>卡片内容</div></Card>"
+        ]
+    },
+    "Carousel": {
+        "name": "Carousel",
+        "description": "Carousel走马灯与CarouselItem组合使用",
+        "props": {
+            "value": {
+                "type": "string",
+                "description": "当前展示的内容块对应的的值"
+            },
+            "autoplay": {
+                "type": "string",
+                "description": "是否自动切换，如果指定数值，则表示切换的时间间隔（ms），为0则不自动切换"
+            },
+            "arrow": {
+                "type": "string",
+                "description": "左右快速切换箭头展示的方式，hover：鼠标移入展示；always：一直展示；never：不展示",
+                "options": ["hover", "always", "never"]
+            },
+            "effect": {
+                "type": "string",
+                "description": "指定切换动画",
+                "options": ["slide", "fade"]
+            },
+            "clonedAmount": {
+                "type": "number",
+                "description": "指定前后克隆的内容块数量"
+            }
+        },
+        "examples": [
+            "<Carousel><CarouselItem>1</CarouselItem><CarouselItem>2</CarouselItem><CarouselItem>3</CarouselItem><CarouselItem>4</CarouselItem></Carousel>"
+        ]
+    },
+    "Cascader": {
+        "name": "Cascader",
+        "description": "Cascader级联选择器",
+        "props": {
+            "value": {
+                "type": "any",
+                "description": "当前选择的元素，可用v-model双向绑定"
+            },
+            "multiple": {
+                "type": "boolean",
+                "description": "是否支持多选"
+            },
+            "filterable": {
+                "type": "boolean",
+                "description": "是否支持筛选"
+            },
+            "loading": {
+                "type": "boolean",
+                "description": "数据加载状态"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用"
+            },
+            "name": {
+                "type": "string",
+                "description": "表单元素的name"
+            },
+            "size": {
+                "type": "string",
+                "description": "尺寸",
+                "options":["large", "default", "small", "mini"]
+            },
+            "hideIcon": {
+                "type": "boolean",
+                "description": "是否隐藏后面的图标"
+            },
+            "clearable": {
+                "type": "boolean",
+                "description": "是否可清空"
+            },
+            "fluid": {
+                "type": "boolean",
+                "description": "是否宽度100%"
+            },
+            "inline": {
+                "type": "boolean",
+                "description": "展示内联模式，该模式下，组件没有边框，宽度和高度如同内联元素一样由内容撑开"
+            },
+            "placeholder": {
+                "type": "string",
+                "description": "占位文案"
+            },
+            "container": {
+                "type": "Container",
+                "description": "指定弹出菜单追加的位置，默认：Dialog类型的组件会追加到Dialog中，其他会追加到body中。你可以传入函数返回一个DOM用来作为插入的容器，或者传入字符串用来给querySelector进行查询"
+            },
+            "width": {
+                "type": "number",
+                "description": "指定宽度，组件自动添加单位px"
+            },
+            "data": {
+                "type": "CascaderData<V>[]",
+                "description": "组件要展示的数据"
+            },
+            "trigger": {
+                "type": "\"click\"",
+                "description": "子菜单触发方式，默认点击触发"
+            },
+            "changeOnSelect": {
+                "type": "boolean",
+                "description": "是否选中父级即改变value值"
+            },
+            "format": {
+                "type": "Function",
+                "description": "自定义结果显示，组件会将当前选择的所有数据项以数组的格式作为参数传入"
+            },
+            "loadData": {
+                "type": "(data: CascaderData<V>) => any",
+                "description": "如果data中的children属性值为空数组[]，则可以使用该属性定义动态加载逻辑，组件会将当前选中的数据项作为参数传入"
+            },
+            "filter": {
+                "type": "(keywords: string, data: CascaderData<V>) => boolean",
+                "description": "如果可搜索，你可以传入filter改变搜索逻辑，组件会将搜索关键词和数据项作为参数传入"
+            },
+            "show": {
+                "type": "boolean",
+                "description": "是否展示菜单项"
+            },
+            "fields": {
+                "type": "CascaderFields<CascaderData<any>>",
+                "description": "指定value label children disabled字段名"
+            },
+            "position": {
+                "type": "Position",
+                "description": "菜单弹出的位置，默认与触发器左侧对齐向下偏移8px的地方"
+            }
+        },
+        "events": {
+            "show": {
+                "type": "function",
+                "description": "菜单弹出时触发"
+            },
+            "hide": {
+                "type": "function",
+                "description": "菜单隐藏时触发"
+            }
+        },
+        "solt": {
+            "value": {
+                "type": "string",
+                "description": "自定义选择结果的展示 ([value: any, label: Children]) => Children"
+            },
+            "values": {
+                "type": "string",
+                "description": "自定义多选的选择结果的展示 ([values: any[], labels: Children[]]) => Children"
+            },
+            "prefix": {
+                "type": "string",
+                "description": "自定义输入框前面展示的内容n"
+            },
+            "suffix": {
+                "type": "string",
+                "description": "自定义输入框后面展示的内容"
+            }
+        },
+        "examples": [
+            "<Cascader :data=data v-model=value />"
+        ]
+    },
+    "CarouselItem": {
+        "name": "CarouselItem",
+        "description": "CarouselItem走马灯与CarouselItem组合使用",
+        "props": {
+            "value": {
+                "type": "string",
+                "description": "定义内容块选中后的值"
+            }
+        },
+        "examples": [
+            "<Carousel><CarouselItem>1</CarouselItem><CarouselItem>2</CarouselItem><CarouselItem>3</CarouselItem><CarouselItem>4</CarouselItem></Carousel>"
+        ]
+    },
+    "Icon": {
+        "name": "Icon",
+        "description": "字体图标",
+        "props": {
+            "class": {
+                "type": "string",
+                "description": "图标样式",
+                "options": [
+                    "k-icon-information-fill",
+                    "k-icon-warning-fill",
+                    "k-icon-success-fill",
+                    "k-icon-error-fill",
+                    "k-icon-question-fill",
+                    "k-icon-heart-fill",
+                    "k-icon-heart",
+                    "k-icon-notification-fill",
+                    "k-icon-notification",
+                    "k-icon-information",
+                    "k-icon-alert",
+                    "k-icon-question",
+                    "k-icon-zoom-in",
+                    "k-icon-zoom-out",
+                    "k-icon-close-outline",
+                    "k-icon-check-outline",
+                    "k-icon-time",
+                    "k-icon-right-circled-arrow",
+                    "k-icon-down-circled-arrow",
+                    "k-icon-up-circled-arrow",
+                    "k-icon-right-squared-arrow",
+                    "k-icon-down-squared-arrow",
+                    "k-icon-left-squared-arrow",
+                    "k-icon-up-squared-arrow",
+                    "k-icon-right-arrow",
+                    "k-icon-down-arrow",
+                    "k-icon-left-arrow",
+                    "k-icon-up-arrow",
+                    "k-icon-right-bold-arrow",
+                    "k-icon-down-bold-arrow",
+                    "k-icon-left-bold-arrow",
+                    "k-icon-up-bold-arrow",
+                    "k-icon-sort",
+                    "k-icon-sort-bold",
+                    "k-icon-close",
+                    "k-icon-close-bold",
+                    "k-icon-check",
+                    "k-icon-check-bold",
+                    "k-icon-add",
+                    "k-icon-add-bold",
+                    "k-icon-minus",
+                    "k-icon-minus-bold",
+                    "k-icon-share",
+                    "k-icon-tag",
+                    "k-icon-clone",
+                    "k-icon-cloud",
+                    "k-icon-pin",
+                    "k-icon-home",
+                    "k-icon-cut",
+                    "k-icon-server",
+                    "k-icon-internet",
+                    "k-icon-mail",
+                    "k-icon-paper",
+                    "k-icon-phone",
+                    "k-icon-panel",
+                    "k-icon-alarm",
+                    "k-icon-earphone",
+                    "k-icon-settings-horizontal",
+                    "k-icon-settings-vertical",
+                    "k-icon-settings",
+                    "k-icon-message",
+                    "k-icon-return-right",
+                    "k-icon-picture",
+                    "k-icon-logout",
+                    "k-icon-all",
+                    "k-icon-drag",
+                    "k-icon-more",
+                    "k-icon-more-circled",
+                    "k-icon-folder",
+                    "k-icon-folder-open",
+                    "k-icon-lock",
+                    "k-icon-unlock",
+                    "k-icon-user",
+                    "k-icon-users",
+                    "k-icon-edit",
+                    "k-icon-location",
+                    "k-icon-delete",
+                    "k-icon-calendar",
+                    "k-icon-search",
+                    "k-icon-batchsearch",
+                    "k-icon-hidden",
+                    "k-icon-visible",
+                    "k-icon-refresh",
+                    "k-icon-upload",
+                    "k-icon-download",
+                    "k-icon-start",
+                    "k-icon-stop",
+                    "k-icon-sortorder"
+                  ]
+            },
+            "size": {
+                "type": "string",
+                "description": "自定义图标尺寸",
+                "options":["default",  "large", "small", "mini"]
+            },
+            "color": {
+                "type": "string",
+                "description": "图标颜色",
+                "options":["default",  "primary", "danger", "warning", "success"]
+            },
+            "rotate": {
+                "type": "boolean",
+                "description": "是否一直旋转图标"
+            },
+            "hoverable": {
+                "type": "string",
+                "description": "图标是否具有hover效果"
+            },
+            "disbaled": {
+                "type": "string",
+                "description": "是否展示disabled状态"
+            }
+        },
+        "examples": [
+            "<Card title='用户信息' type='border'><div>卡片内容</div><div>卡片内容</div></Card>"
+        ]
+    },
+    "Button": {
+        "name": "Button",
+        "description": "按钮组件",
+        "props": {
+            "type": {
+                "type": "string",
+                "description": "按钮类型",
+                "options":["default", "primary", "warning", "danger", "success", "none", "secondary", "link", "flat"]
+            },
+            "icon": {
+                "type": "boolean",
+                "description": "是否为图标按钮"
+            },
+            "circle": {
+                "type": "boolean",
+                "description": "是否为圆角按钮"
+            },
+            "loading": {
+                "type": "boolean",
+                "description": "是否为正在加载中的按钮"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用状态"
+            },
+            "fluid": {
+                "type": "boolean",
+                "description": "是否宽度100%"
+            },
+            "htmlType": {
+                "type": "string",
+                "description": "是否宽度100%"
+            },
+            "tagName": {
+                "type": "string",
+                "description": "按钮渲染后的实际html元素，例如我们可以传入'a'来渲染成超链接"
+            },
+            "value": {
+                "type": "string",
+                "description": "对于radio/checkbox类型的按钮组，我们可以给每个按钮指定一个选中时的值"
+            },
+            "name": {
+                "type": "string",
+                "description": "对于radio/checkbox类型的按钮组，我们给input指定name属性"
+            },
+            "ghost": {
+                "type": "boolean",
+                "description": "展示透明背景的按钮"
+            },
+            "color": {
+                "type": "string",
+                "description": "自定义字体、边框、波纹动效颜色"
+            },
+            "size": {
+                "type": "string",
+                "options": ["default", "small", "mini"],
+                "description": "按钮的尺寸"
+            }
+        },
+        "events": {
+            "showLoading": {
+                "type": "string",
+                "description": "展示loading状态"
+            },
+            "hideLoading": {
+                "type": "string",
+                "description": "取消loading状态"
+            },
+            "disable": {
+                "type": "string",
+                "description": "禁用按钮"
+            },
+            "enable": {
+                "type": "string",
+                "description": "启用按钮"
+            }
+        },
+        "examples": [
+            "<Button type='primary'>primary</Button>",
+            "<Button color='rgb(183, 18, 193)''>custom</Button>",
+            "<Button icon circle><Icon class='k-icon-search' /></Button>",
+            "<Button type='primary'><Icon class='k-icon-search' size='small' />搜索</Button>",
+            "<Button icon circle loading><i class='k-icon k-icon-search'></i></Button>",
+            "<Button disabled>disabled</Button>"
+        ]
+    },
+    "ButtonGroup": {
+        "name": "ButtonGroup",
+        "description": "按钮组组件常与Button组件组合使用, ButtonGroup最为父容器内部嵌套Button",
+        "props": {
+            "checkType": {
+                "type": "string",
+                "description": "指定按钮组为单选或复选类型，此时需要给每个按钮指定value来作为选中的值",
+                "options":["radio", "checkbox", "none"]
+            },
+            "vertical": {
+                "type": "boolean",
+                "description": "是否垂直排列按钮组"
+            },
+            "circle": {
+                "type": "boolean",
+                "description": "是否为圆角按钮"
+            },
+            "fluid": {
+                "type": "boolean",
+                "description": "是否宽度100%"
+            },
+            "separate": {
+                "type": "boolean",
+                "description": "是否展示间隔"
+            }
+        },
+        "examples": [
+            "<ButtonGroup><Button type='danger'>开机</Button><Button type='danger'>关机</Button><Button type='danger'>重启</Button></ButtonGroup>",
+            "<ButtonGroup checkType='radio' v-model='city'><Button value='beijing'>北京</Button><Button value='shanghai' ref='__radioShanghai'>上海</Button><Button value='guangzhou'>广州</Button><Button value='shenzhen'>深圳</Button></ButtonGroup>"
+        ]
+    },
+    "Input": {
+        "name": "Input",
+        "description": "输入框组件",
+        "props": {
+            "type": {
+                "type": "string",
+                "description": "在原生input标签的type取值的基础上扩展了textarea值,当取该值时渲染成<textarea>"
+            },
+            "name": {
+                "type": "string",
+                "description": "原生input标签的name属性"
+            },
+            "value": {
+                "type": "string",
+                "description": "输入框的值,可用v-model进行双向绑定"
+            },
+            "defaultValue": {
+                "type": "string",
+                "description": "input的defaultValue，首次渲染使用该值"
+            },
+            "placeholder": {
+                "type": "string",
+                "description": "占位文案"
+            },
+            "readonly": {
+                "type": "boolean",
+                "description": "是否只读"
+            },
+            "clearable": {
+                "type": "boolean",
+                "description": "是否展示快速清除按钮"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用"
+            },
+            "size": {
+                "type": "string",
+                "description": "组件尺寸",
+                "options":["large", "default", "small", "mini"]
+            },
+            "rows": {
+                "type": "string",
+                "description": "当type = 'textarea'时，默认展示文本行数"
+            },
+            "autoWidth": {
+                "type": "boolean",
+                "description": "是否宽度随输入的文本的长度变化而变化"
+            },
+            "fluid": {
+                "type": "boolean",
+                "description": "是否宽度100%"
+            },
+            "width": {
+                "type": "string",
+                "description": "指定宽度，组件会加上单位px"
+            },
+            "stackClearIcon": {
+                "type": "boolean",
+                "description": "是否将清空按钮覆盖在suffix按钮上展示来节省空间"
+            },
+            "frozenOnInput": {
+                "type": "boolean",
+                "description": "是否在输入的过程中冻结value更新到视图"
+            },
+            "inline": {
+                "type": "boolean",
+                "description": "是否展示内联模式"
+            },
+            "resize": {
+                "type": "string",
+                "description": "指定textarea输入框拖动调整大小的方向，默认只能垂直方向调整",
+                "options": ["none", "vertical", "horizontal", "both"]
+            },
+            "flat": {
+                "type": "boolean",
+                "description": "是否展示扁平样式"
+            },
+            "showCount": {
+                "type": "boolean",
+                "description": "是否展示字符长度提示数字"
+            }
+        },
+        "events": {
+            "clear": {
+                "type": "string",
+                "description": "点击清除按钮时触发"
+            },
+            "change": {
+                "type": "string",
+                "description": "原生change事件，绑定在组件内部input元素上"
+            },
+            "keydown": {
+                "type": "string",
+                "description": "原生keydown事件，绑定在组件内部input元素上"
+            },
+            "keyup": {
+                "type": "string",
+                "description": "原生keyup事件，绑定在组件内部input元素上"
+            },
+            "keypress": {
+                "type": "string",
+                "description": "原生keypress事件，绑定在组件内部input元素上"
+            },
+            "click": {
+                "type": "string",
+                "description": "原生click事件，绑定在组件最外层元素上"
+            },
+            "mouseenter": {
+                "type": "string",
+                "description": "原生mouseenter事件，绑定在组件最外层元素上"
+            },
+            "mouseleave": {
+                "type": "string",
+                "description": "原生mouseleave事件，绑定在组件最外层元素上"
+            }
+        },
+        "examples": [
+            "<Input v-model='value' disabled placeholder='disabled' />",
+            " <Input value='extarea auto mini' size='mini' type='textarea' rows='auto' />"
+        ]
+    },
+    "Dialog": {
+        "name": "Dialog",
+        "description": "弹窗组件, 注意默认内部已经包含了头部标题以及底部确认和取消按钮",
+        "props": {
+            "size": {
+                "type": "string",
+                "description": "弹窗尺寸",
+                "options":["large", "default", "small", "mini"]
+            },
+            "title": {
+                "type": "string",
+                "description": "是否垂直排列按钮组"
+            },
+            "value": {
+                "type": "boolean",
+                "description": "弹窗是否展示出来 使用v-model控制"
+            },
+            "loading": {
+                "type": "boolean",
+                "description": "“确定”按钮是否为加载状态"
+            },
+            "disabledOk": {
+                "type": "boolean",
+                "description": "“确定”按钮是否为禁用状态"
+            },
+            "okText": {
+                "type": "string",
+                "description": "“确定”按钮文案"
+            },
+            "cancelText": {
+                "type": "string",
+                "description": "“取消”按钮文案"
+            },
+            "ok": {
+                "type": "string",
+                "description": "“确定”按钮点击后自定义回调函数"
+            },
+            "cancel": {
+                "type": "string",
+                "description": "“取消”按钮点击后自定义回调函数"
+            },
+            "container": {
+                "type": "string",
+                "description": "指定弹层插入的位置，默认会追加到body中，你可以传入函数返回一个DOM用来作为插入的容器，或者传入字符串用来给querySelector进行查询"
+            },
+            "hideClose": {
+                "type": "boolean",
+                "description": "是否隐藏右上角关闭按钮"
+            },
+            "overlay": {
+                "type": "boolean",
+                "description": "是否展示遮罩层"
+            },
+            "closable": {
+                "type": "boolean",
+                "description": "点击遮罩层是否可以关闭弹窗"
+            },
+            "terminate": {
+                "type": "string",
+                "description": "指定在用户点击“关闭”按钮，点击遮罩层或者按ESC键时的回调函数"
+            },
+            "escClosable": {
+                "type": "boolean",
+                "description": "是否按ESC时关闭弹窗"
+            },
+            "width": {
+                "type": "string",
+                "description": "指定弹窗宽度，number类型时，单位为px；string类型时，需要指定单位"
+            },
+            "mode": {
+                "type": "boolean",
+                "description": "指定主体元素在关闭状态下的渲染方式，'destroy'代表直接销毁，'hide'代表只是隐藏",
+                "options":["destroy", "hide"]
+            },
+            "draggable": {
+                "type": "boolean",
+                "description": "弹窗是否可拖拽"
+            }
+        },
+        "events": {
+            "open": {
+                "type": "string",
+                "description": "弹窗打开后触发"
+            },
+            "close": {
+                "type": "string",
+                "description": "弹窗关闭后触发，不管是什么原因导致的关闭"
+            },
+            "ok": {
+                "type": "string",
+                "description": "点击确定按钮时触发"
+            },
+            "cancel": {
+                "type": "string",
+                "description": "点击取消按钮时触发"
+            },
+            "terminate": {
+                "type": "string",
+                "description": "用户强行关闭弹窗时触发，即：点击“关闭”按钮，点击遮罩层，按ESC键"
+            },
+            "afterClose": {
+                "type": "string",
+                "description": "弹窗退出动画执行完成后触发"
+            }
+        },
+        "solt": {
+            "content": {
+                "type": "string",
+                "description": "定义整个弹窗体，包括header，body，footer"
+            },
+            "header": {
+                "type": "string",
+                "description": "扩展弹窗头部"
+            },
+            "body": {
+                "type": "string",
+                "description": "扩展弹窗主体部分"
+            },
+            "footer": {
+                "type": "string",
+                "description": "扩展弹窗底部"
+            },
+            "footerWrapper": {
+                "type": "string",
+                "description": "扩展弹窗整个底部，上述footer是它下面一个子扩展点"
+            }
+        },
+        "examples": [
+            "<Dialog v-model='show' title='Dialog Title' ref='__demo'>Dialog Body <Select></Select></Dialog>",
+            "<Dialog v-model='show' title='Dialog Title' ref='__demo' />"
+        ]
+    },
+    "Table": {
+        "name": "Table",
+        "description": "表格Table组件与TableColumn组件绑定结合使用",
+        "props": {
+            "data": {
+                "type": "array",
+                "description": "表格数据"
+            },
+            "fixHeader": {
+                "type": "boolean",
+                "description": "表头固定，给定需要固定高度的具体数值，当超出改值时，展示滚动条"
+            },
+            "stickHeader": {
+                "type": "boolean",
+                "description": "表头吸顶，给定需要吸顶的高度，当表头在页面滚动滚动时，距离视窗顶部的距离等于该高度时，将表头固定在此高度处"
+            },
+            "stickScrollbar": {
+                "type": "boolean",
+                "description": "当出现横向滚动条时，设置是否当表格底部没有滚动到视窗中时，将横向滚动条固定在页面底部；取值为number类型时，用来指定距离视窗底部的距离"
+            },
+            "checkType": {
+                "type": "string",
+                "description": "当行可选择时，定义选择的类型: 单选 'radio' , 复选 'checkbox', 不可选'none'",
+                "options":["checkbox", "radio", "none"]
+            },
+            "rowKey": {
+                "type": "function",
+                "description": "设置每行的key (value: T, index: number) => TableRowKey "
+            },
+            "rowCheckable": {
+                "type": "boolean",
+                "description": "当行可选时，是否点击该行任意区域都可选中"
+            },
+            "disableRow": {
+                "type": "function",
+                "description": "定义行禁用可选的逻辑，返回true，则该行被禁用选择"
+            },
+            "type": {
+                "type": "string",
+                "description": "表格类型，默认左右无边框，'border'类型会添加边框, 'grid'类型会展示栅格边框",
+                "options":["default", "border", "grid"]
+            },
+            "stripe": {
+                "type": "boolean",
+                "description": "相邻行是否展示不同的背景色"
+            },
+            "rowClassName": {
+                "type": "function",
+                "description": "通过一个函数定义行的className，该函数会传入该行数据，索引和key当做参数，返回的字符串将被设为该行的className "
+            },
+            "group": {
+                "type": "object",
+                "description": "分组需要两个group来指定：1.第一个是Table上的group属性，该属性指定当前分组的方式，形式为：{分组的列的key: ['当前列选择的分组的值']}。 对于“全部”选项，value需要设为空字符串'这样才能在选择“全部”的时候，不高亮筛选按钮  当分组方式改变时，可以监听默认事件$change:group来执行自定义分组逻辑。 2.第二个是TableColumn的group属性,该属性指定当前列有哪些可选的分组方式，形式为:[{label:'分组展示文案","value":"选择后的值'}],如果该列支持多选，还可以添加multiple属性，默认为单选"
+            },
+            "sort": {
+                "type": "object",
+                "description": "通过sort属性来指定当前表格的排序方式。它的数据格式如下{ key: '当前排序的列的key', type: '当前排序方式（desc: 降序，asc: 升序）' }, 当该列可排序时，只需要在TableColumn中加入sortable即可, 当排序方式改变时，可以监听默认事件$change:sort来执行自定义排序逻辑"
+            },
+            "loading": {
+                "type": "boolean",
+                "description": "是否展示加载状态"
+            },
+            "merge": {
+                "type": "boolean",
+                "description": "通过merge属性指定一个函数来定义合并单元格的逻辑，函数返回的结果{colspan?: number, rowspan?: number}用来定义单元格占用的行列数。组件传入函数的参数如下,1.row 当前行数据 2.column 当前列数据 3.rowIndex 当前行索引 4.columnIndex 当前列索引. 合并多选框时，可以通过checkedKeys来设置选中行，多选框是支持半选状态的；合并单选框时，与合并多选框不同的是，单选框是不支持半选状态的，只要一行被选中，那么整个合并行都会被选中.注意：禁选行和选中行默认没有给出高亮，如果需要请自行设置高亮"
+            },
+            "expandedKeys": {
+                "type": "array",
+                "description": "通过key来指定哪些行展开"
+            },
+            "rowExpandable": {
+                "type": "boolean",
+                "description": "是否点击该行任意区域即展开"
+            },
+            "selectedKeys": {
+                "type": "array",
+                "description": "当rowSelectable取值为非false时，指定哪些行高亮"
+            },
+            "rowSelectable": {
+                "type": "boolean",
+                "description": "是否点击行时高亮该行，取值为multiple时，可以同时高亮多行",
+                "options":["single", "multiple", "true", "false"]
+            },
+            "childrenKey": {
+                "type": "string",
+                "description": "树形表格指定子元素键名"
+            },
+            "indent": {
+                "type": "number",
+                "description": "树形表格指定子元素缩进宽度"
+            },
+            "spreadKeys": {
+                "type": "array",
+                "description": "树形表格指定展开的行"
+            },
+            "tooltipPosition": {
+                "type": "array",
+                "description": "行提示的位置",
+                "options":["left", "bottom", "right", "top"]
+            },
+            "tooltipContainer": {
+                "type": "string",
+                "description": "指定行提示弹层追加的位置，默认：Dialog类型的组件会追加到Dialog中，其他会追加到body中。你可以传入函数返回一个DOM用来作为插入的容器，或者传入字符串用来给querySelector进行查询"
+            },
+            "keepStatus": {
+                "type": "boolean",
+                "description": "是否在行销毁的时候，保持该行在checkedKeys | selectedKeys | spreadKeys | expandedKeys中的key值，默认会同步删除（仅在销毁行的时候有效，如果整个Table被销毁，则不会执行该逻辑）"
+            },
+            "showIndeterminate": {
+                "type": "boolean",
+                "description": "表头的Checkbox是否支持展示半选中状态"
+            },
+            "resizable": {
+                "type": "boolean",
+                "description": "是否可以表头拖动"
+            },
+            "minColWidth": {
+                "type": "number",
+                "description": "指定所有列拖动时的最小宽度"
+            },
+            "widthStoreKey": {
+                "type": "string",
+                "description": "如果要保存表格拖动后的列宽信息，可以通过该属性设置保存到localStorage中的key"
+            },
+            "draggable": {
+                "type": "boolean",
+                "description": "是否可以表头拖动"
+            },
+            "animation": {
+                "type": "boolean",
+                "description": "是否开启动效，默认开启。可以通过true false全部设置，或者通过数组单独设置行和列的动效"
+            },
+            "hideHeader": {
+                "type": "boolean",
+                "description": "是否隐藏表头"
+            },
+            "pagination": {
+                "type": "boolean",
+                "description": "是否支持分页"
+            },
+            "fixFooter": {
+                "type": "boolean",
+                "description": "table给定需要固定高度时，自定义footer固定"
+            },
+            "load": {
+                "type": "function",
+                "description": "指定异步加载节点数据的函数，该函数通过Promise返回数组来添加子节点数据"
+            },
+            "spreadArrowIndex": {
+                "type": "number",
+                "description": "指定树形表格展开Icon的所在列，默认在第一列"
+            },
+            "virtual": {
+                "type": "boolean",
+                "description": "是否开启虚拟列表"
+            }
+        },
+        "events": {
+            "getCheckedData": {
+                "type": "string",
+                "description": "获取选中数据信息 返回值为数组"
+            },
+            "getSelectedData": {
+                "type": "string",
+                "description": "获取高亮行数据信息 返回值为数组"
+            },
+            "checkAll": {
+                "type": "string",
+                "description": "全部选中"
+            },
+            "uncheckAll": {
+                "type": "string",
+                "description": "全不选中"
+            },
+            "scrollToRowByIndex": {
+                "type": "string",
+                "description": "通过索引指定滚动的行 (index: number) => Promise<void>"
+            },
+            "scrollToRowByKey": {
+                "type": "string",
+                "description": "通过key指定滚动的行 (key: TableRowKey) => Promise<void>"
+            },
+            "exportTable": {
+                "type": "string",
+                "description": "导出表格 (data: T[] = this.get('data'), filename = 'table') => Promise<string>"
+            }
+        },
+        "solt": {
+            "empty": {
+                "type": "string",
+                "description": "自定义无数据展示模板"
+            },
+            "expand": {
+                "type": "function",
+                "description": "指定行展开后要展示的模板内容 格式为： ([data: T, index: number]) => Children"
+            },
+            "tooltip": {
+                "type": "function",
+                "description": "行提示内容 格式为：([data: T, index: number]) => Children"
+            },
+            "footer": {
+                "type": "string",
+                "description": "自定义Table底部"
+            }
+        },
+        "examples": [
+            "<Table :data='data' resizable><TableColumn key='a' title='Title 1' :minWidth='200' /><TableColumn key='b' title='Title 2' :minWidth='300' /></Table>"
+        ]
+    },
+    "TableColumn": {
+        "name": "TableColumn",
+        "description": "表格TableColumn组件与Table组件绑定结合使用",
+        "props": {
+            "key": {
+                "type": "string",
+                "description": "指定当前列的key，必须指定"
+            },
+            "title": {
+                "type": "boolean",
+                "description": "标题"
+            },
+            "sortable": {
+                "type": "boolean",
+                "description": "是否可排序"
+            },
+            "width": {
+                "type": "string",
+                "description": "列宽，可以指定百分比或像素(像素不需要加单位)"
+            },
+            "group": {
+                "type": "object",
+                "description": "指定分组数组，每一项格式为{value: '选中后的值', label: '展示的文案'}"
+            },
+            "hideGroupHeader": {
+                "type": "boolean",
+                "description": "是否隐藏group下拉菜单中header区域"
+            },
+            "multiple": {
+                "type": "boolean",
+                "description": "分组是否支持多选"
+            },
+            "ignore": {
+                "type": "boolean",
+                "description": "是否忽略当前列的导出"
+            },
+            "fixed": {
+                "type": "string",
+                "description": "是否将列固定，'left'固定在左侧；'right'固定在右侧",
+                "options":["left", "right"]
+            },
+            "align": {
+                "type": "string",
+                "description": "当前列对齐方式",
+                "options":["left", "center","right"]
+            },
+            "exportTitle": {
+                "type": "string",
+                "description": "自定义导出的标题"
+            },
+            "exportCell": {
+                "type": "object",
+                "description": "自定义导出的单元格内容 (data: any, index: number) => string"
+            },
+            "minWidth": {
+                "type": "number",
+                "description": "指定当前列拖动时的最小宽度，优先级高于Table的minColWidth"
+            },
+            "className": {
+                "type": "string",
+                "description": "给当前列添加className"
+            },
+            "hidden": {
+                "type": "boolean",
+                "description": "是否隐藏当前列，仅为不可见，不影响exportTable导出表格"
+            },
+            "ellipsis": {
+                "type": "boolean",
+                "description": "是否开启超长省略"
+            }
+        },
+        "solt": {
+            "title": {
+                "type": "string",
+                "description": "自定义复杂表头内容"
+            },
+            "template": {
+                "type": "function",
+                "description": "自定义单元格内容 格式为： ([data: T, index: number]) => Children"
+            },
+            "default": {
+                "type": "function",
+                "description": "与template扩展点等价，为了方便vue中使用的别名 格式为：([data: T, index: number]) => Children"
+            }
+        },
+        "examples": [
+            "<Table :data=[{'a': '第一行', 'b': '哈哈1'}, {'a': '第二行', 'b': '哈哈2'},{a: '第三行', b: '哈哈3'}]><template v-slot:tooltip=['data', 'index']><div>{{ data.a }}</div></template><TableColumn key='a' title='表头1' /><TableColumn key='b' title='表头2' /></Table>"
+        ]
+    },
+    "Select": {
+        "name": "Select",
+        "description": "选择框Select常与Option组合使用, Select最为父容器内部嵌套Option",
+        "props": {
+            "value": {
+                "type": "string",
+                "description": "当前选择的元素，可用v-model双向绑定"
+            },
+            "multiple": {
+                "type": "boolean",
+                "description": "是否支持多选"
+            },
+            "filterable": {
+                "type": "boolean",
+                "description": "是否支持筛选"
+            },
+            "loading": {
+                "type": "boolean",
+                "description": "数据加载状态"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用"
+            },
+            "name": {
+                "type": "string",
+                "description": "表单元素的name"
+            },
+            "size": {
+                "type": "string",
+                "description": "尺寸",
+                "options":["default", "large", "small", "mini"]
+            },
+            "hideIcon": {
+                "type": "boolean",
+                "description": "是否隐藏后面的图标"
+            },
+            "clearable": {
+                "type": "boolean",
+                "description": "是否可清空"
+            },
+            "fluid": {
+                "type": "boolean",
+                "description": "是否宽度100%"
+            },
+            "inline": {
+                "type": "boolean",
+                "description": "展示内联模式，该模式下，组件没有边框，宽度和高度如同内联元素一样由内容撑开"
+            },
+            "placeholder": {
+                "type": "string",
+                "description": "占位文案"
+            },
+            "container": {
+                "type": "boolean",
+                "description": "指定弹出菜单追加的位置，默认：Dialog类型的组件会追加到Dialog中，其他会追加到body中。你可以传入函数返回一个DOM用来作为插入的容器，或者传入字符串用来给querySelector进行查询"
+            },
+            "width": {
+                "type": "string",
+                "description": "指定宽度，组件自动添加单位px"
+            },
+            "filter": {
+                "type": "string",
+                "description": "当支持筛选时，可以自定义筛选规则"
+            },
+            "searchable": {
+                "type": "boolean",
+                "description": "是否将在弹出菜单中展示搜索框"
+            },
+            "creatable": {
+                "type": "boolean",
+                "description": "是否支持创建新的选项，可以配合filterable使用"
+            },
+            "labelMap": {
+                "type": "object",
+                "description": "建立值value到展示标签label的映射，可以在value不在Option集合中时，依然能够正确展示相应的label"
+            },
+            "card": {
+                "type": "boolean",
+                "description": "是否展示card模式"
+            },
+            "autoDisableArrow": {
+                "type": "boolean",
+                "description": "是否在没有更多可选项时，给箭头一个disabled状态来提示用户"
+            },
+            "show": {
+                "type": "boolean",
+                "description": "是否展示菜单项"
+            },
+            "position": {
+                "type": "boolean",
+                "description": "菜单弹出的位置，默认与触发器左侧对齐向下偏移8px的地方"
+            },
+            "flat": {
+                "type": "boolean",
+                "description": "是否展示扁平样式"
+            },
+            "draggable": {
+                "type": "boolean",
+                "description": "多选值是否支持拖动排序"
+            },
+            "virtual": {
+                "type": "boolean",
+                "description": "是否开启虚拟列表"
+            }
+        },
+        "events": {
+            "show": {
+                "type": "string",
+                "description": "菜单弹出时触发"
+            },
+            "hide": {
+                "type": "string",
+                "description": "菜单隐藏时触发"
+            },
+            "input": {
+                "type": "string",
+                "description": "远程搜索时调用的事件"
+            }
+        },
+        "examples": [
+            "<Select v-model='day'><Option value='Monday'>星期一</Option><Option value='Tuesday'>星期二</Option><Option value='Wednesday'>星期三</Option><Option value='Thursday'>星期四</Option><Option value='Friday'>星期五</Option><Option value='Saturday'>星期六</Option><Option value='Sunday'>星期天</Option></Select>",
+            "<Select v-model='day' filterable><OptionGroup label='工作日'><Option value='Monday'>星期一</Option><Option value='Tuesday'>星期二</Option><Option value='Wednesday'>星期三</Option><Option value='Thursday'>星期四</Option><Option value='Friday'>星期五</Option></OptionGroup><OptionGroup label='休息日'><Option value='Saturday'>星期六</Option><Option value='Sunday'>星期天</Option></OptionGroup></Select>"
+        ]
+    },
+    "Option": {
+        "name": "Option",
+        "description": "选择框Select常与Option组合使用, Select最为父容器内部嵌套Option",
+        "props": {
+            "value": {
+                "type": "string",
+                "description": "选中的值"
+            },
+            "label": {
+                "type": "string",
+                "description": "该值有两个作用，1. 当children不存在时，作为展示文案；2. 作为筛选的内容，不存在时，则使用children的文本作为筛选内容"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用该项选择"
+            }
+        },
+        "examples": [
+            "<Select v-model='day'><Option value='Monday'>星期一</Option><Option value='Tuesday'>星期二</Option><Option value='Wednesday'>星期三</Option><Option value='Thursday'>星期四</Option><Option value='Friday'>星期五</Option><Option value='Saturday'>星期六</Option><Option value='Sunday'>星期天</Option></Select>",
+            "<Select v-model='day' filterable><OptionGroup label='工作日'><Option value='Monday'>星期一</Option><Option value='Tuesday'>星期二</Option><Option value='Wednesday'>星期三</Option><Option value='Thursday'>星期四</Option><Option value='Friday'>星期五</Option></OptionGroup><OptionGroup label='休息日'><Option value='Saturday'>星期六</Option><Option value='Sunday'>星期天</Option></OptionGroup></Select>"
+        ]
+    },
+    "OptionGroup": {
+        "name": "OptionGroup",
+        "description": "用OptionGroup嵌套Option可以实现分组功能。Select与OptionGroup嵌套Option组合使用",
+        "props": {
+            "label": {
+                "type": "string",
+                "description": "分组标签名"
+            }
+        },
+        "examples": [
+            "<Select v-model='day' filterable><OptionGroup label='工作日'><Option value='Monday'>星期一</Option><Option value='Tuesday'>星期二</Option><Option value='Wednesday'>星期三</Option><Option value='Thursday'>星期四</Option><Option value='Friday'>星期五</Option></OptionGroup><OptionGroup label='休息日'><Option value='Saturday'>星期六</Option><Option value='Sunday'>星期天</Option></OptionGroup></Select>"
+        ]
+    },
+    "Tags": {
+        "name": "Tags",
+        "description": "使用Tags包裹Tag可以展示标签组，给Tags指定nowrap可以让标签自适应仅展示成一行，超出的部分会隐藏，同时会展示隐藏的数量",
+        "props": {
+            "size": {
+                "type": "string",
+                "description": "定义“更多”标签尺寸",
+                "options": ["large", "default", "small", "mini"]
+            },
+            "border": {
+                "type": "string",
+                "description": "定义“更多”标签边框样式",
+                "options": ["solid", "dashed", "none"]
+            },
+            "nowrap": {
+                "type": "boolean",
+                "description": "是否单行展示标签组，超出的部分会隐藏，仅展示隐藏数量"
+            },
+            "draggable": {
+                "type": "boolean",
+                "description": "标签是否支持拖动排序"
+            }
+        },
+        "events": {
+            "draggable": {
+                "type": "function",
+                "description": "拖动开始 (v: TagsDragStartParam) => void"
+            },
+            "dragend": {
+                "type": "function",
+                "description": "拖动结束 (v: TagsDragEndParam) => void"
+            }
+        },
+        "solt": {
+            "append": {
+                "type": "string",
+                "description": "追加到后面的元素，不参与到Tags对Tag的管理中"
+            }
+        },
+        "examples": [
+            "<Tags draggable><Tag v-for=($value, $key) in tags1 :key=$value :type=$value>{{ $value }}</Tag><Tooltip content=test key=test><Tag>with tooltip</Tag></Tooltip></Tags>"
+        ]
+    },
+    "Tag": {
+        "name": "Tag",
+        "description": "Tag标签",
+        "props": {
+            "type": {
+                "type": "string",
+                "description": "组件类型",
+                "options": ["primary", "default", "success", "warning", "danger"]
+            },
+            "closable": {
+                "type": "boolean",
+                "description": "是否可关闭"
+            },
+            "closed": {
+                "type": "boolean",
+                "description": "是否已关闭"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否展示禁用状态"
+            },
+            "size": {
+                "type": "string",
+                "description": "组件尺寸",
+                "options": ["large", "default", "small", "mini"]
+            },
+            "border": {
+                "type": "string",
+                "description": "定义边框样式",
+                "options": ["solid", "dashed", "none"]
+            }
+        },
+        "events": {
+            "colse": {
+                "type": "function",
+                "description": "标签关闭事件 (e: MouseEvent) => void"
+            }
+        },
+        "examples": [
+            "<Tag v-for=($value, $key) in tags1 :key=$value :type=$value>{{ $value }}</Tag><Tooltip content=test key=test><Tag>with tooltip</Tag></Tooltip>"
+        ]
+    },
+    "Pagination": {
+        "name": "Pagination",
+        "description": "Pagination分页",
+        "props": {
+            "flat": {
+                "type": "boolean",
+                "description": "是否展示无边框样式，默认有边框"
+            },
+            "simple": {
+                "type": "boolean",
+                "description": "是否展示简洁样式"
+            },
+            "showTotal": {
+                "type": "boolean",
+                "description": "显示总条数"
+            },
+            "showGoto": {
+                "type": "boolean",
+                "description": "显示快速跳转框"
+            },
+            "showLimits": {
+                "type": "boolean",
+                "description": "是否显示每页条数选择框"
+            },
+            "counts": {
+                "type": "string",
+                "description": "展示按钮个数"
+            },
+            "total": {
+                "type": "string",
+                "description": "数据总条数"
+            },
+            "value": {
+                "type": "string",
+                "description": "当前页码"
+            },
+            "limit": {
+                "type": "string",
+                "description": "页面条数"
+            },
+            "limits": {
+                "type": "array",
+                "description": "页面条数 [10, 20, 50]"
+            },
+            "size": {
+                "type": "string",
+                "description": "组件尺寸",
+                "options": ["large", "default", "small", "mini"]
+            },
+            "border": {
+                "type": "string",
+                "description": "定义边框样式",
+                "options": ["solid", "dashed", "none"]
+            }
+        },
+        "events": {
+            "change": {
+                "type": "function",
+                "description": "value和limit变化时触发，同时变化不会重复触发 {value: number, limit: number}"   
+            }
+        },
+        "examples": [
+            "<Pagination v-model=value3 :total=200 :limit=20 :limits=[10, 20, 50, 100] />"
+        ]
+    },
+    "Switch": {
+        "name": "Switch",
+        "description": "Switch开关",
+        "props": {
+            "size": {
+                "type": "string",
+                "description": "组件尺寸",
+                "options": ["large", "default", "small", "mini"]
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "控制禁用"
+            },
+            "loading": {
+                "type": "boolean",
+                "description": "开关loading属性"
+            },
+            "beforeChange": {
+                "type": "function",
+                "description": "切换Switch之前的拦截函数，如果该函数返回false则阻止本次切换，支持异步函数, 参数为当前值from，期望切换值to (from: any, to: any) => boolean | Promise<boolean> "
+            },
+            "name": {
+                "type": "string",
+                "description": "可定义当前开关的名称"
+            },
+            "on": {
+                "type": "string",
+                "description": "定义开启时显示文案"
+            },
+            "off": {
+                "type": "string",
+                "description": "定义关闭时显示文案"
+            },
+            "value": {
+                "type": "string",
+                "description": "开关当前值，可用v-model双向绑定"
+            },
+            "trueValue": {
+                "type": "string",
+                "description": "开启时的值"
+            },
+            "falseValue": {
+                "type": "string",
+                "description": "关闭时的值"
+            },
+            "width": {
+                "type": "string",
+                "description": "开关的宽度"
+            },
+            "height": {
+                "type": "string",
+                "description": "开关的高度"
+            }
+        },
+        "solt": {
+            "on": {
+                "type": "function",
+                "description": "扩展开启时的文案"   
+            },
+            "off": {
+                "type": "function",
+                "description": "扩展关闭时的文案"   
+            }
+        },
+        "examples": [
+            "<Switch v-model=value />"
+        ]
+    },
+    "Radio": {
+        "name": "Radio",
+        "description": "Radio单选框",
+        "props": {
+            "name": {
+                "type": "string",
+                "description": "和浏览器原生行为一样，给Radio指定相同的name，它们便组成了单选框组。"
+            },
+            "value": {
+                "type": "string",
+                "description": "单选框取值，用于v-model进行双向绑定"
+            },
+            "trueValue": {
+                "type": "string",
+                "description": "单选框选中后的值"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否展示禁用状态"
+            }
+        },
+        "events": {
+            "colse": {
+                "type": "function",
+                "description": "标签关闭事件 (e: MouseEvent) => void"
+            }
+        },
+        "examples": [
+            "<Radio v-model=value>radio</Radio>"
+        ]
+    },
+    "Tab": {
+        "name": "Tab",
+        "description": "Tab选项卡与Tabs组合使用",
+        "props": {
+            "to": {
+                "type": "string",
+                "description": "点击标签的跳转地址"
+            },
+            "value": {
+                "type": "string",
+                "description": "选中的值"
+            },
+            "closable": {
+                "type": "boolean",
+                "description": "是否展示选项卡关闭按钮"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否展示禁用状态"
+            }
+        },
+        "events": {
+            "click": {
+                "type": "function",
+                "description": "Tab点击事件，发生在value改变之后，disabled状态不会触发"
+            }
+        },
+        "examples": [
+            "<Tabs v-model=tab><Tab value=rulein>入站规则</Tab><Tab value=ruleout>出站规则</Tab><Tab value=relatedVM>关联云主机</Tab></Tabs>"
+        ]
+    },
+    "Tabs": {
+        "name": "Tabs",
+        "description": "Tab选项卡与Tabs组合使用",
+        "props": {
+            "vertical": {
+                "type": "string",
+                "description": "垂直排列"
+            },
+            "value": {
+                "type": "string",
+                "description": "被选中的选项卡,使用v-model进行双向绑定"
+            },
+            "closable": {
+                "type": "boolean",
+                "description": "是否展示选项卡关闭按钮"
+            },
+            "beforeChange": {
+                "type": "function",
+                "description": "切换Switch之前的拦截函数，如果该函数返回false则阻止本次切换，支持异步函数, 参数为当前值from，期望切换值to (from: any, to: any) => boolean | Promise<boolean> "
+            },
+            "size": {
+                "type": "string",
+                "description": "选项卡尺寸",
+                "options": ["large", "default", "small", "mini"]
+            },
+            "type": {
+                "type": "string",
+                "description": "选项卡类型",
+                "options": ["card", "default", "flat-card"]
+            }
+        },
+        "events": {
+            "remove": {
+                "type": "function",
+                "description": "关闭选项卡时触发 (value: T) => void"
+            }
+        },
+        "examples": [
+            "<Tabs v-model=tab><Tab value=rulein>入站规则</Tab><Tab value=ruleout>出站规则</Tab><Tab value=relatedVM>关联云主机</Tab></Tabs>"
+        ]
+    },
+    "Timepicker": {
+        "name": "Timepicker",
+        "description": "Timepicker时间选择器",
+        "props": {
+            "value": {
+                "type": "Value",
+                "description": "当前选中的时间字符串，可用v-model双向绑定，你可以传入任意合法的日期，组件最终都会处理成时间字符串，日期信息将被忽略"
+            },
+            "multiple": {
+                "type": "boolean",
+                "description": "是否支持多选"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用"
+            },
+            "name": {
+                "type": "string",
+                "description": "表单元素的name"
+            },
+            "size": {
+                "type": "string",
+                "description": "尺寸",
+                "options": ["large", "default", "small", "mini"]
+            },
+            "hideIcon": {
+                "type": "boolean",
+                "description": "是否隐藏后面的图标"
+            },
+            "clearable": {
+                "type": "boolean",
+                "description": "是否可清空"
+            },
+            "fluid": {
+                "type": "boolean",
+                "description": "是否宽度100%"
+            },
+            "inline": {
+                "type": "boolean",
+                "description": "展示内联模式，该模式下，组件没有边框，宽度和高度如同内联元素一样由内容撑开"
+            },
+            "placeholder": {
+                "type": "string",
+                "description": "占位文案"
+            },
+            "container": {
+                "type": "Container",
+                "description": "指定弹出菜单追加的位置，默认：Dialog类型的组件会追加到Dialog中，其他会追加到body中。你可以传入函数返回一个DOM用来作为插入的容器，或者传入字符串用来给querySelector进行查询"
+            },
+            "width": {
+                "type": "number",
+                "description": "指定宽度，组件自动添加单位px"
+            },
+            "range": {
+                "type": "boolean",
+                "description": "是否选择时间范围"
+            },
+            "format": {
+                "type": "string",
+                "description": "指定日期格式化字符串"
+            },
+            "valueFormat": {
+                "type": "string",
+                "description": "指定value值日期格式化字符串"
+            },
+            "showFormat": {
+                "type": "string",
+                "description": "指定展示的日期格式化字符串"
+            },
+            "max": {
+                "type": "Value",
+                "description": "最大可选时间"
+            },
+            "min": {
+                "type": "Value",
+                "description": "最小可选时间"
+            },
+            "disabledDate": {
+                "type": "function",
+                "description": "该属性值是一个函数，用于定义那些日期被禁止选择，函数参数为日期字符串，返回true则表示禁用该日期"
+            },
+            "step": {
+                "type": "string",
+                "description": "固定时间点的步长"
+            },
+            "position": {
+                "type": "Position",
+                "description": "菜单弹出的位置，默认与触发器左侧对齐向下偏移8px的地方",
+                "options": ["left", "bottom", "right", "top"]
+            },
+            "flat": {
+                "type": "boolean",
+                "description": "是否展示扁平样式"
+            },
+            "draggable": {
+                "type": "boolean",
+                "description": "多选值是否支持拖动排序"
+            }
+        },
+        "events": {
+            "show": {
+                "type": "function",
+                "description": "菜单弹出时触发"
+            },
+            "hide": {
+                "type": "function",
+                "description": "菜单隐藏时触发"
+            },
+            "selecting": {
+                "type": "function",
+                "description": "该事件尽在范围选择(range)触发，表示用户正在操作选择，可能只选了一个值，或者正在修改日期的时间 (value: [Dayjs, Dayjs?]) => void"
+            },
+            "change": {
+                "type": "function",
+                "description": "当用户操作完成且值value变化时触发 (value: string) => void"
+            }
+        },
+        "examples": [
+            "<Timepicker v-model=time min=01:34:56 max=15:02:59 />"
+        ]
+    },
+    "Datepicker": {
+        "name": "Datepicker",
+        "description": "Datepicker日期选择器",
+        "props": {
+            "value": {
+                "type": "Value",
+                "description": "当前选择的元素，可用v-model双向绑定"
+            },
+            "multiple": {
+                "type": "boolean",
+                "description": "是否支持多选"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用"
+            },
+            "name": {
+                "type": "string",
+                "description": "表单元素的name"
+            },
+            "size": {
+                "type": "string",
+                "description": "尺寸",
+                "options": ["large", "default", "small", "mini"]
+            },
+            "hideIcon": {
+                "type": "boolean",
+                "description": "是否隐藏后面的图标"
+            },
+            "clearable": {
+                "type": "boolean",
+                "description": "是否可清空"
+            },
+            "fluid": {
+                "type": "boolean",
+                "description": "是否宽度100%"
+            },
+            "inline": {
+                "type": "boolean",
+                "description": "展示内联模式，该模式下，组件没有边框，宽度和高度如同内联元素一样由内容撑开"
+            },
+            "placeholder": {
+                "type": "string",
+                "description": "占位文案"
+            },
+            "container": {
+                "type": "Container",
+                "description": "指定弹出菜单追加的位置，默认：Dialog类型的组件会追加到Dialog中，其他会追加到body中。你可以传入函数返回一个DOM用来作为插入的容器，或者传入字符串用来给querySelector进行查询"
+            },
+            "width": {
+                "type": "number",
+                "description": "指定宽度，组件自动添加单位px"
+            },
+            "range": {
+                "type": "boolean",
+                "description": "是否选择日期范围"
+            },
+            "format": {
+                "type": "string",
+                "description": "指定日期格式化字符串"
+            },
+            "valueFormat": {
+                "type": "string",
+                "description": "指定value值日期格式化字符串"
+            },
+            "showFormat": {
+                "type": "string",
+                "description": "指定展示的日期格式化字符串"
+            },
+            "max": {
+                "type": "Value",
+                "description": "最大可选日期"
+            },
+            "min": {
+                "type": "Value",
+                "description": "最小可选日期"
+            },
+            "disabledDate": {
+                "type": "(v: Dayjs) => boolean",
+                "description": "该属性值是一个函数，用于定义那些日期被禁止选择，函数参数为日期字符串，返回true则表示禁用该日期"
+            },
+            "type": {
+                "type": "string",
+                "description": "组件类型：\"date\" 只选择日期；\"datetime\" 选择日期和时间；\"year\" 选择年份；\"month\" 选择月份",
+                "options": ["date", "datetime", "year", "month"]
+            },
+            "shortcuts": {
+                "type": "Shortcut[]",
+                "description": "指定快捷方式"
+            },
+            "show": {
+                "type": "boolean",
+                "description": "是否展示菜单项"
+            },
+            "position": {
+                "type": "Position",
+                "description": "菜单弹出的位置，默认与触发器左侧对齐向下偏移8px的地方",
+                "options": ["left", "bottom", "right", "top"]
+            },
+            "flat": {
+                "type": "boolean",
+                "description": "是否展示扁平样式"
+            },
+            "draggable": {
+                "type": "boolean",
+                "description": "多选值是否支持拖动排序"
+            }
+        },
+        "events": {
+            "show": {
+                "type": "function",
+                "description": "菜单弹出时触发"
+            },
+            "hide": {
+                "type": "function",
+                "description": "菜单隐藏时触发"
+            },
+            "selecting": {
+                "type": "function",
+                "description": "该事件尽在范围选择(range)触发，表示用户正在操作选择，可能只选了一个值，或者正在修改日期的时间 (value: [Dayjs, Dayjs?]) => void"
+            }
+        },
+        "examples": [
+            "<Datepicker v-model=date flat />"
+        ]
+    },
+    "Copy": {
+        "name": "Copy",
+        "description": "Copy复制",
+        "props": {
+            "text": {
+                "type": "string",
+                "description": "复制时的文案"
+            },
+            "showMessage": {
+                "type": "boolean",
+                "description": "复制成功/失败时，是否展示Message"
+            }
+        },
+        "events": {
+            "success": {
+                "type": "function",
+                "description": "复制成功时触发 (value: string) => void"
+            },
+            "error": {
+                "type": "function",
+                "description": "复制失败时触发 () => void"
+            }
+        },
+        "examples": [
+            "<Copy text=Hello King Desgin! />"
+        ]
+    },
+    "Collapse": {
+        "name": "Collapse",
+        "description": "Collapse折叠面板与Collapse组合使用",
+        "props": {
+            "value": {
+                "type": "string",
+                "description": "当前展开的CollapseItem取值"
+            },
+            "accordion": {
+                "type": "boolean",
+                "description": "是否展示手风琴风格"
+            },
+            "arrow": {
+                "type": "string",
+                "description": "指定箭头位置",
+                "options": ["right", "left"]
+            },
+            "noBorder": {
+                "type": "boolean",
+                "description": "是否展示无边框的简洁样式"
+            }
+        },
+        "examples": [
+            " <Collapse v-model=value accordion><CollapseItem title=设计语言></CollapseItem></Collapse>"
+        ]
+    },
+    "CollapseItem": {
+        "name": "CollapseItem",
+        "description": "Collapse折叠面板与Collapse组合使用",
+        "props": {
+            "value": {
+                "type": "string",
+                "description": "当前CollapseItem的取值，默认会使用$ + 索引的组合"
+            },
+            "title": {
+                "type": "string",
+                "description": "标题内容"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用"
+            }
+        },
+        "events": {
+            "show": {
+                "type": "function",
+                "description": "展开时触发 (collapseItem: CollapseItem) => void"
+            },
+            "hide": {
+                "type": "function",
+                "description": "收起时触发 () => (collapseItem: CollapseItem) => void"
+            }
+        },
+        "examples": [
+            "<Collapse v-model=value accordion><CollapseItem title=设计语言></CollapseItem></Collapse>"
+        ]
+    },
+    "Checkbox": {
+        "name": "Checkbox",
+        "description": "Checkbox复选框",
+        "props": {
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用"
+            },
+            "value": {
+                "type": "any",
+                "description": "复选框组的取值，用于v-model进行双向绑定"
+            },
+            "trueValue": {
+                "type": "any",
+                "description": "当前复选框选中的值"
+            },
+            "falseValue": {
+                "type": "any",
+                "description": "当前复选框取消选中的值"
+            },
+            "indeterminate": {
+                "type": "boolean",
+                "description": "是否半选中状态"
+            },
+            "name": {
+                "type": "string",
+                "description": "原生name属性"
+            },
+            "required": {
+                "type": "boolean",
+                "description": "原生required属性"
+            },
+            "form": {
+                "type": "string",
+                "description": "原生form属性"
+            },
+            "autofocus": {
+                "type": "boolean",
+                "description": "原生autofocus属性"
+            }
+        },
+        "events": {
+            "change": {
+                "type": "function",
+                "description": "当点击组件导致值变化时触发 (value: any, e: MouseEvent) => void"
+            }
+        },
+        "examples": [
+            "<Checkbox v-model=value>checkbox</Checkbox>"
+        ]
+    },
+    "Divider": {
+        "name": "Divider",
+        "description": "Divider分割线",
+        "props": {
+            "borderType": {
+                "type": "string",
+                "description": "定义线的类型",
+                "options": ["solid", "dashed", "dotted", "double"]
+            },
+            "position": {
+                "type": "string",
+                "description": "定义文字位置",
+                "options": ["left", "right", "center"]
+            },
+            "type": {
+                "type": "string",
+                "description": "定义菜单排列方式：垂直，水平",
+                "options": ["vertical", "horizontal"]
+            },
+            "theme": {
+                "type": "string",
+                "description": "定义菜单主题",
+                "options": ["light", "dark"]
+            },
+            "margin": {
+                "type": "string",
+                "description": "定义Divider外边距",
+                "options": ["large", "default", "small", "none", "number"]
+            }
+        },
+        "examples": [
+            "<Divider />"
+        ]
+    },
+    "Drawer": {
+        "name": "Drawer",
+        "description": "Drawer抽屉",
+        "props": {
+            "title": {
+                "type": "string",
+                "description": "弹窗标题"
+            },
+            "value": {
+                "type": "boolean",
+                "description": "弹窗是否展示出来"
+            },
+            "size": {
+                "type": "\"large\"",
+                "description": "弹窗尺寸"
+            },
+            "loading": {
+                "type": "boolean",
+                "description": "“确定”按钮是否为加载状态"
+            },
+            "disabledOk": {
+                "type": "boolean",
+                "description": "“确定”按钮是否为禁用状态"
+            },
+            "okText": {
+                "type": "string",
+                "description": "“确定”按钮文案"
+            },
+            "cancelText": {
+                "type": "string",
+                "description": "“取消”按钮文案"
+            },
+            "ok": {
+                "type": "() => void",
+                "description": "“确定”按钮点击后自定义回调函数"
+            },
+            "cancel": {
+                "type": "() => void",
+                "description": "“取消”按钮点击后自定义回调函数"
+            },
+            "container": {
+                "type": "Container",
+                "description": "指定弹层插入的位置，默认会追加到body中，你可以传入函数返回一个DOM用来作为插入的容器，或者传入字符串用来给querySelector进行查询"
+            },
+            "hideClose": {
+                "type": "boolean",
+                "description": "是否隐藏右上角关闭按钮"
+            },
+            "overlay": {
+                "type": "boolean",
+                "description": "是否展示遮罩层"
+            },
+            "closable": {
+                "type": "boolean",
+                "description": "点击遮罩层是否可以关闭弹窗"
+            },
+            "terminate": {
+                "type": "() => void",
+                "description": "指定在用户点击“关闭”按钮，点击遮罩层或者按ESC键时的回调函数"
+            },
+            "escClosable": {
+                "type": "boolean",
+                "description": "是否按ESC时关闭弹窗"
+            },
+            "width": {
+                "type": "number",
+                "description": "指定弹窗宽度，number类型时，单位为px；string类型时，需要指定单位"
+            },
+            "mode": {
+                "type": "string",
+                "description": "指定主体元素在关闭状态下的渲染方式，\"destroy\"代表直接销毁，\"hide\"代表只是隐藏",
+                "options": ["destroy", "hide"]
+            },
+            "placement": {
+                "type": "string",
+                "description": "自定义位置",
+                "options": ["top", "bottom", "left", "right"]
+            }
+        },
+        "events": {
+            "show": {
+                "type": "function",
+                "description": "弹出弹窗"
+            },
+            "close": {
+                "type": "function",
+                "description": "关闭弹窗"
+            },
+            "showLoading": {
+                "type": "function",
+                "description": "“确定”按钮变为加载状态"
+            },
+            "hideLoading": {
+                "type": "function",
+                "description": "“确定”按钮变为正常状态"
+            },
+            "disableOk": {
+                "type": "function",
+                "description": "“确定”按钮变为禁用状态"
+            },
+            "enableOk": {
+                "type": "function",
+                "description": "“确定”按钮变为正常状态"
+            },
+            "ok": {
+                "type": "function",
+                "description": "点击“确定”按钮的回调方法，继承Dialog时，可以复写该方法实现自定义需求"
+            },
+            "cancel": {
+                "type": "function",
+                "description": "点击“取消”按钮的回调方法，继承Dialog时，可以复写该方法实现自定义需求"
+            }
+        },
+        "solt": {
+            "content": {
+                "type": "string",
+                "description": "定义整个弹窗体，包括header，body，footer"
+            },
+            "header": {
+                "type": "string",
+                "description": "扩展弹窗头部"
+            },
+            "body": {
+                "type": "string",
+                "description": "扩展弹窗主体部分"
+            },
+            "footer": {
+                "type": "string",
+                "description": "扩展弹窗底部"
+            },
+            "footerWrapper": {
+                "type": "string",
+                "description": "扩展弹窗整个底部，上述footer是它下面一个子扩展点"
+            }
+        },
+        "examples": [
+            "<Drawer v-model=show title=Drawer Title />"
+        ]
+    },
+    "Dropdown": {
+        "name": "Dropdown",
+        "description": "Dropdown下拉菜单与DropdownItem组合使用,内部第一个元素为Button组件",
+        "props": {
+            "trigger": {
+                "type": "string",
+                "description": "触发方式，hover为悬停触发，click为点击触发",
+                "options": ["hover", "click", "contextmenu", "focus"]
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用整个菜单"
+            },
+            "value": {
+                "type": "boolean",
+                "description": "是否将弹出菜单展示出来，可通过v-model双向绑定"
+            },
+            "position": {
+                "type": "Position",
+                "description": "菜单弹出的位置，默认与触发器左侧对齐向下偏移8px的地方",
+                "options": ["left", "bottom", "right", "top"]
+            },
+            "of": {
+                "type": "string",
+                "description": "弹出菜单的位置是相对当前触发元素，还是触发元素所在的菜单元素，这在嵌套菜单中可能会用到，可以使所有子菜单保持统一的对齐方式，例如：级联选择（Cascader）组件",
+                "options": ["self", "parent"]
+            },
+            "container": {
+                "type": "Container",
+                "description": "指定弹出菜单追加的位置，默认：Dialog类型的组件会追加到Dialog中，其他会追加到body中。你可以传入函数返回一个DOM用来作为插入的容器，或者传入字符串用来给querySelector进行查询"
+            }
+        },
+        "events": {
+            "show": {
+                "type": "function",
+                "description": "菜单展示事件"
+            },
+            "hide": {
+                "type": "function",
+                "description": "菜单隐藏事件"
+            }
+        },
+        "examples": [
+             "<Dropdown><Button /> <DropdownMenu><DropdownItem /></Dropdown>"
+        ]
+    },
+    "DropdownItem": {
+        "name": "DropdownItem",
+        "description": "Dropdown下拉菜单与DropdownItem组合使用",
+        "props": {
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用该项菜单"
+            },
+            "hideOnSelect": {
+                "type": "boolean",
+                "description": "是否选中该菜单后隐藏整个菜单"
+            }
+        },
+        "events": {
+            "select": {
+                "type": "function",
+                "description": "菜单项被选中时触发，不管是点击还是键盘操作选中"
+            },
+            "click": {
+                "type": "function",
+                "description": "菜单项被点击时触发"
+            },
+            "mouseenter": {
+                "type": "function",
+                "description": "鼠标进入菜单项时触发"
+            },
+            "mouseleave": {
+                "type": "function",
+                "description": "鼠标离开菜单项时触发"
+            }
+        },
+        "examples": [
+            "<Dropdown><Button /> <DropdownMenu><DropdownItem /></Dropdown>"
+        ]
+    },
+    "Editable": {
+        "name": "Editable",
+        "description": "Editable可编辑文本",
+        "props": {
+            "editing": {
+                "type": "boolean",
+                "description": "是否为编辑状态"
+            },
+            "value": {
+                "type": "string",
+                "description": "编辑的内容，使用v-model进行双向绑定"
+            },
+            "required": {
+                "type": "boolean",
+                "description": "是否规定不能为空"
+            },
+            "validate": {
+                "type": "(v: string) => boolean",
+                "description": "验证规则，可以为函数/正则/正则字符串，若为字符串将转为正则表达式；函数则会传入当前编辑框的值来调用函数验证，返回true则验证通过，否则验证失败"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用编辑"
+            },
+            "tip": {
+                "type": "string",
+                "description": "编辑按钮提示文案"
+            },
+            "trim": {
+                "type": "boolean",
+                "description": "是否去掉前后空白字符"
+            },
+            "invalid": {
+                "type": "boolean",
+                "description": "是否为验证失败状态"
+            },
+            "rows": {
+                "type": "string",
+                "description": "是否自动折行，以及行数控制"
+            }
+        },
+        "events": {
+            "error": {
+                "type": "function",
+                "description": "验证失败时触发"
+            },
+            "change": {
+                "type": "function",
+                "description": "当值改变时触发"
+            }
+        },
+        "examples": [
+             "<Editable v-model=text ref=__test />"
+        ]
+    },
+    "Ellipsis": {
+        "name": "Ellipsis",
+        "description": "Ellipsis超长忽略",
+        "props": {
+            "maxLines": {
+                "type": "number",
+                "description": "定义多行省略最大行数"
+            },
+            "position": {
+                "type": "Position",
+                "description": "菜单弹出的位置，默认在触发器正上方向上偏移10px的地方"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "定义是否展示tooltip"
+            }
+        },
+        "examples": [
+             "<Ellipsis>ppp</Ellipsis>"
+        ]
+    },
+    "Popover": {
+        "name": "Ellipsis",
+        "description": "Ellipsis超长忽略",
+        "props": {
+            "title": {
+                "type": "string",
+                "description": "指定提示的标题，也可以用title扩展点指定"
+            },
+            "type": {
+                "type": "\"info\"",
+                "description": "指定提示的类型"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用组件"
+            },
+            "value": {
+                "type": "boolean",
+                "description": "是否将弹出菜单展示出来，可通过v-model双向绑定"
+            },
+            "position": {
+                "type": "Position",
+                "description": "菜单弹出的位置，默认在触发器正上方向上偏移10px的地方"
+            },
+            "of": {
+                "type": "\"self\"",
+                "description": "弹出菜单的位置是相对当前触发元素，还是触发元素所在的菜单元素，这在嵌套菜单中可能会用到，可以使所有子菜单保持统一的对齐方式，例如：级联选择（Cascader）组件"
+            },
+            "container": {
+                "type": "Container",
+                "description": "指定弹出菜单追加的位置，默认：Dialog类型的组件会追加到Dialog中，其他会追加到body中。你可以传入函数返回一个 DOM 用来作为插入的容器，或者传入字符串用来给querySelector进行查询"
+            },
+            "showArrow": {
+                "type": "boolean",
+                "description": "弹层是否展示箭头"
+            },
+            "always": {
+                "type": "boolean",
+                "description": "是否一直保持当前展示/隐藏状态"
+            },
+            "size": {
+                "type": "string",
+                "description": "弹层尺寸",
+                "options": ["large", "default", "small", "mini"]
+            },
+            "content": {
+                "type": "String",
+                "description": "指定提示的内容，当然你也可以用content扩展点指定"
+            },
+            "okText": {
+                "type": "string",
+                "description": "“确认”按钮文案"
+            },
+            "cancelText": {
+                "type": "string",
+                "description": "“取消”按钮文案"
+            }
+        },
+        "events": {
+            "show": {
+                "type": "function",
+                "description": "弹层展开事件"
+            },
+            "hide": {
+                "type": "function",
+                "description": "弹层隐藏事件"
+            },
+            "ok": {
+                "type": "function",
+                "description": "点击确认按钮事件"
+            },
+            "cancel": {
+                "type": "function",
+                "description": "点击取消按钮事件"
+            }
+        },
+        "solt": {
+            "title": {
+                "type": "string",
+                "description": "自定义提示标题"
+            },
+            "content": {
+                "type": "string",
+                "description": "自定义提示内容"
+            },
+            "footer": {
+                "type": "string",
+                "description": "自定义底部按钮"
+            }
+        },
+        "examples": [
+             "<Popover title=确定删除？ @ok=ok @cancel=cancel size=small><Button>删除</Button></Popover>"
+        ]
+    },
+    "Progress": {
+        "name": "Progress",
+        "description": "Progress进度条",
+        "props": {
+            "type": {
+                "type": "string",
+                "description": "类型",
+                "options": ["bar", "circle"]
+            },
+            "percent": {
+                "type": "number",
+                "description": "当前百分比(0~100)"
+            },
+            "size": {
+                "type": "string",
+                "description": "尺寸",
+                "options": ["default", "small", "mini"]
+            },
+            "showOuterText": {
+                "type": "boolean",
+                "description": "是否展示后面的百分比"
+            },
+            "showInnerText": {
+                "type": "boolean",
+                "description": "是否展示进度条上面的百分比"
+            },
+            "status": {
+                "type": "string",
+                "description": "进度条状态",
+                "options": ["success", "error", "active", "normal", "warning"]
+            },
+            "strokeWidth": {
+                "type": "number",
+                "description": "进度条指示线的宽度，单位px，只对type=\"circle\"圆形进度有效"
+            },
+            "color": {
+                "type": "string",
+                "description": "进度条背景颜色，支持根据百分比自定义颜色。会覆盖status设置的颜色"
+            }
+        },
+        "examples": [
+             "<Progress percent=50 />"
+        ]
+    },
+    "Rate": {
+        "name": "Rate",
+        "description": "Rate评分组件",
+        "props": {
+            "value": {
+                "type": "number",
+                "description": "组件取值"
+            },
+            "count": {
+                "type": "number",
+                "description": "星星的个数"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否变为只读状态"
+            },
+            "half": {
+                "type": "boolean",
+                "description": "是否支持选中半星"
+            },
+            "clearable": {
+                "type": "boolean",
+                "description": "是否可以清空值"
+            }
+        },
+        "examples": [
+             "<Rate v-model=value1 />"
+        ]
+    },
+    "Slider": {
+        "name": "Slider",
+        "description": "Slider滑块",
+        "props": {
+            "max": {
+                "type": "number",
+                "description": "最大值"
+            },
+            "min": {
+                "type": "number",
+                "description": "最小值"
+            },
+            "value": {
+                "type": "number",
+                "description": "当前值，可用v-model双向绑定"
+            },
+            "range": {
+                "type": "boolean",
+                "description": "是否是范围选择"
+            },
+            "unit": {
+                "type": "string",
+                "description": "单位，用于刻度展示"
+            },
+            "showEnd": {
+                "type": "boolean",
+                "description": "是否展示最小值和最大值刻度"
+            },
+            "showInput": {
+                "type": "boolean",
+                "description": "是否展示输入框"
+            },
+            "step": {
+                "type": "number",
+                "description": "步长，支持动态步长，详见示例"
+            },
+            "points": {
+                "type": "boolean",
+                "description": "是否展示间隔点，或者指定哪些值展示间隔点"
+            },
+            "marks": {
+                "type": "Marks",
+                "description": "标注刻度"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用"
+            },
+            "showTooltip": {
+                "type": "boolean",
+                "description": "是否展示提示气泡，默认不展示"
+            },
+            "always": {
+                "type": "boolean",
+                "description": "当展示气泡时，是否一直展示"
+            },
+            "animate": {
+                "type": "boolean",
+                "description": "滑块的移动是否使用缓动动画"
+            },
+            "tooltipProps": {
+                "type": "TooltipProps",
+                "description": "设置内置的Tooltip的所有属性"
+            },
+            "spinnerProps": {
+                "type": "SpinnerProps",
+                "description": "设置内置的Spinner的所有属性"
+            },
+            "forceStep": {
+                "type": "boolean",
+                "description": "是否限制value除边界之外，满足min + step * n(n为整数)"
+            }
+        },
+        "events": {
+            "change": {
+                "type": "function",
+                "description": "当值value变化时触发，拖动过程中不会触发，而是拖动结束触发"
+            }
+        },
+        "solt": {
+            "tooltip": {
+                "type": "string",
+                "description": "当展示提示气泡，定义气泡的内容，和Tooltip组件行为一样，如果你传入空的内容，则不会展示气泡"
+            }
+        },
+        "examples": [
+             "<Slider v-model=value1 :min=min :max=max unit=MB />"
+        ]
+    },
+    "Spinner": {
+        "name": "Spinner",
+        "description": "Spinner数字输入框",
+        "props": {
+            "value": {
+                "type": "number",
+                "description": "组件的值，可用v-model进行双向绑定"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用"
+            },
+            "max": {
+                "type": "number",
+                "description": "最大值"
+            },
+            "min": {
+                "type": "number",
+                "description": "最小值"
+            },
+            "step": {
+                "type": "number",
+                "description": "步长，支持动态步长，详见示例"
+            },
+            "size": {
+                "type": "string",
+                "description": "尺寸",
+                "options": ["default", "small", "mini"]
+            },
+            "vertical": {
+                "type": "boolean",
+                "description": "控制按钮是否竖直排列"
+            },
+            "precision": {
+                "type": "number",
+                "description": "控制展示精度，该值必须为正整数或0"
+            },
+            "formatter": {
+                "type": "(value: number) => string",
+                "description": "定义格式化展示值的函数"
+            },
+            "parser": {
+                "type": "(value: string) => number",
+                "description": "与formatter结合使用，定义解析格式化的值的函数"
+            },
+            "prefix": {
+                "type": "string",
+                "description": "定义展示的值的前缀，优先级低于formatter"
+            },
+            "suffix": {
+                "type": "string",
+                "description": "定义展示的值的后缀，优先级低于formatter"
+            },
+            "width": {
+                "type": "string",
+                "description": "指定Input输入框的宽度"
+            },
+            "forceStep": {
+                "type": "boolean",
+                "description": "value值除了边界值，都必须被满足min + step * n(n为整数)"
+            }
+        },
+        "examples": [
+             "<Spinner v-model=value />"
+        ]
+    },
+    "Steps": {
+        "name": "Steps",
+        "description": "Steps步骤条与Step组合使用",
+        "props": {
+            "value": {
+                "type": "number",
+                "description": "标识当前第几步，从0开始"
+            },
+            "status": {
+                "type": "string",
+                "description": "步骤条的状态",
+                "options": ["normal", "error"]
+            },
+            "type": {
+                "type": "string",
+                "description": "步骤条样式",
+                "options": ["default", "line", "simple", "line-compact"]
+            },
+            "clickable": {
+                "type": "boolean",
+                "description": "是否支持快速切换【已完成】的步骤"
+            },
+            "vertical": {
+                "type": "boolean",
+                "description": "是否垂直排列"
+            }
+        },
+        "examples": [
+             "<Rate v-model=value1 />"
+        ]
+    },
+    "Step": {
+        "name": "Step",
+        "description": "Steps步骤条与Step组合使用",
+        "props": {
+            "title": {
+                "type": "string",
+                "description": "标题"
+            }
+        },
+        "examples": [
+             "<Steps v-model=index><Step title=test1></Step></Steps>"
+        ]
+    },
+    "Timeline": {
+        "name": "Timeline",
+        "description": "Timeline与TimelineItem组合使用垂直方向线性时间轴",
+        "examples": [
+             "<Timeline><TimelineItem></TimelineItem></Timeline>"
+        ]
+    },
+    "TimelineItem": {
+        "name": "Timeline",
+        "description": "Timeline与TimelineItem组合使用垂直方向线性时间轴",
+        "props": {
+            "type": {
+                "type": "string",
+                "description": "轴的颜色类型",
+                "options": ["primary", "success", "danger", "warning"]
+            },
+            "size": {
+                "type": "string",
+                "description": "轴点的大小",
+                "options": ["primary", "success", "danger", "warning"]
+            }
+
+        },
+        "solt": {
+            "dot": {
+                "type": "string",
+                "description": "轴的颜色类型",
+                "options": ["primary", "success", "danger", "warning"]
+            }
+        },
+        "examples": [
+             "<Timeline><TimelineItem></TimelineItem></Timeline>"
+        ]
+    },
+    "Tip": {
+        "name": "Tip",
+        "description": "警告提示",
+        "props": {
+            "type": {
+                "type": "string",
+                "description": "组件类型",
+                "options": ["default", "primary", "success", "warning", "danger"]
+            },
+            "closable": {
+                "type": "boolean",
+                "description": "是否可关闭"
+            },
+            "closed": {
+                "type": "boolean",
+                "description": "是否已关闭"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否展示禁用状态"
+            },
+            "size": {
+                "type": "string",
+                "description": "组件尺寸",
+                "options": ["large", "default", "small", "mini"]
+            },
+            "border": {
+                "type": "string",
+                "description": "定义边框样式",
+                "options": ["solid", "dashed", "none"]
+            },
+            "showIcon": {
+                "type": "boolean",
+                "description": "展示Icon"
+            }
+        },
+        "events": {
+            "close": {
+                "type": "function",
+                "description": "标签关闭事件 (e: MouseEvent) => void"
+            }
+        },
+        "solt": {
+            "title": {
+                "type": "string",
+                "description": "自定义标题内容"
+            },
+            "close": {
+                "type": "string",
+                "description": "自定义关闭按钮内容"
+            },
+            "icon": {
+                "type": "string",
+                "description": "自定义Icon内容"
+            }
+        },
+        "examples": [
+             "<Tip> type=primary showIcon closable /"
+        ]
+    },
+    "Tooltip": {
+        "name": "Tooltip",
+        "description": "Tooltip提示弹层",
+        "props": {
+            "trigger": {
+                "type": "string",
+                "description": "触发方式，hover为悬停触发，click为点击触发",
+                "options": ["hover", "click", "focus"]
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用提示"
+            },
+            "value": {
+                "type": "boolean",
+                "description": "是否将弹出菜单展示出来，可通过v-model双向绑定"
+            },
+            "position": {
+                "type": "Position",
+                "description": "菜单弹出的位置，默认在触发器正上方向上偏移10px的地方",
+                "options": ["left", "bottom", "right", "top"]
+            },
+            "of": {
+                "type": "string",
+                "description": "弹出菜单的位置是相对当前触发元素，还是触发元素所在的菜单元素，这在嵌套菜单中可能会用到，可以使所有子菜单保持统一的对齐方式，例如：级联选择（Cascader）组件",
+                "options": ["parent", "self"]
+            },
+            "container": {
+                "type": "Container",
+                "description": "指定弹出菜单追加的位置，默认：Dialog类型的组件会追加到Dialog中，其他会追加到body中。你可以传入函数返回一个 DOM 用来作为插入的容器，或者传入字符串用来给querySelector进行查询"
+            },
+            "showArrow": {
+                "type": "boolean",
+                "description": "弹层是否展示箭头"
+            },
+            "theme": {
+                "type": "string",
+                "description": "指定主题",
+                "options": ["dark", "light"]
+            },
+            "hoverable": {
+                "type": "boolean",
+                "description": "对于悬浮触发hover的方式，提示内容弹层是否在鼠标悬浮时仍然展示，默认鼠标离开触发元素弹层就会关闭"
+            },
+            "always": {
+                "type": "boolean",
+                "description": "是否一直保持当前展示/隐藏状态"
+            },
+            "size": {
+                "type": "string",
+                "description": "弹层尺寸",
+                "options": ["default", "small"]
+            },
+            "content": {
+                "type": "string",
+                "description": "指定提示的内容，当然你也可以用content扩展点指定"
+            }
+        },
+        "solt": {
+            "content": {
+                "type": "string",
+                "description": "自定义提示内容"
+            }
+        },
+        "examples": [
+             "<Tooltip content=hello>hover the text</Tooltip>"
+        ]
+    },
+    "Transfer": {
+        "name": "Transfer",
+        "description": "Transfer穿梭框",
+        "props": {
+            "data": {
+                "type": "TransferDataItem[]",
+                "description": "需要展示的列表数据, 其中label会默认当做列表文案展示，disabled用于指定是否禁用该行选择"
+            },
+            "keyName": {
+                "type": "string",
+                "description": "指定每一行数据的哪个属性当做列表的key属性，默认会取key属性"
+            },
+            "labelName": {
+                "type": "string",
+                "description": "指定每一行数据的哪个属性当做列表的label属性，默认会取label属性"
+            },
+            "value": {
+                "type": "string[]",
+                "description": "已选择key的数据项，可用v-model进行双向绑定"
+            },
+            "leftCheckedKeys": {
+                "type": "string[]",
+                "description": "通过key指定勾选的左侧数据节点"
+            },
+            "rightCheckedKeys": {
+                "type": "string[]",
+                "description": "通过key指定勾选的右侧数据节点"
+            },
+            "filterable": {
+                "type": "boolean",
+                "description": "是否需要过滤列表功能，默认根据data中定义的label进行过滤"
+            },
+            "filter": {
+                "type": "(data: TransferDataItem, keywords: string) => boolean",
+                "description": "指定自定义的过滤函数，组件会将每行数据data以及关键词keywords传给它"
+            },
+            "placeholder": {
+                "type": "string",
+                "description": "当开启过滤功能时，用于输入框展示的占位文案"
+            },
+            "leftKeywords": {
+                "type": "string",
+                "description": "左边筛选关键字"
+            },
+            "rightKeywords": {
+                "type": "string",
+                "description": "右边筛选关键字"
+            },
+            "leftTitle": {
+                "type": "string",
+                "description": "左边顶部展示的标题"
+            },
+            "rightTitle": {
+                "type": "string",
+                "description": "右边顶部展示的标题"
+            },
+            "enableAdd": {
+                "type": "() => boolean",
+                "description": "指定右箭头按钮的可用状态"
+            },
+            "enableRemove": {
+                "type": "() => boolean",
+                "description": "指定左箭头按钮的可用状态"
+            }
+        },
+        "events": {
+            "getData": {
+                "type": "function",
+                "description": "获取右边的节点数据 () => TransferDataItem[]"
+            },
+            "getCheckedData": {
+                "type": "function",
+                "description": "获取勾选的节点数据 () => (type: 'left' | 'right') => TransferDataItem[]"
+            },
+            "add": {
+                "type": "function",
+                "description": "右箭头按钮点击事件"
+            },
+            "remove": {
+                "type": "function",
+                "description": "左箭头按钮点击事件"
+            }
+        },
+        "solt": {
+            "header": {
+                "type": "string",
+                "description": "自定义整个头部内容 (type: 'left' | 'right') => Children"
+            },
+            "filter": {
+                "type": "string",
+                "description": "自定义检索内容 (type: 'left' | 'right') => Children"
+            },
+            "list": {
+                "type": "string",
+                "description": "自定义整个列表内容 (type: 'left' | 'right') => Children"
+            },
+            "label": {
+                "type": "string",
+                "description": "自定义每一项的渲染函数，类似于label属性 (data: TransferDataItem, key: string, type: 'left' | 'right') => Children"
+            }
+        },
+        "examples": [
+             "<Transfer v-model=value :data=data>"
+        ]
+    },
+    "Tree": {
+        "name": "Tree",
+        "description": "树形控件",
+        "props": {
+            "data": {
+                "type": "TreeDataItem<K>[]",
+                "description": "要渲染的数据"
+            },
+            "filter": {
+                "type": "(data: TreeDataItem<K>, node: Node<K>) => boolean",
+                "description": "指定节点过滤函数，返回true则展示，否则过滤掉"
+            },
+            "uncorrelated": {
+                "type": "boolean",
+                "description": "是否让父子checkbox选中状态互不关联"
+            },
+            "checkedKeys": {
+                "type": "K[]",
+                "description": "通过key指定勾选的数据节点"
+            },
+            "expandedKeys": {
+                "type": "K[]",
+                "description": "通过key指定展开的数据节点"
+            },
+            "defaultExpandAll": {
+                "type": "boolean",
+                "description": "是否默认展开所有节点"
+            },
+            "selectable": {
+                "type": "boolean",
+                "description": "节点是否可选中，默认为true可选中"
+            },
+            "selectedKeys": {
+                "type": "K[]",
+                "description": "通过key指定选中的数据节点"
+            },
+            "multiple": {
+                "type": "boolean",
+                "description": "selectedKeys是否支持多选"
+            },
+            "checkbox": {
+                "type": "boolean",
+                "description": "是否展示复选框"
+            },
+            "load": {
+                "type": "(node: TreeNode) => Proomise | void",
+                "description": "指定异步加载节点数据的函数，该函数通过Promise返回数组来添加子节点数据"
+            },
+            "showLine": {
+                "type": "boolean",
+                "description": "是否展示左侧对齐线"
+            },
+            "draggable": {
+                "type": "boolean",
+                "description": "是否支持拖拽"
+            },
+            "allowDrag": {
+                "type": "(node: TreeNode<K>) => boolean",
+                "description": "指定哪些节点可拖拽"
+            },
+            "allowDrop": {
+                "type": "(node: TreeNode<K>, srcNode: TreeNode[K]) => boolean",
+                "description": "指定哪些节点可以插入子节点"
+            }
+        },
+        "events": {
+            "getCheckedData": {
+                "type": "function",
+                "description": "获取勾选的节点数据 (leafOnly: boolean = false) => TreeDataItem<K>[]"
+            },
+            "getSelectedData": {
+                "type": "function",
+                "description": "获取选中的节点数据"
+            },
+            "expand": {
+                "type": "function",
+                "description": "展开节点 (key: K) => void，key 要展开的节点的key"
+            },
+            "shrink": {
+                "type": "function",
+                "description": "收起节点 (key: K) => void，key 要收起的节点的key"
+            },
+            "getNodes": {
+                "type": "function",
+                "description": "返回一级节点 () => TreeNode<K>[]"
+            },
+            "expandAll": {
+                "type": "function",
+                "description": "展开所有节点"
+            },
+            "dragend": {
+                "type": "function",
+                "description": "拖拽完成触发"
+            },
+            "denydrag": {
+                "type": "function",
+                "description": "拖拽不允许拖拽的节点触发"
+            },
+            "denydrop": {
+                "type": "function",
+                "description": "插入到不允许插入的节点时触发"
+            }
+        },
+        "solt": {
+            "label": {
+                "type": "string",
+                "description": "自定义节点渲染内容"
+            }
+        },
+        "examples": [
+             "<Tree :data=data :expandedKeys=['2', '2-1'] />"
+        ]
+    },
+    "TreeSelect": {
+        "name": "Timeline",
+        "description": "Timeline与TimelineItem组合使用垂直方向线性时间轴",
+        "props": {
+            "value": {
+                "type": "any",
+                "description": "当前选择的元素，可用v-model双向绑定"
+            },
+            "multiple": {
+                "type": "boolean",
+                "description": "是否支持多选"
+            },
+            "filterable": {
+                "type": "boolean",
+                "description": "是否支持筛选"
+            },
+            "loading": {
+                "type": "boolean",
+                "description": "数据加载状态"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用"
+            },
+            "name": {
+                "type": "string",
+                "description": "表单元素的name"
+            },
+            "size": {
+                "type": "string",
+                "description": "尺寸",
+                "options": ["default", "small", "large", "mini"]
+            },
+            "hideIcon": {
+                "type": "boolean",
+                "description": "是否隐藏后面的图标"
+            },
+            "clearable": {
+                "type": "boolean",
+                "description": "是否可清空"
+            },
+            "fluid": {
+                "type": "boolean",
+                "description": "是否宽度100%"
+            },
+            "inline": {
+                "type": "boolean",
+                "description": "展示内联模式，该模式下，组件没有边框，宽度和高度如同内联元素一样由内容撑开"
+            },
+            "placeholder": {
+                "type": "string",
+                "description": "占位文案"
+            },
+            "container": {
+                "type": "Container",
+                "description": "指定弹出菜单追加的位置，默认：Dialog类型的组件会追加到Dialog中，其他会追加到body中。你可以传入函数返回一个DOM用来作为插入的容器，或者传入字符串用来给querySelector进行查询"
+            },
+            "width": {
+                "type": "number",
+                "description": "指定宽度，组件自动添加单位px"
+            },
+            "data": {
+                "type": "TreeDataItem<K>[]",
+                "description": "要渲染的数据"
+            },
+            "uncorrelated": {
+                "type": "boolean",
+                "description": "是否让父子checkbox选中状态互不关联"
+            },
+            "load": {
+                "type": "(node: TreeNode) => Proomise | void",
+                "description": "指定异步加载节点数据的函数，该函数通过Promise返回数组来添加子节点数据"
+            },
+            "showLine": {
+                "type": "boolean",
+                "description": "是否展示Tree的对齐线"
+            },
+            "defaultExpandAll": {
+                "type": "boolean",
+                "description": "是否默认展开所有节点"
+            },
+            "checkbox": {
+                "type": "boolean",
+                "description": "是否展示复选框"
+            },
+            "filter": {
+                "type": "(keywords: string, data: TreeDataItem<K>) => boolean",
+                "description": "当支持筛选时，可以自定义筛选规则"
+            },
+            "show": {
+                "type": "boolean",
+                "description": "是否展示菜单项"
+            },
+            "position": {
+                "type": "Position",
+                "description": "菜单弹出的位置，默认与触发器左侧对齐向下偏移8px的地方"
+            },
+            "flat": {
+                "type": "boolean",
+                "description": "是否展示扁平样式"
+            },
+            "draggable": {
+                "type": "boolean",
+                "description": "多选值是否支持拖动排序"
+            }
+        },
+        "events": {
+            "expandAll": {
+                "type": "function",
+                "description": "展开所有节点"
+            }
+        },
+        "solt": {
+            "value": {
+                "type": "string",
+                "description": "自定义选择结果的展示"
+            },
+            "values": {
+                "type": "string",
+                "description": "自定义多选的选择结果的展示"
+            },
+            "prefix": {
+                "type": "string",
+                "description": "自定义输入款前面展示的内容"
+            },
+            "suffix": {
+                "type": "string",
+                "description": "自定义输入框后面展示的内容"
+            },
+            "menu": {
+                "type": "string",
+                "description": "自定义整个菜单的内容"
+            }
+        },
+        "examples": [
+             "<TreeSelect v-model=value :data=data :showLine=false />"
+        ]
+    },
+    "Upload": {
+        "name": "Upload",
+        "description": "Upload上传控件",
+        "props": {
+            "accept": {
+                "type": "string",
+                "description": "input的accept属性，支持的文件的类型"
+            },
+            "files": {
+                "type": "UploadFile[]",
+                "description": "所有已上传和待上传的文件列表"
+            },
+            "defaultFiles @deprecated": {
+                "type": "(Partial<UploadFile> & Pick<UploadFile, 'name' | 'url'>)[]",
+                "description": "指定初始化上传列表，见示例"
+            },
+            "maxSize": {
+                "type": "number",
+                "description": "最大上传文件大小限制(kb)，默认无限制"
+            },
+            "limit": {
+                "type": "number",
+                "description": "最大上传文件数量限制，默认无限制"
+            },
+            "autoUpload": {
+                "type": "boolean",
+                "description": "是否选择文件后即自动上传"
+            },
+            "beforeRemove": {
+                "type": "BeforeCallback",
+                "description": "指定文件在删除之前的处理逻辑，如果该函数返回false，则取消删除，你也可以使用异步函数或返回Promise对象；组件会将当前文件(file)和文件列表(files)传给该函数"
+            },
+            "beforeUpload": {
+                "type": "BeforeCallback",
+                "description": "指定文件在开始上传之前的处理逻辑，如果该函数返回false，则取消上传，你也可以使用异步函数或返回Promise对象；组件会将当前文件(file)和文件列表(files)传给该函数"
+            },
+            "data": {
+                "type": "DataObject",
+                "description": "指定上传附加的请求数据，可以为对象或者函数，为函数时，组件会将当前文件对象作为参数传入，函数应返回一个对象作为附加数据"
+            },
+            "action": {
+                "type": "string",
+                "description": "上传地址"
+            },
+            "headers": {
+                "type": "Record<string | number, string>",
+                "description": "指定上传的请求头"
+            },
+            "name": {
+                "type": "string",
+                "description": "指定上传文件字段名，不存在时，组件默认会使用原始文件名"
+            },
+            "withCredentials": {
+                "type": "boolean",
+                "description": "指定跨域请求是是否允许传送cookie"
+            },
+            "type": {
+                "type": "string",
+                "description": "组件风格",
+                "options": ["select", "drag", "gallery"]
+            },
+            "directory": {
+                "type": "boolean",
+                "description": "是否支持上传文件夹 caniuse"
+            },
+            "disabled": {
+                "type": "boolean",
+                "description": "是否禁用上传"
+            },
+            "multiple": {
+                "type": "boolean",
+                "description": "input的multiple属性，是否支持多选"
+            }
+        },
+        "events": {
+            "submit": {
+                "type": "function",
+                "description": "文件上传过程中会抛出该事件 (event: ProgressEvent, xml: XMLHttpRequest, file: UploadFile, files: UploadFile[]) => void"
+            },
+            "success": {
+                "type": "function",
+                "description": "文件上传成功时会抛出该事件 (res: any, xml: XMLHttpRequest, file: UploadFile, files: UploadFile[]) => void"
+            },
+            "error": {
+                "type": "function",
+                "description": "文件超出最大文件数量限制，超出文件大小限制，或者上传失败都会抛出该事件 (err: Error | RequestError, file: File[] | File | UploadFile, files: UploadFile[]) => void"
+            }
+        },
+        "solt": {
+            "content": {
+                "type": "string",
+                "description": "组件展示的内容，当没有子元素时，默认会根据type展示不同的内容"
+            },
+            "tip": {
+                "type": "string",
+                "description": "组件展示的提示信息"
+            }
+        },
+        "examples": [
+             "<Upload multiple :beforeRemove=beforeRemove  action=//fakestoreapi.com/products accept=.jpg, .png :maxSize=500 @error=showError><template v-slot:tip>只能上传JPG/PNG格式文件，且不超过500kb</template></Upload>"
+        ]
+    },
+    "VirtualList": {
+        "name": "VirtualList",
+        "description": "VirtualList虚拟列表适用于数据量大加载",
+        "props": {
+            "disable": {
+                "type": "boolean",
+                "description": "是否禁用虚拟化"
+            }
+        },
+        "examples": [
+             "<VirtualList style=height: 450px ></VirtualList>"
+        ]
+    },
+    "Message": {
+        "name": "Message",
+        "description": "Message全局提示",
+        "props": {
+            "content": {
+                "type": "string",
+                "description": "提示内容"
+            },
+            "duration": {
+                "type": "number",
+                "description": "提示展示多长时间后自动关闭，当传入0时，提示将会一直展示。单位ms"
+            },
+            "type": {
+                "type": "string",
+                "description": "提示类型",
+                "options": ["info", "error", "success", "warning"]
+            },
+            "closable": {
+                "type": "boolean",
+                "description": "是否展示关闭按钮"
+            },
+            "hideIcon": {
+                "type": "boolean",
+                "description": "是否隐藏文字前面的icon"
+            }
+        },
+        "events": {
+            "info": {
+                "type": "function",
+                "description": "普通提示"
+            },
+            "error": {
+                "type": "function",
+                "description": "错误提示"
+            },
+            "success": {
+                "type": "function",
+                "description": "成功提示"
+            },
+            "warning": {
+                "type": "function",
+                "description": "警告提示"
+            }
+        },
+        "examples": [
+             "Message.success('success')"
+        ]
+    }
+}
