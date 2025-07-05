@@ -1,6 +1,6 @@
 {
   "name": "kpc-mcp-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "KPC组件库MCP服务 - 基于官方TypeScript SDK",
   "main": "dist/index.js",
   "type": "module",
