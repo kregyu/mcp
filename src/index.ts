@@ -380,21 +380,21 @@ class KPCMCPServer {
     // 使用现有示例或生成新示例
     let examples = component.examples;
     
-    if (scenario) {
-      // 按场景筛选
-      examples = examples.filter(ex => 
-        ex.scenario?.toLowerCase().includes(scenario.toLowerCase()) ||
-        ex.title.toLowerCase().includes(scenario.toLowerCase())
-      );
+    // if (scenario) {
+    //   // 按场景筛选
+    //   examples = examples.filter(ex => 
+    //     ex.scenario?.toLowerCase().includes(scenario.toLowerCase()) ||
+    //     ex.title.toLowerCase().includes(scenario.toLowerCase())
+    //   );
       
-      // 如果没有找到匹配的示例，生成一个
-      if (examples.length === 0) {
-        const generatedExample = this.exampleGenerator.generateExampleByScenario(component, scenario);
-        if (generatedExample) {
-          examples = [generatedExample];
-        }
-      }
-    }
+    //   // 如果没有找到匹配的示例，生成一个
+    //   if (examples.length === 0) {
+    //     const generatedExample = this.exampleGenerator.generateExampleByScenario(component, scenario);
+    //     if (generatedExample) {
+    //       examples = [generatedExample];
+    //     }
+    //   }
+    // }
 
     // 如果还是没有示例，生成基础示例
     if (examples.length === 0) {

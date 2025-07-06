@@ -2192,7 +2192,7 @@
     },
     "Form": {
       "name": "Form",
-      "description": "Form组件",
+      "description": "Form表单",
       "category": "表单组件",
       "tags": [
         "表单",
@@ -2200,11 +2200,69 @@
         "提交"
       ],
       "filePath": "components/form",
-      "props": [],
-      "events": [],
-      "methods": [],
+      "props": [
+        {
+          "name": "labelWidth",
+          "type": "string",
+          "required": false,
+          "description": "定义所有子孙FormItem组件的label宽度",
+          "options": []
+        },
+        {
+          "name": "layout",
+          "type": "string",
+          "required": false,
+          "description": "指定表单布局方式",
+          "options": ["horizontal", "vertical", "inline"]
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "required": false,
+          "description": "指定表单尺寸",
+          "options": ["default", "small", "mini"]
+        },
+        {
+          "name": "starOnRequired",
+          "type": "boolean",
+          "required": false,
+          "description": "是否在必填项前显示星号",
+          "options": [true, false]
+        }
+      ],
+      "events": [
+        {
+          "name": "submit",
+          "type": "function",
+          "description": "组件事件 当表单提交并且所有规则都验证通过时触发"
+        }
+      ],
+      "methods": [
+        {
+          "name": "validate",
+          "type": "function",
+          "description": "通过ref验证表单所有规则"
+        },
+        {
+          "name": "reset",
+          "type": "function",
+          "description": "通过ref重置表单验证状态"
+        },
+        {
+          "name": "getFirstInvalidFormItem",
+          "type": "function",
+          "description": "通过ref获取第一条出错的FormItem"
+        },
+        {
+          "name": "addMethod",
+          "type": "function",
+          "description": "静态方法 添加全局验证规则，这样在所有FormItem中如果需要使用该规则，只需要在rules中写上该规则名即可"
+        }
+      ],
       "slots": [],
-      "examples": [],
+      "examples": [
+        "<Form @submit='submit' ref='form' labelWidth='200'><FormItem label='Input' :value='model.input' :rules='{required: true}'><Input v-model='model.input' /></FormItem></Form>"
+      ],
       "nestingRules": [
         {
           "parent": "Form",
@@ -2217,17 +2275,115 @@
               "div",
               "Button"
             ],
-            "forbidden": [
-              "Input",
-              "Select",
-              "Checkbox",
-              "Radio"
-            ]
+            "forbidden": []
           },
           "mandatory": true,
           "description": "Form组件内的表单控件必须使用FormItem包裹"
         }
       ],
+      "dependencies": []
+    },
+    "FormItem": {
+      "name": "FormItem",
+      "description": "表单组件",
+      "category": "表单组件",
+      "tags": [],
+      "filePath": "components/form",
+      "props": [
+        {
+          "name": "value",
+          "type": "any",
+          "required": false,
+          "description": "指定需要验证的数据",
+          "options": []
+        },
+        {
+          "name": "rules",
+          "type": "object",
+          "required": false,
+          "description": "指定验证规则",
+          "options": []
+        },
+        {
+          "name": "message",
+          "type": "object",
+          "required": false,
+          "description": "指定验证失败时错误提示文案",
+          "options": []
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false,
+          "description": "指定验证失败时添加的className",
+          "options": []
+        },
+        {
+          "name": "errorClassName",
+          "type": "string",
+          "required": false,
+          "description": "指定验证失败时统一添加的className，不管是哪个规则导致的失败",
+          "options": []
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": false,
+          "description": "指定表单每一项前面展示的标题",
+          "options": []
+        },
+        {
+          "name": "htmlFor",
+          "type": "string",
+          "required": false,
+          "description": "指定label的for属性",
+          "options": []
+        },
+        {
+          "name": "hideLabel",
+          "type": "boolean",
+          "required": false,
+          "description": "是否隐藏label，默认会展示label，即使该属性为空，也会展示占位元素",
+          "options": [true, false]
+        },
+        {
+          "name": "fluid",
+          "type": "boolean",
+          "required": false,
+          "description": "FormItem的宽度默认是被子元素撑开的，添加该属性可以渲染100%的宽度",
+          "options": [true, false]
+        },
+        {
+          "name": "validateOnStart",
+          "type": "boolean",
+          "required": false,
+          "description": "是否组件一渲染就开始验证，而不是等用户输入完成再验证",
+          "options": [true, false]
+        }
+      ],
+      "events": [],
+      "methods": [],
+      "slots": [
+        {
+          "name": "label",
+          "type": "string",
+          "description": "扩展前面的标题label"
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "description": "扩展后面的内容，也可以使用children代替"
+        },
+        {
+          "name": "append",
+          "type": "string",
+          "description": "往后面追加的内容"
+        }
+      ],
+      "examples": [
+        "<Form @submit='submit' ref='form' labelWidth='200'><FormItem label='Input' :value='model.input' :rules='{required: true}' :messages='{required: '必须选择'}'><Input v-model='model.input' /></FormItem></Form>"
+      ],
+      "nestingRules": [],
       "dependencies": []
     },
     "Layout": {

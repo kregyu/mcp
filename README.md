@@ -371,4 +371,9 @@ CMD ["yarn", "start"]
 - supplement_kpc_api.py 用于补全extract-api.js生成组件丢失的属性等
 - generate_api.files.py 用于基于kpc-api-full.json生成其他分类压缩json
 
+### debugger
+
+npx -y @modelcontextprotocol/inspector npx kpc-mcp-server
+ 
+
 这个基于官方SDK的实现提供了更高的代码质量、类型安全和维护性，是企业级应用的最佳选择。

@@ -1825,6 +1825,118 @@
             "<Copy text=Hello King Desgin! />"
         ]
     },
+    "Form": {
+        "name": "Form",
+        "description": "Form表单",
+        "props": {
+            "labelWidth": {
+                "type": "string",
+                "description": "定义所有子孙FormItem组件的label宽度"
+            },
+            "layout": {
+                "type": "boolean",
+                "description": "指定表单布局方式",
+                "options": ["horizontal", "vertical", "inline"]
+            },
+            "size": {
+                "type": "string",
+                "description": "指定表单尺寸",
+                "options": ["default", "small", "mini"]
+            },
+            "starOnRequired": {
+                "type": "boolean",
+                "description": "是否在必填项前显示星号"
+            }
+        },
+        "events": {
+            "validate": {
+                "type": "function",
+                "description": "通过ref验证表单所有规则"
+            },
+            "reset": {
+                "type": "function",
+                "description": "通过ref重置表单验证状态"
+            },
+            "getFirstInvalidFormItem": {
+                "type": "function",
+                "description": "通过ref获取第一条出错的FormItem"
+            },
+            "addMethod": {
+                "type": "function",
+                "description": "静态方法 添加全局验证规则，这样在所有FormItem中如果需要使用该规则，只需要在rules中写上该规则名即可"
+            },
+            "submit": {
+                "type": "function",
+                "description": "组件事件 当表单提交并且所有规则都验证通过时触发"
+            }
+        },
+        "examples": [
+            "<Form @submit='submit' ref='form' labelWidth='200'><FormItem label='Input' :value='model.input' :rules='{required: true}'><Input v-model='model.input' /></FormItem></Form>"
+        ]
+    },
+    "FormItem": {
+        "name": "FormItem",
+        "description": "Form表单",
+        "props": {
+            "value": {
+                "type": "string",
+                "description": "指定需要验证的数据"
+            },
+            "rules": {
+                "type": "object",
+                "description": "指定验证规则"
+            },
+            "message": {
+                "type": "object",
+                "description": "指定验证失败时错误提示文案"
+            },
+            "className": {
+                "type": "object",
+                "description": "指定验证失败时添加的className"
+            },
+            "errorClassName": {
+                "type": "string",
+                "description": "指定验证失败时统一添加的className，不管是哪个规则导致的失败"
+            },
+            "label": {
+                "type": "string",
+                "description": "指定表单每一项前面展示的标题"
+            },
+            "htmlFor": {
+                "type": "string",
+                "description": "指定label的for属性"
+            },
+            "hideLabel": {
+                "type": "boolean",
+                "description": "是否隐藏label，默认会展示label，即使该属性为空，也会展示占位元素"
+            },
+            "fluid": {
+                "type": "boolean",
+                "description": "FormItem的宽度默认是被子元素撑开的，添加该属性可以渲染100%的宽度"
+            },
+            "validateOnStart": {
+                "type": "boolean",
+                "description": "是否组件一渲染就开始验证，而不是等用户输入完成再验证"
+            }
+        },
+        "solt": {
+            "label": {
+                "type": "string",
+                "description": "扩展前面的标题label"
+            },
+            "content": {
+                "type": "string",
+                "description": "扩展后面的内容，也可以使用children代替"
+            },
+            "append": {
+                "type": "string",
+                "description": "往后面追加的内容"
+            }
+        },
+        "examples": [
+            "<Form @submit='submit' ref='form' labelWidth='200'><FormItem label='Input' :value='model.input' :rules='{required: true}' :messages='{required: '必须选择'}'><Input v-model='model.input' /></FormItem></Form>"
+        ]
+    },
     "Collapse": {
         "name": "Collapse",
         "description": "Collapse折叠面板与Collapse组合使用",

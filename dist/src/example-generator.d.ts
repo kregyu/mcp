@@ -77,6 +77,14 @@ export declare class KPCExampleGenerator {
      */
     private getEventParams;
     /**
+     * 生成插槽内容
+     */
+    private generateSlotContent;
+    /**
+     * 检查是否有需要响应式数据的属性
+     */
+    private hasReactiveProps;
+    /**
      * 首字母大写
      */
     private capitalize;

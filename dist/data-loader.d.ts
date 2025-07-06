@@ -28,6 +28,11 @@ export declare class KPCDataLoader {
     getGeneratedAt(): string;
     private calculateRelevance;
     private ensureInitialized;
+    /**
+     * 规范化examples数据格式
+     * 将字符串数组转换为UsageExample对象数组
+     */
+    private normalizeExamplesData;
     getStats(): {
         totalComponents: number;
         totalProps: number;

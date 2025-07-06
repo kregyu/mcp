@@ -35,7 +35,9 @@ export class KPCDataLoader {
             // 加载完整组件数据
             const fullDataPath = join(this.dataDir, 'kpc-api-full.json');
             const fullContent = await readFile(fullDataPath, 'utf-8');
-            this.apiData = JSON.parse(fullContent);
+            const rawData = JSON.parse(fullContent);
+            // 转换examples格式
+            this.apiData = this.normalizeExamplesData(rawData);
             // 加载分类数据
             const categories = ['基础组件', '表单组件', '数据展示', '导航组件', '布局组件', '反馈组件', '工具组件'];
             for (const category of categories) {
@@ -150,6 +152,41 @@ export class KPCDataLoader {
         if (!this.initialized) {
             throw new Error('KPCDataLoader not initialized. Call initialize() first.');
         }
+    }
+    /**
+     * 规范化examples数据格式
+     * 将字符串数组转换为UsageExample对象数组
+     */
+    normalizeExamplesData(rawData) {
+        const normalizedData = { ...rawData };
+        Object.keys(normalizedData.components).forEach(componentName => {
+            const component = normalizedData.components[componentName];
+            if (component.examples && Array.isArray(component.examples)) {
+                component.examples = component.examples.map((example, index) => {
+                    // 如果已经是对象格式，直接返回
+                    if (typeof example === 'object' && example.code) {
+                        return example;
+                    }
+                    // 如果是字符串，转换为标准格式
+                    if (typeof example === 'string') {
+                        return {
+                            title: `示例 ${index + 1}`,
+                            description: `${componentName}组件的使用示例`,
+                            scenario: '基础用法',
+                            code: example,
+                            framework: 'vue3',
+                            complexity: 'basic'
+                        };
+                    }
+                    return example;
+                });
+            }
+            else {
+                // 如果没有examples，初始化为空数组
+                component.examples = [];
+            }
+        });
+        return normalizedData;
     }
     // 统计信息
     getStats() {

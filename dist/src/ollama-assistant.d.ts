@@ -48,13 +48,13 @@ export declare class KPCOllamaAssistant {
      */
     private callOllama;
     /**
-     * 处理Ollama响应
-     */
-    private processOllamaResponse;
-    /**
      * 执行工具调用
      */
     private executeTool;
+    /**
+     * 直接回答（无需工具）
+     */
+    private directAnswer;
     /**
      * 生成最终答案
      */

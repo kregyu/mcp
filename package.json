@@ -9,13 +9,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "postbuild": "chmod +x dist/index.js && chmod +x examples/cli-chat.js",
+    "postbuild": "chmod +x dist/index.js",
     "dev": "tsc --watch",
-    "start": "node dist/index.js",
-    "test": "node dist/test.js",
-    "prepare": "yarn build",
-    "demo": "tsx examples/ollama-demo.ts",
-    "chat": "tsx examples/cli-chat.ts"
+    "start": "node dist/index.js"
   },
   "keywords": [
     "mcp",

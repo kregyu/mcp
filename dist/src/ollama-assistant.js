@@ -40,12 +40,7 @@ export class KPCOllamaAssistant {
      * 尝试直接用KPC助手回答
      */
     async tryKPCDirectAnswer(message) {
-        const msg = message.toLowerCase();
-        // 如果明确是KPC相关问题，直接用KPC助手
-        if (msg.includes('kpc') || msg.includes('组件') || msg.includes('button') ||
-            msg.includes('form') || msg.includes('table') || msg.includes('input')) {
-            return await this.kpcAssistant.answerQuestion(message);
-        }
+        // 不再直接回答，都通过AI处理
         return null;
     }
     /**
@@ -53,27 +48,49 @@ export class KPCOllamaAssistant {
      */
     async chatWithFunctionCalling(userMessage) {
         const systemPrompt = this.buildSystemPrompt();
-        const tools = this.getToolDefinitions();
-        const prompt = `${systemPrompt}
-
-可用工具：
-${JSON.stringify(tools, null, 2)}
+        // 第一步：让AI分析是否需要工具
+        const analysisPrompt = `${systemPrompt}
 
 用户问题：${userMessage}
 
-请分析用户问题，如果需要查询KPC组件信息，请调用相应的工具。请以JSON格式回复，格式如下：
+请分析这个问题是否需要查询KPC组件信息。如果需要，请指定需要调用的工具和参数。
+
+请只回复JSON格式，不要其他内容：
 {
   "need_tool": true/false,
+  "reason": "分析原因",
   "tool_call": {
     "name": "工具名称",
     "arguments": {...}
-  },
-  "response": "回答内容"
-}`;
-        // 调用Ollama
-        const ollamaResponse = await this.callOllama(prompt);
-        // 解析响应
-        return await this.processOllamaResponse(ollamaResponse, userMessage);
+  }
+}
+
+可用工具：
+- get_kpc_component: 获取指定组件详细信息，参数: {"component": "组件名"}
+- search_kpc_components: 搜索组件，参数: {"query": "关键词"}
+- get_kpc_examples: 获取使用示例，参数: {"component": "组件名", "scenario": "场景"}
+- validate_kpc_usage: 验证用法，参数: {"component": "组件名", "props": {...}}`;
+        console.log('🤔 AI正在分析问题...');
+        const analysisResponse = await this.callOllama(analysisPrompt);
+        let analysis;
+        try {
+            analysis = JSON.parse(analysisResponse.trim());
+        }
+        catch (e) {
+            // 如果无法解析，直接回答
+            return await this.directAnswer(userMessage);
+        }
+        if (analysis.need_tool && analysis.tool_call) {
+            console.log(`🔧 调用工具: ${analysis.tool_call.name}`);
+            // 执行工具调用
+            const toolResult = await this.executeTool(analysis.tool_call);
+            // 第二步：基于工具结果生成最终回答
+            return await this.generateFinalAnswer(userMessage, toolResult, analysis.reason);
+        }
+        else {
+            // 直接回答
+            return await this.directAnswer(userMessage);
+        }
     }
     /**
      * 构建系统提示词
@@ -197,60 +214,87 @@ ${JSON.stringify(tools, null, 2)}
         return data.response;
     }
     /**
-     * 处理Ollama响应
-     */
-    async processOllamaResponse(ollamaResponse, userMessage) {
-        try {
-            // 尝试解析JSON响应
-            const parsed = JSON.parse(ollamaResponse);
-            if (parsed.need_tool && parsed.tool_call) {
-                // 执行工具调用
-                const toolResult = await this.executeTool(parsed.tool_call);
-                // 将工具结果传递给Ollama进行最终回答
-                return await this.generateFinalAnswer(userMessage, toolResult);
-            }
-            else {
-                return parsed.response || ollamaResponse;
-            }
-        }
-        catch (e) {
-            // 如果不是JSON格式，直接返回原响应
-            return ollamaResponse;
-        }
-    }
-    /**
      * 执行工具调用
      */
     async executeTool(toolCall) {
         const { name, arguments: args } = toolCall;
-        switch (name) {
-            case 'get_kpc_component':
-                return await this.kpcAssistant.answerQuestion(`获取${args.component}组件信息`);
-            case 'search_kpc_components':
-                return await this.kpcAssistant.answerQuestion(`搜索${args.query}`);
-            case 'get_kpc_examples':
-                const exampleQuery = args.scenario
-                    ? `${args.component}组件${args.scenario}示例`
-                    : `${args.component}组件使用示例`;
-                return await this.kpcAssistant.answerQuestion(exampleQuery);
-            case 'validate_kpc_usage':
-                return await this.kpcAssistant.answerQuestion(`验证${args.component}组件配置${JSON.stringify(args.props)}`);
-            default:
-                return `未知工具：${name}`;
+        try {
+            switch (name) {
+                case 'get_kpc_component':
+                    const component = this.kpcAssistant['dataLoader'].getComponent(args.component);
+                    if (!component) {
+                        return `组件 "${args.component}" 不存在`;
+                    }
+                    return this.kpcAssistant['formatter'].formatComponentAPI(component);
+                case 'search_kpc_components':
+                    const searchResults = this.kpcAssistant['dataLoader'].searchComponents(args.query, {
+                        category: args.category,
+                        fuzzy: true
+                    });
+                    return this.kpcAssistant['formatter'].formatSearchResults(searchResults, args.query);
+                case 'get_kpc_examples':
+                    const comp = this.kpcAssistant['dataLoader'].getComponent(args.component);
+                    if (!comp) {
+                        return `组件 "${args.component}" 不存在`;
+                    }
+                    let examples = comp.examples || [];
+                    if (args.scenario && examples.length === 0) {
+                        const generated = this.kpcAssistant['exampleGenerator'].generateExampleByScenario(comp, args.scenario);
+                        if (generated) {
+                            examples = [generated];
+                        }
+                    }
+                    if (examples.length === 0) {
+                        const basic = this.kpcAssistant['exampleGenerator'].generateBasicExample(comp);
+                        examples = [basic];
+                    }
+                    return this.kpcAssistant['formatter'].formatExamples(examples);
+                case 'validate_kpc_usage':
+                    const targetComp = this.kpcAssistant['dataLoader'].getComponent(args.component);
+                    if (!targetComp) {
+                        return `组件 "${args.component}" 不存在`;
+                    }
+                    const validationResult = this.kpcAssistant['validator'].validate(targetComp, args.props);
+                    return this.kpcAssistant['formatter'].formatValidationResult(validationResult);
+                default:
+                    return `未知工具：${name}`;
+            }
         }
+        catch (error) {
+            return `工具执行失败：${error}`;
+        }
+    }
+    /**
+     * 直接回答（无需工具）
+     */
+    async directAnswer(userMessage) {
+        const prompt = `你是一个专业的前端开发助手，特别擅长Vue组件开发。
+
+用户问题：${userMessage}
+
+请用友好、专业的语调回答用户的问题。如果问题与KPC组件库相关但你需要更具体的信息，请引导用户提供更多细节。`;
+        console.log('💭 AI正在思考回答...');
+        return await this.callOllama(prompt);
     }
     /**
      * 生成最终答案
      */
-    async generateFinalAnswer(userMessage, toolResult) {
-        const prompt = `基于以下信息回答用户问题：
+    async generateFinalAnswer(userMessage, toolResult, reason) {
+        const prompt = `你是KPC组件库专家，基于以下信息回答用户问题：
 
 用户问题：${userMessage}
+
+${reason ? `分析原因：${reason}` : ''}
 
 工具查询结果：
 ${toolResult}
 
-请根据查询结果，用友好、专业的语调回答用户问题，提供实用的建议和代码示例。`;
+请根据查询结果，用友好、专业的语调回答用户问题：
+1. 直接回答用户的问题
+2. 提供实用的建议和代码示例
+3. 如果合适，补充相关的最佳实践
+4. 保持回答简洁明了`;
+        console.log('💡 AI正在生成最终回答...');
         return await this.callOllama(prompt);
     }
     /**

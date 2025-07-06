@@ -6,7 +6,7 @@ async function main() {
     console.log('🚀 启动KPC智能助手演示...\n');
     // 创建助手实例
     const assistant = new KPCOllamaAssistant('http://localhost:11434', // Ollama服务地址
-    'qwen2.5:7b' // 使用的模型
+    'qwen3:8b' // 使用的模型
     );
     // 初始化
     await assistant.initialize();
@@ -14,7 +14,7 @@ async function main() {
     const questions = [
         'Button组件有哪些属性？',
         '如何使用Form组件进行表单验证？',
-        '搜索所有表单相关的组件',
+        'Select的使用示例',
         'Table组件如何实现分页？',
         '验证这个Button配置是否正确：{type: "primary", size: "large"}',
         'KPC组件库总共有多少个组件？'

@@ -17,13 +17,18 @@ export class KPCExampleGenerator {
         if (eventsCode)
             templateCode += `\n  ${eventsCode}`;
         if (component.slots && component.slots.length > 0) {
-            templateCode += `>\n  ${component.name}内容\n</${component.name}>`;
+            const slotContent = this.generateSlotContent(component);
+            templateCode += `>\n  ${slotContent}\n</${component.name}>`;
         }
         else {
             templateCode += ' />';
         }
         const scriptCode = this.generateScriptCode(component, props, events);
-        const code = `<template>\n  ${templateCode}\n</template>\n\n${scriptCode}`;
+        let code = `<template>\n  ${templateCode}\n</template>`;
+        // 只有当有事件或需要响应式数据时才添加script部分
+        if (events.length > 0 || this.hasReactiveProps(props)) {
+            code += `\n\n${scriptCode}`;
+        }
         return {
             title: '基础用法',
             description: `${component.name}组件的基本使用方式`,
@@ -402,6 +407,43 @@ export default {
             return '';
         }
         return event.parameters.map((p) => p.name || 'event').join(', ');
+    }
+    /**
+     * 生成插槽内容
+     */
+    generateSlotContent(component) {
+        switch (component.name) {
+            case 'Button':
+                return '点击按钮';
+            case 'Card':
+                return 'Card内容';
+            case 'Dialog':
+                return '这是一个对话框内容';
+            case 'Modal':
+                return '模态框内容';
+            case 'Drawer':
+                return '抽屉内容';
+            case 'Tooltip':
+                return 'Hover显示提示';
+            case 'Popover':
+                return '点击显示气泡';
+            case 'Collapse':
+                return 'CollapseItem内容';
+            case 'Tabs':
+                return 'Tab内容';
+            case 'Steps':
+                return 'Step内容';
+            default:
+                return `${component.name}内容`;
+        }
+    }
+    /**
+     * 检查是否有需要响应式数据的属性
+     */
+    hasReactiveProps(props) {
+        return props.some(prop => prop.name === 'value' ||
+            prop.name.includes('model') ||
+            prop.type === 'boolean' && ['checked', 'selected', 'active'].includes(prop.name));
     }
     /**
      * 首字母大写
